@@ -2,3 +2,17 @@
     background-color: #efefef;
     border: solid 1px black;
 }
+
+.page_title {
+    position: absolute;
+    left: 900px;
+    top: 220px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#special_title {
+    position: absolute;
+    left: 980px;
+    top: 470px;
+}
