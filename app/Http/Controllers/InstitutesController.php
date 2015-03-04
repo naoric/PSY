@@ -1,9 +1,7 @@
 <?php 
 
 namespace App\Http\Controllers;
-
-
-use Illuminate\Support\Facades\Lang;
+use App\Models\Institute;
 
 class InstitutesController extends Controller {
 
@@ -19,6 +17,9 @@ class InstitutesController extends Controller {
 
 	}
 
+    public function show(Institute $institute) {
+        $institute->toJson();
+    }
 
 	public function store() {
 
