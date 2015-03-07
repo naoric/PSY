@@ -33,7 +33,7 @@ body {
 
 .main-header nav {
     position: absolute;
-    bottom: 0;
+    bottom: -4px;
     width: 100%;
 }
 
@@ -60,7 +60,7 @@ nav.horizontal a:link {
     display: block;
     padding: 18px;
     font-weight: 700;
-    border-left: solid 1px;
+    border-left: solid 1px #b7b7b7;
     text-decoration: none;
 }
 
@@ -133,20 +133,23 @@ nav.horizontal a:visited {
     border-color: #6d93ff;
     border-radius: 5px;
     cursor: pointer;
-    position: relative;
 }
 
 .psy-form button.approve:active {
-    left: 3px;
-    top: 3px;
+    margin-top: 3px;
+    margin-left: 3px;
     border: none;
 }
 
-.psy-form input[type=text], .psy-form select, .psy-form textarea {
+.psy-form input[type=text], .psy-form input[type=number], .psy-form select, .psy-form textarea {
     padding: 10px 7px;
     font-family: 'Alef', sans-serif;
     font-size: 1.01em;
     border: solid 1px #adadad;
     border-radius: 3px;
     outline: none;
+}
+
+.psy-form .small {
+    width: 50px;
 }
