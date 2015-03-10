@@ -11,6 +11,17 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('home');
+});
+
+
+Route::get('/report', function () {
+    return view('forms.psyc-report');
+});
+
+
+Route::get('match/new', function () {
+    return view('forms.match');
 });
