@@ -1,18 +1,157 @@
-.wrap {
+/* main template */
+html {
+    height: 100%;    
+}
+
+body {
+    min-height: 100%;
+    font-family: 'Alef', sans-serif;
+    direction: rtl;
     background-color: #efefef;
-    border: solid 1px black;
 }
 
-.page_title {
-    position: absolute;
-    left: 900px;
-    top: 220px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 0 0 20px 5px #989898
 }
 
-#special_title {
+.clearfix::after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+.main-header {
+    background-image: url("../images/background.png");
+    background-repeat: no-repeat;
+    height: 240px;
+    position: relative;
+}
+
+.main-header nav {
     position: absolute;
-    left: 980px;
-    top: 470px;
+    bottom: -4px;
+    width: 100%;
+}
+
+nav.horizontal ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: #e6e6e6;
+    border: solid 1px #b7b7b7;
+    border-radius: 4px;
+}
+
+nav.horizontal li {
+    float: right;
+}
+
+nav.horizontal a:link {
+    text-decoration: underline;
+    color: #6a6a6a;
+}
+
+.main-header nav.horizontal a:link {
+    transition: background-color 200ms;
+    display: block;
+    padding: 18px;
+    font-weight: 700;
+    border-left: solid 1px #b7b7b7;
+    text-decoration: none;
+}
+
+.centered {
+    
+}
+
+nav.horizontal a:visited {
+    color: #6a6a6a;
+}
+
+.main-header nav.horizontal a:hover {
+    background-color: #adadad;
+    color: white;
+}
+
+.main-header a:active {
+    
+}
+
+.main-content {
+    padding: 40px 20px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+/* standard form */
+
+
+.psy-form {
+
+}
+
+.psy-form .mult {
+    margin-left: 20px
+}
+
+.psy-form label{
+    float: right;
+    color: #6d6d6d;
+    width: 180px;
+    font-weight:bold;
+    line-height: 35px;
+    vertical-align: baseline;
+}
+
+.psy-form .input-line {
+    margin-bottom: 10px;
+}
+
+.psy-form label::after {
+    content: ":"
+}
+
+.psy-form button.approve {
+    outline: none;
+    background-color: #2d5eff;
+    padding: 8px 20px;
+    color: white;
+    font-family: 'Alef', sans-serif;
+    font-size: 1.01em;
+    border-width: 0 3px 3px 0;
+    border-style: solid;
+    border-color: #6d93ff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.psy-form button.approve:active {
+    margin-top: 3px;
+    margin-left: 3px;
+    border: none;
+}
+
+.psy-form input[type=text],.psy-form input[type=email],.psy-form input[type=tel], .psy-form input[type=number], .psy-form select, .psy-form textarea {
+    padding: 10px 7px;
+    font-family: 'Alef', sans-serif;
+    font-size: 1.01em;
+    border: solid 1px #adadad;
+    border-radius: 3px;
+    outline: none;
+}
+
+.psy-form .small {
+    width: 50px;
 }
