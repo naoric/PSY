@@ -25,3 +25,7 @@ Route::get('/report', function () {
 Route::get('match/new', function () {
     return view('forms.match');
 });
+
+//Route::resource('institutes', 'InstituteController');
+//Route::resource('psychologists', 'PsychologistController');
+//Route::resource('meetings', 'MeetingController');
