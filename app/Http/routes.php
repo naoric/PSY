@@ -12,11 +12,5 @@
 */
 
 Route::get('/', function () {
-    return 'Hello World';
+    return view('home');
 });
-
-
-Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
