@@ -13,7 +13,7 @@
         for (i = 0; i < len; ++i) {
             window.elements.datePickers.push(new Pikaday({
                 field: pickers[i],
-                format: 'DD/MM/YYYY'
+                format: pickers[i].getAttribute('data-format')
             }));
         }
 

@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::get('/', function () {
     return view('home');
 });
@@ -24,6 +23,10 @@ Route::get('/report', function () {
 
 Route::get('match/new', function () {
     return view('forms.match');
+});
+
+Route::get('psychologist/new', function () {
+    return view('forms.psychologist');
 });
 
 //Route::resource('institutes', 'InstituteController');

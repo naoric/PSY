@@ -10,7 +10,7 @@
 
         <div class="input-line">
             <label>תאריך פגישה</label>
-            <input type="text" id="datepicker" class="datepicker">
+            <input type="text" id="datepicker" class="datepicker" data-format="DD/MM/YYYY">
         </div>
 
 
