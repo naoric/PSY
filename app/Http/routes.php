@@ -29,6 +29,10 @@ Route::get('psychologist/new', function () {
     return view('forms.psychologist');
 });
 
+Route::get('psychologist/calc', function () {
+    return view('forms.calc');
+});
+
 //Route::resource('institutes', 'InstituteController');
 //Route::resource('psychologists', 'PsychologistController');
 //Route::resource('meetings', 'MeetingController');
