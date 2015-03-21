@@ -6,7 +6,10 @@
 
 @section('content')
 
-    <label>בחר פסיכולוג</label>
+    <form class="psy-form" action="">
+
+
+                    <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
                         <select name="type[]" class="pull-right mult" required>
                             <option disabled="disabled" selected="selected" >בחר מרשימה</option>
@@ -58,4 +61,5 @@
                 </div>
 
 
+            </form> <!-- /form -->
 @stop

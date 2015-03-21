@@ -1,20 +1,13 @@
-@extends('app')
+@extends('app_login')
 
 @section('page-title')
-        <h1> מחשבון לחישוב תקן</h1>
-        <h2> ע"פ מפתח עבודה מומלץ בחוז"ר מנכ"ל משרד החינוך</h2>
-        <h3>מתווה השירות הפסיכולוגי חינוכי" תש"ע 8/א 1212" </h3>
+
 @stop
 
 @section('content')
 
-    <div class="container">
-        <header class="main-header">
-            <nav class="horizontal">
 
-            </nav>
-        </header>
-        <article class="main-content">
+
 
 
                 <div class="container2">

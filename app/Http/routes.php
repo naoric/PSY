@@ -12,16 +12,16 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('forms.login');
 });
 
 
-Route::get('/report', function () {
+Route::get('psyc-report', function () {
     return view('forms.psyc-report');
 });
 
 
-Route::get('match/new', function () {
+Route::get('match', function () {
     return view('forms.match');
 });
 
@@ -29,9 +29,23 @@ Route::get('psychologist/new', function () {
     return view('forms.psychologist');
 });
 
-Route::get('psychologist/calc', function () {
+Route::get('calc', function () {
     return view('forms.calc');
 });
+
+Route::get('delete-match', function () {
+    return view('forms.delete_match');
+});
+
+Route::get('institute_page', function () {
+    return view('forms.institute_page');
+});
+
+
+Route::get('new-match', function () {
+    return view('forms.new_match');
+});
+
 
 //Route::resource('institutes', 'InstituteController');
 //Route::resource('psychologists', 'PsychologistController');
