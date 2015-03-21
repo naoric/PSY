@@ -12,13 +12,13 @@
 
                  <div class="input-line clearfix">
                     <label>תאריך פגישה</label>
-                    <input type="date" id="datepicker" class="datepicker">
+                    <input type="date" id="datepicker" class="datepicker" required>
                 </div>
 
 
                 <div class="input-line clearfix">
                     <label>שם המוסד</label>
-                    <select name="institute-name" required>
+                    <select name="institute-name">
                         <option value="AU">תיכון עמית עמל</option>
                          <option value="AU">תיכון ששת עמל</option>
                     </select>
@@ -26,18 +26,18 @@
 
                 <div class="input-line">
                     <label>שעות שהיה בבית הספר</label>
-                    <input type="number" name="" size="1" maxlength="1" min="1" max="8" required>
+                    <input type="number" name="" size="1" maxlength="1" min="1" max="8">
                 </div>
 
                 <div class="input-line">
                     <label>שעות שהיה בשפ"ח</label>
-                    <input type="number" name="" size="1" maxlength="1" max="8" min="1" required>
+                    <input type="number" name="" size="1" maxlength="1" max="8" min="1">
                 </div>
 
                 <div class="dynamic-list" data-label="סוגי פעילויות">
                    <label>דווח פעילות</label>
                     <div class="input-line">
-                        <select name="type[]" class="pull-right mult" required>
+                        <select name="type[]" class="pull-right mult">
                             <option disabled="disabled" selected="selected">בחר פעילות</option>
                             <optgroup label="ועדות /ישיבות">
                             <option value="10">ישיבת צוות בינ-מקצועי + מנהל</option>
