@@ -24,12 +24,12 @@
                     </select>
                 </div>
 
-                <div class="input-line">
+                <div class="input-line" required>
                     <label>שעות שהיה בבית הספר</label>
                     <input type="number" name="" size="1" maxlength="1" min="1" max="8">
                 </div>
 
-                <div class="input-line">
+                <div class="input-line" required>
                     <label>שעות שהיה בשפ"ח</label>
                     <input type="number" name="" size="1" maxlength="1" max="8" min="1">
                 </div>
