@@ -11,7 +11,7 @@
 
                     <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
-                        <select name="type[]" class="pull-right mult" required>
+                        <select name="type[]" class="pull-right mult" >
                             <option disabled="disabled" selected="selected" >בחר מרשימה</option>
                             <option value="">דוד</option>
                             <option value="">משה</option>

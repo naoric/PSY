@@ -10,7 +10,7 @@
 
         <form class="psy-form" action="">
 
-            <div class="input-line">
+            <div class="input-line" required>
                 <label>מספר רשיון פסיכולוג</label>
                 <input type="number" name="" size="12" maxlength="12" required>
             </div>
@@ -29,11 +29,11 @@
                 <label>מועד תחילת עבודה</label>
                 <input type="month" name="work_starting_date">
             </div>
-            <div class="input-line">
+            <div class="input-line" required>
                 <label>שם פרטי</label>
                 <input type="text" name="" size="10" maxlength="8" required>
             </div>
-            <div class="input-line">
+            <div class="input-line" required>
                 <label>שם משפחה</label>
                 <input type="text" name="" size="10" maxlength="8" required>
             </div>
@@ -48,7 +48,7 @@
                 <input type="tel" name="" size="10" maxlength="10" required>
             </div>
 
-            <div class="input-line">
+            <div class="input-line" required>
                 <label>email</label>
                 <input type="email" name="" size="22" maxlength="22" required>
             </div>
@@ -67,7 +67,7 @@
                     </select>
                 </div>
             </div>
-            <div class="dynamic-list" data-label="תפקיד" required>
+            <div class="dynamic-list" data-label="תפקיד">
                 <label>תפקיד בשפ"ח</label>
 
                 <div class="input-line clearfix">
