@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'sqlsrv',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -77,7 +77,7 @@ return [
 
 		'sqlsrv' => [
 			'driver'   => 'sqlsrv',
-			'host'     => env('DB_HOST', 'localhost'),
+			'host'     => env('DB_HOST', '127.0.0.1'),
 			'database' => env('DB_DATABASE', 'psy'),
 			'username' => env('DB_USERNAME', 'psy'),
 			'password' => env('DB_PASSWORD', 'bFmPWwO)nOF@'),

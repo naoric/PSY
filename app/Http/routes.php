@@ -11,6 +11,9 @@
 |
 */
 
+use App\Models\Psychologist;
+use Illuminate\Support\Facades\DB;
+
 Route::get('/', function () {
     return view('forms.login');
 });
@@ -44,6 +47,12 @@ Route::get('institute_page', function () {
 
 Route::get('new-match', function () {
     return view('forms.new_match');
+});
+
+Route::get('db', function () {
+    if (DB::connection()->getDatabaseName()) {
+        dd(Psychologist::all());
+    }
 });
 
 
