@@ -56,6 +56,19 @@ Route::get('db', function () {
 });
 
 
+Route::get('new-psy', function () {
+    return view('forms.new_psy');
+});
+
+Route::get('new-page', function () {
+    return view('forms.new_page');
+});
+
+Route::get('visit-report', function () {
+    return view('forms.visit_report');
+});
+
+
 //Route::resource('institutes', 'InstituteController');
 //Route::resource('psychologists', 'PsychologistController');
 //Route::resource('meetings', 'MeetingController');

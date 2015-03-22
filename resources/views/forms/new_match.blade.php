@@ -11,7 +11,7 @@
 
                     <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
-                        <select name="type[]" class="pull-right mult" required>
+                        <select name="type[]" class="pull-right mult">
                             <option disabled="disabled" selected="selected" >בחר מרשימה</option>
                             <option value="">דוד</option>
                             <option value="">משה</option>
@@ -19,7 +19,7 @@
                         </select>
                     </div>
 
-                  <div class="input-line">
+                  <div class="input-line" >
                     <label>מספר רשיון פסיכולוג</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     <br></br>
@@ -27,7 +27,7 @@
 
            <label>שנת שיבוץ</label>
                     <div class="input-line clearfix">
-                        <select name="type[]" class="pull-right mult" required>
+                        <select name="type[]" class="pull-right mult" >
                             <option disabled="disabled" selected="selected" >בחר שנה</option>
                             <option value="">2015</option>
                             <option value="">2016</option>
@@ -50,7 +50,7 @@
 
                     <label>שם המוסד</label>
 
-                    <select name="institute-name" required>
+                    <select name="institute-name" >
                         <option value="AU">תיכון עמית עמל</option>
                          <option value="AU">תיכון ששת עמל</option>
                     </select>

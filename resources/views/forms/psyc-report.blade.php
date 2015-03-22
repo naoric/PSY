@@ -36,7 +36,7 @@
             <label>דווח פעילות</label>
 
             <div class="input-line">
-                <select name="type[]" class="pull-right mult" required>
+                <select name="type[]" class="pull-right mult">
                     <option disabled="disabled" selected="selected">בחר פעילות</option>
                     <optgroup label="ועדות /ישיבות">
                         <option value="10">ישיבת צוות בינ-מקצועי + מנהל</option>

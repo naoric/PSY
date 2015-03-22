@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('app')
 
-<head>
-    <meta charset="UTF-8">
-    <title>שפ"י דרום - מערכת לבקרת עבודה</title>
-    <link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
-    <link href="../lib/Pikaday-master/css/pikaday.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-</head>
+@section('page-title')
+       <h1>עמוד פסיכולוג</h1>
+@stop
 
-<body>
-<div class="container">
-    <header class="main-header">
-        <nav class="horizontal">
-            <ul class="clearfix">
-                <li><a href="map.html">מוסדות המחוז</a>
-                </li>
-                <li><a href="new_psy.html">הפסיכולוגים במחוז</a>
-                </li>
-                <li><a href="visit_report.html">דיווח מפגש פסיכולוג</a>
-                </li>
-                <li><a href="new_match.html">מערכת לשיבוץ</a>
-                </li>
-                <li><a href="#">מחשבון תקן</a>
-                </li>
-                <li><a href="#">דו"חות</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
-    <article class="main-content">
-        <h1>עמוד פסיכולוג</h1>
-        <!--form-->
+@section('content')
+ <!--form-->
 
 
         <form class="psy-form" action="">
@@ -88,29 +62,5 @@
 
         </form>
         <!-- /form -->
-    </article>
-    <footer>
-        <nav class="horizontal centered">
-            <ul class="clearfix">
-                <li><a href="#"> קישור לדף</a>
-                </li>
-                <li><a href="#"> קישור לדף</a>
-                </li>
-                <li><a href="#"> קישור לדף</a>
-                </li>
-                <li><a href="#"> קישור לדף</a>
-                </li>
-                <li><a href="#"> קישור לדף</a>
-                </li>
-            </ul>
-        </nav>
 
-    </footer>
-</div>
-
-<script src="//cdn.jsdelivr.net/momentjs/2.9.0/moment.min.js"></script>
-<script src="../lib/Pikaday-master/pikaday.js"></script>
-<script src="../js/app.js"></script>
-</body>
-
-</html>
+@stop
