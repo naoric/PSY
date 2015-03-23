@@ -16,11 +16,23 @@
     <header class="main-header">
         <nav class="horizontal">
             <ul class="clearfix">
-                <li><a href="#">מוסדות המחוז</a>
+                <li>
+                    <a href="#">מוסדות המחוז</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
                 </li>
-                <li><a href="#">מערכת לשיבוץ</a>
+                <li>
+                    <a href="#">מערכת לשיבוץ</a>
+                    <ul>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
                 </li>
                 <li><a href="#">מחשבון תקן</a>
                 </li>

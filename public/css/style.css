@@ -51,6 +51,20 @@ nav.horizontal li {
     float: right;
 }
 
+nav.horizontal li ul {
+	display: none;
+	position: absolute;
+	width: 200px;
+}
+
+nav.horizontal li:hover ul {
+	display: block;
+}
+
+nav.horizontal li ul li {
+	float: none;
+}
+
 nav.horizontal a:link {
     text-decoration: underline;
     color: #6a6a6a;
