@@ -12,7 +12,7 @@
 
             <div class="input-line" required>
                 <label>מספר רשיון פסיכולוג</label>
-                <input type="number" name="" size="12" maxlength="12" required>
+                <input type="text" name="" size="12" maxlength="12" required>
             </div>
 
             <label>בחר שפ"ח</label>

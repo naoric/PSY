@@ -17,24 +17,31 @@
         <nav class="horizontal">
             <ul class="clearfix">
                 <li>
-                    <a href="#">מוסדות המחוז</a>
+                      <a href="map">השפ"חים במחוז</a>
+                </li>
+                <li>
+                    <a href="map">מוסדות המחוז</a>
                     <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="institute_page">דף מוסד</a></li>
+                        <li><a href="#">הוספת מוסד חדש</a></li>
+                        <li><a href="#">עדכון פרטי מוסד</a></li>
                     </ul>
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
-                </li>
-                <li>
-                    <a href="#">מערכת לשיבוץ</a>
-                    <ul>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                     <ul>
+                        <li><a href="psy_page">עיון בפרטי פסיכולוג</a></li>
+                        <li><a href="psy_new">הוספת פסיכולוג חדש</a></li>
                     </ul>
                 </li>
-                <li><a href="#">מחשבון תקן</a>
+                <li>
+                    <a href="#">דיווח ושיבוץ</a>
+                    <ul>
+                        <li><a href="visit_report">דיווח מפגש פסיכולוג במוסד</a></li>
+                        <li><a href="#">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
+                        <li><a href="#">מחיקת שיבוץ</a></li>
+                    </ul>
+                </li>
+                <li><a href="calc">מחשבון תקן שיבוץ</a>
                 </li>
                 <li><a href="#">דו"חות</a>
                 </li>
