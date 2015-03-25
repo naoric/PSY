@@ -63,6 +63,12 @@ Route::get('institute_page', function () {
 });
 
 
+Route::get('institute_new', function () {
+    return view('forms.institute_new');
+});
+
+
+
 Route::get('new_match', function () {
     return view('forms.new_match');
 });

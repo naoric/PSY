@@ -20,10 +20,10 @@
                       <a href="map">השפ"חים במחוז</a>
                 </li>
                 <li>
-                    <a href="map">מוסדות המחוז</a>
+                    <a href="#">מוסדות המחוז</a>
                     <ul>
                         <li><a href="institute_page">דף מוסד</a></li>
-                        <li><a href="#">הוספת מוסד חדש</a></li>
+                        <li><a href="institute_new">הוספת מוסד חדש</a></li>
                         <li><a href="#">עדכון פרטי מוסד</a></li>
                     </ul>
                 </li>
@@ -31,18 +31,25 @@
                      <ul>
                         <li><a href="psy_page">עיון בפרטי פסיכולוג</a></li>
                         <li><a href="psy_new">הוספת פסיכולוג חדש</a></li>
+                        <li><a href="#">עדכון פרטי פסיכולוג</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">דיווח ושיבוץ</a>
+                    <a href="#">דיווח מפגש</a>
                     <ul>
                         <li><a href="visit_report">דיווח מפגש פסיכולוג במוסד</a></li>
-                        <li><a href="#">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
-                        <li><a href="#">מחיקת שיבוץ</a></li>
+                      <li><a href="visit_report">עיון במפגשי פסיכולוג</a></li>
                     </ul>
                 </li>
-                <li><a href="calc">מחשבון תקן שיבוץ</a>
+                <li>
+                    <a href="#">שיבוץ פסיכולוג במוסד</a>
+                     <ul>
+                    <li><a href="calc">מחשבון לתקן שיבוץ</a></li>
+                      <li><a href="new_match">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
+                      <li><a href="delete_match">מחיקת שיבוץ</a></li>
+                    </ul>
                 </li>
+
                 <li><a href="#">דו"חות</a>
                 </li>
             </ul>
@@ -56,11 +63,14 @@
     <footer>
         <nav class="horizontal centered">
             <ul class="clearfix">
-                <li><a href="#">קישור לדף</a>
+        <li><a href="http://cms.education.gov.il/EducationCMS/Units/shefi">שפ"י נט</a>
+            &nbsp
                 </li>
-                <li><a href="#">קישור לדף</a>
+        <li><a href="http://edu.gov.il/owlheb/Pages/default.aspx">משרד החינוך</a>
+            &nbsp
                 </li>
-                <li><a href="#">קישור לדף</a>
+                <li><a href="http://www.apa.org/">American Psychological Association</a>
+                &nbsp
                 </li>
                 <li><a href="#">קישור לדף</a>
                 </li>

@@ -26,16 +26,9 @@
     <footer>
         <nav class="horizontal centered">
             <ul class="clearfix">
-                <li><a href="#">קישור לדף</a>
+                <li>לקבלת פרטי התחברות - פנה לפסיכולוג המחוז אילן וירצברגר: ilanvi@education.gov.il , 08-6263278</a>
                 </li>
-                <li><a href="#">קישור לדף</a>
-                </li>
-                <li><a href="#">קישור לדף</a>
-                </li>
-                <li><a href="#">קישור לדף</a>
-                </li>
-                <li><a href="#">קישור לדף</a>
-                </li>
+
             </ul>
         </nav>
 
