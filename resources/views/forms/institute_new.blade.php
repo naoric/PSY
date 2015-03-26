@@ -42,18 +42,18 @@
 
                    <div class="input-line">
                     <label>מספר כיתות</label>
-                    <input type="text" name="" size="12" maxlength="12" required>
+                    <input type="number" class="small" name="" size="2" maxlength="2" max="99" min="1">
                     </div>
 
 
                    <div class="input-line">
                     <label>כיתות מיוחדות</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="number" class="small" name="" size="2" maxlength="2" max="50" min="1" >
                     </div>
 
             <div class="input-line">
                     <label>ילדי גן</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="numbre" name="" size="12" maxlength="12" >
                     </div>
 
              <div class="input-line">
