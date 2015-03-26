@@ -36,7 +36,7 @@
 
                     <div class="input-line">
                     <label>שם המנהל</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="text" name="" size="20" maxlength="20" >
                     </div>
 
 
@@ -51,24 +51,24 @@
                     <input type="number" class="small" name="" size="2" maxlength="2" max="50" min="1" >
                     </div>
 
-            <div class="input-line">
+            <div class="input-line" >
                     <label>ילדי גן</label>
-                    <input type="numbre" name="" size="12" maxlength="12" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1" >
                     </div>
 
-             <div class="input-line">
+             <div class="input-line" >
                     <label>תלמידים - כיתה א</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1" >
                     </div>
 
             <div class="input-line">
                     <label>תלמידים - כיתות ב-יב</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1">
                     </div>
 
              <div class="input-line">
                     <label>תלמידים - צרכים מיוחדים</label>
-                    <input type="text" name="" size="12" maxlength="12" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1" >
                     </div>
 
 
