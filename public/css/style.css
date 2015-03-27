@@ -416,4 +416,10 @@ form:after {
 }
 
 
+form .error {
+    color: red;
+}
 
+form .error::before {
+    content: '*';
+}

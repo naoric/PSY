@@ -13,6 +13,7 @@
             <div class="input-line" required>
                 <label>מספר רשיון פסיכולוג</label>
                 <input type="number" name="" size="12" maxlength="12" required>
+                <span class="error"></span>
             </div>
 
             <label>בחר שפ"ח</label>
@@ -24,33 +25,40 @@
                     <option value="11">נתיבות</option>
                     <option value="12">עומר</option>
                 </select>
+                <div class="error"></div>
             </div>
             <div class="input-line clearfix">
                 <label>מועד תחילת עבודה</label>
                 <input type="month" name="work_starting_date">
+                <span class="error"></span>
             </div>
             <div class="input-line" required>
                 <label>שם פרטי</label>
                 <input type="text" name="" size="10" maxlength="8" required>
+                <span class="error"></span>
             </div>
             <div class="input-line" required>
                 <label>שם משפחה</label>
                 <input type="text" name="" size="10" maxlength="8" required>
+                <span class="error"></span>
             </div>
 
             <div class="input-line">
                 <label>היקף משרה- שעות בשבוע</label>
                 <input type="number" class="small" name="" size="2" maxlength="2" max="50" min="1">
+                <span class="error"></span>
             </div>
 
             <div class="input-line">
                 <label>טלפון</label>
                 <input type="tel" name="" size="10" maxlength="10" required>
+                <span class="error"></span>
             </div>
 
             <div class="input-line" required>
                 <label>email</label>
                 <input type="email" name="" size="22" maxlength="22" required>
+                <span class="error"></span>
             </div>
             <div class="dynamic-list clearfix" data-label="ססטוס מקצועי">
                 <label>סטטוס מקצועי</label>
@@ -65,6 +73,7 @@
                         <option value="6">מדריך</option>
                         <option value="7">אחר</option>
                     </select>
+                    <span class="error"></span>
                 </div>
             </div>
             <div class="dynamic-list" data-label="תפקיד">
@@ -78,6 +87,7 @@
                         <option value="3">מנהל שפ"ח</option>
                         <option value="4">מדריך</option>
                     </select>
+                    <span class="error"></span>
                 </div>
             </div>
             <div class="input-line clearfix">
