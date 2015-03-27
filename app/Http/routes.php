@@ -18,6 +18,24 @@ Route::get('/', function () {
 });
 
 
+Route::get('map', function () {
+    return view('general.map');
+});
+
+Route::get('psy_page', function () {
+    return view('forms.psy_page');
+});
+
+Route::get('psy_new', function () {
+    return view('forms.psy_new');
+});
+
+Route::get('institute_page', function () {
+    return view('forms.institute_page');
+});
+
+
+
 Route::get('psyc-report', function () {
     return view('forms.psyc-report');
 });
@@ -27,9 +45,9 @@ Route::get('match', function () {
     return view('forms.match');
 });
 
-Route::get('psychologist/new', function () {
-    return view('forms.psychologist');
-});
+
+
+
 
 Route::get('calc', function () {
     return view('forms.calc');
@@ -44,26 +62,34 @@ Route::get('institute_page', function () {
 });
 
 
-Route::get('new-match', function () {
+Route::get('institute_new', function () {
+    return view('forms.institute_new');
+});
+
+
+
+Route::get('new_match', function () {
     return view('forms.new_match');
 });
 
 Route::get('db', function () {
     if (DB::connection()->getDatabaseName()) {
-        dd(Psychologist::all());
+//        dd(Psychologist::find(4));
+        $psychologists = Psychologist::all();
+        return view('form.whatever', ['psychologist' => $psychologist]);
     }
 });
 
 
-Route::get('new-psy', function () {
+Route::get('new_psy', function () {
     return view('forms.new_psy');
 });
 
-Route::get('new-page', function () {
+Route::get('new_page', function () {
     return view('forms.new_page');
 });
 
-Route::get('visit-report', function () {
+Route::get('visit_report', function () {
     return view('forms.visit_report');
 });
 
