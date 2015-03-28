@@ -22,7 +22,11 @@ class StorePsychologistRequest extends Request {
 	public function rules()
 	{
 		return [
-			'license_number' => 'unique:psychologists|numeric'
+			'psychologist_id' => 'unique:psychologists|numeric'
+            'psychologist_role_id' =>'exists:psychologist_roles'
+            'professional_status_id' =>'exists:professional_statuses'
+            'license_number'=> 'unique:psychologists|numeric'
+            'first_name'=> 'alpha'
 
 		];
 	}
