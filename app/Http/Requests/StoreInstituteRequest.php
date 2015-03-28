@@ -31,6 +31,7 @@ class StoreInstituteRequest extends Request {
        'principal_first_name'=> 'alpha',
        'principal_last_name'=> 'alpha',
        'email' => 'email',
+       'phone'=> 'numeric',
        'classes'=> 'numeric|between:0,50',
        'special_classes'=> 'numeric|between:0,50',
        'kindergarten_children'=> 'numeric|between:0,2000',
@@ -39,5 +40,4 @@ class StoreInstituteRequest extends Request {
        'special_needs_children'=> 'numeric|between:1,2000',
 		];
 	}
-
 }
