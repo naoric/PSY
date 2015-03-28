@@ -29,11 +29,11 @@ class StorePsychologistRequest extends Request {
             'city_of_residence' => 'alpha',
             'availability'=> 'numeric|between:1,50',
             'phone'=> 'numeric',
-            'email' => 'email',
+            'psychologist_email' => 'email',
             'password'=> 'min:8',
             'psychologist_role_id' =>'exists:psychologist_roles',
             'professional_status_id' =>'exists:professional_statuses',
-		];
+        ];
 	}
 
 }
