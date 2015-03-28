@@ -28,12 +28,12 @@
                     <input type="text" name="" size="12" maxlength="12" required>
                     </div>
 
-
-             <div class="input-line">
+                    <div class="input-line">
                     <label>עיר המוסד</label>
                     <input type="text" name="" size="12" maxlength="12" required>
                     </div>
-  <div class="input-line">
+
+                    <div class="input-line">
                     <label>כתובת</label>
                     <input type="text" name="" size="35" maxlength="35" required>
                     </div>
@@ -77,17 +77,17 @@
 
              <div class="input-line" >
                     <label>תלמידים - כיתה א</label>
-                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3"                       max="500" min="1" >
                     </div>
 
             <div class="input-line">
                     <label>תלמידים - כיתות ב-יב</label>
-                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1">
+                    <input type="number"  class="small" name="" size="3" maxlength="3"                       max="500" min="1">
                     </div>
 
              <div class="input-line">
                     <label>תלמידים - צרכים מיוחדים</label>
-                    <input type="number"  class="small" name="" size="3" maxlength="3" max="500" min="1" >
+                    <input type="number"  class="small" name="" size="3" maxlength="3"                      max="500" min="1" >
                     </div>
 
 
