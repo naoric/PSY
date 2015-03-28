@@ -32,17 +32,39 @@
                     </div>
 
                 <div class="input-line">
+                    <label>שפ"ח</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+
+             <div class="input-line">
+                    <label>מועד תחילת עבודה</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+                       <div class="input-line">
+                    <label>עיר מגורים</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+
+             <div class="input-line">
                     <label>טלפון</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
 
-                    <div class="input-line">
-                    <label>שפ"ח</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                     <div class="input-line">
+                    <label>דואר אלקטרוני</label>
+                    <input type="text" name="" size="20" maxlength="20" readonly style="background-color: #D8D8D8;">
                     </div>
 
-                     <div class="input-line">
+                      <div class="input-line clearfix">
+                    <label>מועד תחילת העבודה</label>
+                    <input type="date" name="" size="9" maxlength="9" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+                     <div class="input-line clearfix">
                     <label>סטטוס מקצועי</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
@@ -52,10 +74,6 @@
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
-             <div class="input-line">
-                    <label>מועד תחילת עבודה</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
-                    </div>
 
 
             <a href="url">לצפיה במפגשי הפסיכולוג</a>
