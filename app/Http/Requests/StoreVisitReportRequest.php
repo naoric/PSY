@@ -28,8 +28,8 @@ class StoreVisitReportRequest extends Request {
             'activity2'=> 'alpha',
             'length_in_institute' => 'required_without:length_in_shapah|numeric|between:0.5,12',
             'length_in_shapah' => 'required_without:length_in_institute|numeric|between:0.5,12',
-            'comment1'=> 'alpha',
-            'comment2'=> 'alpha'
+            'comment1'=> 'alpha|max:100',
+            'comment2'=> 'alpha|max:100'
 		];
 	}
 
