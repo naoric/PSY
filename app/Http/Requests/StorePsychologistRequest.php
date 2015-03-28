@@ -22,15 +22,15 @@ class StorePsychologistRequest extends Request {
 	public function rules()
 	{
 		return [
-            'license_number'=> 'unique:psychologists|numeric',
+            'license_number'=> 'required|unique:psychologists|numeric',
             'start_working_date' => 'date'
-            'first_name'=> 'alpha',
-            'last_name'=> 'alpha',
+            'first_name'=> 'required|alpha',
+            'last_name'=> 'required|alpha',
             'city_of_residence' => 'alpha',
-            'availability'=> 'numeric|between:1,50',
+            'availability'=> 'required|numeric|between:1,50',
             'phone'=> 'numeric',
-            'psychologist_email' => 'email',
-            'password'=> 'min:8',
+            'psychologist_email' => 'required|email',
+            'password'=> 'required|min:8',
             'psychologist_role_id' =>'exists:psychologist_roles',
             'professional_status_id' =>'exists:professional_statuses',
         ];
