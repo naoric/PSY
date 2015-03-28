@@ -88,8 +88,9 @@
                     </div>
 
                <div class="input-line clearfix">
+                     <label>בחר סוג גן</label>
                     <select name="type[]" class="pull-right mult">
-                    <option disabled="disabled" selected="selected">בחר סוג גן</option>
+                    <option disabled="disabled" selected="selected"></option>
                         <option value="1">טרום טרום חובה</option>
                         <option value="2">טרום חובה</option>
                         <option value="3">חובה</option>
