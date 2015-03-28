@@ -22,7 +22,22 @@ class StoreInstituteRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+       'educational_institute_id'=> 'unique:educational_institutes|numeric',
+       'shapah_id' =>'exists:shapahs',
+       educational_institute_name
+       educational_institute_city
+       educational_institute_address
+       educational_institute_phone
+       principal_first_name
+       principal_last_name
+       email
+       classes
+       special_classes
+       kindergarten_children
+       first_grade_children
+       mature_children
+       special_needs_children
+
 		];
 	}
 
