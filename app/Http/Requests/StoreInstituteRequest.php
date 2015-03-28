@@ -29,15 +29,15 @@ class StoreInstituteRequest extends Request {
        'educational_institute_city' => 'required|alpha',
        'educational_institute_address' => 'alpha_num',
        'educational_institute_phone'=> 'numeric',
+       'educational_institute_email' => 'email',
        'principal_first_name'=> 'alpha',
        'principal_last_name'=> 'alpha',
-       'email' => 'email',
        'number_of_classes'=> 'numeric|between:0,50',
        'number_of_special_classes'=> 'numeric|between:0,50',
        'number_of_special_students'=> 'numeric|between:0,2000',
        'number_of_alef_students'=> 'numeric|between:0,2000',
-       'number_of_non_alef_students'=> 'numeric|between:0,2000',
-       'number_of_kindergarten_children'=> 'numeric|between:0,2000',
+       'number_of_non_alef_students'=> 'numeric|between:0,500',
+       'number_of_kindergarten_children'=> 'numeric|between:0,200',
        'kindergarten_type'=> 'alpha',
 		];
 	}
