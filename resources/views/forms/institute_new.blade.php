@@ -23,9 +23,19 @@
                     </select>
                 </div>
 
+               <div class="input-line">
+                    <label>שם המוסד</label>
+                    <input type="text" name="" size="12" maxlength="12" required>
+                    </div>
+
+
              <div class="input-line">
                     <label>עיר המוסד</label>
                     <input type="text" name="" size="12" maxlength="12" required>
+                    </div>
+  <div class="input-line">
+                    <label>כתובת</label>
+                    <input type="text" name="" size="35" maxlength="35" required>
                     </div>
 
                 <div class="input-line">
@@ -35,16 +45,25 @@
 
 
                     <div class="input-line">
-                    <label>שם המנהל</label>
-                    <input type="text" name="" size="20" maxlength="20" >
+                    <label>מנהל המוסד- שם פרטי</label>
+                    <input type="text" name="" size="7" maxlength="7" >
+                    </div>
+
+              <div class="input-line">
+                    <label>מנהל המוסד- שם משפחה</label>
+                    <input type="text" name="" size="7" maxlength="7" >
+                    </div>
+
+               <div class="input-line">
+                    <label>דואר אלקטרוני</label>
+                    <input type="email" name="" size="22" maxlength="22">
                     </div>
 
 
                    <div class="input-line">
                     <label>מספר כיתות</label>
-                    <input type="number" class="small" name="" size="2" maxlength="2" max="99" min="1">
+                    <input type="number" class="small" name="" size="2" maxlength="2"                       max="99" min="1">
                     </div>
-
 
                    <div class="input-line">
                     <label>כיתות מיוחדות</label>
