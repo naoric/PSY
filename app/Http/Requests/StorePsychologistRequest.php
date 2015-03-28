@@ -32,7 +32,7 @@ class StorePsychologistRequest extends Request {
             'psychologist_email' => 'required|email',
             'password'=> 'required|min:8',
             'psychologist_role_id' =>'exists:psychologist_roles',
-            'professional_status_id' =>'exists:professional_statuses',
+            'professional_status_id' =>'exists:professional_statuses'
         ];
 	}
 
