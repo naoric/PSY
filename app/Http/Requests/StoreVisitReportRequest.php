@@ -22,7 +22,14 @@ class StoreVisitReportRequest extends Request {
 	public function rules()
 	{
 		return [
-			//
+			'educational_institute_id'=> 'required|unique:educational_institutes|numeric',
+            'date' => 'required|date'
+            'activity1'=> 'required|alpha',
+            'activity2'=> 'alpha',
+            'length_in_institute' => 'required_without:length_in_shapah|numeric|between:0.5,12',
+            'length_in_shapah' => 'required_without:length_in_institute|numeric|between:0.5,12',
+            'comment1'=> 'alpha',
+            'comment2'=> 'alpha'
 		];
 	}
 
