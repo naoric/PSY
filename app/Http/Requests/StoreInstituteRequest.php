@@ -22,22 +22,22 @@ class StoreInstituteRequest extends Request {
 	public function rules()
 	{
 		return [
-       'educational_institute_id'=> 'unique:educational_institutes|numeric',
-       'shapah_id' =>'exists:shapahs',
-       'educational_institute_name' => 'alpha',
-       'educational_institute_city' => 'alpha',
+     //no validation it incremental   'educational_institute_id'=>
+     // 'unique:educational_institutes|numeric',
+       'shapah_id' =>'required|exists:shapahs',
+       'educational_institute_name' => 'required|alpha',
+       'educational_institute_city' => 'required|alpha',
        'educational_institute_address' => 'alpha_num',
        'educational_institute_phone'=> 'numeric',
        'principal_first_name'=> 'alpha',
        'principal_last_name'=> 'alpha',
        'email' => 'email',
-       'phone'=> 'numeric',
        'number_of_classes'=> 'numeric|between:0,50',
        'number_of_special_classes'=> 'numeric|between:0,50',
        'number_of_special_students'=> 'numeric|between:0,2000',
-       'number_of_alef_students'=> 'numeric|between:1,2000',
-       'number_of_non_alef_students'=> 'numeric|between:1,2000',
-       'number_of_kindergarten_children'=> 'numeric|between:1,2000',
+       'number_of_alef_students'=> 'numeric|between:0,2000',
+       'number_of_non_alef_students'=> 'numeric|between:0,2000',
+       'number_of_kindergarten_children'=> 'numeric|between:0,2000',
        'kindergarten_type'=> 'alpha',
 		];
 	}
