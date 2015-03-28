@@ -24,20 +24,19 @@ class StoreInstituteRequest extends Request {
 		return [
        'educational_institute_id'=> 'unique:educational_institutes|numeric',
        'shapah_id' =>'exists:shapahs',
-       educational_institute_name
-       educational_institute_city
-       educational_institute_address
-       educational_institute_phone
-       principal_first_name
-       principal_last_name
-       email
-       classes
-       special_classes
-       kindergarten_children
-       first_grade_children
-       mature_children
-       special_needs_children
-
+       'educational_institute_name' => 'alpha',
+       'educational_institute_city' => 'alpha',
+       'educational_institute_address' => 'alpha_num',
+       'educational_institute_phone'=> 'numeric',
+       'principal_first_name'=> 'alpha',
+       'principal_last_name'=> 'alpha',
+       'email' => 'email',
+       'classes'=> 'numeric|between:0,50',
+       'special_classes'=> 'numeric|between:0,50',
+       'kindergarten_children'=> 'numeric|between:0,2000',
+       'first_grade_children'=> 'numeric|between:1,2000',
+       'mature_children'=> 'numeric|between:1,2000',
+       'special_needs_children'=> 'numeric|between:1,2000',
 		];
 	}
 
