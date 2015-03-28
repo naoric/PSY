@@ -38,7 +38,7 @@ class StoreInstituteRequest extends Request {
        'number_of_alef_students'=> 'numeric|between:1,2000',
        'number_of_non_alef_students'=> 'numeric|between:1,2000',
        'number_of_kindergarten_children'=> 'numeric|between:1,2000',
-       'kindergarten_children_age'=> 'alpha',
+       'kindergarten_type'=> 'alpha',
 		];
 	}
 }
