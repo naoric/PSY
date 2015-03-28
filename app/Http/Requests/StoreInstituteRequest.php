@@ -32,12 +32,13 @@ class StoreInstituteRequest extends Request {
        'principal_last_name'=> 'alpha',
        'email' => 'email',
        'phone'=> 'numeric',
-       'classes'=> 'numeric|between:0,50',
-       'special_classes'=> 'numeric|between:0,50',
-       'kindergarten_children'=> 'numeric|between:0,2000',
-       'first_grade_children'=> 'numeric|between:1,2000',
-       'mature_children'=> 'numeric|between:1,2000',
-       'special_needs_children'=> 'numeric|between:1,2000',
+       'number_of_classes'=> 'numeric|between:0,50',
+       'number_of_special_classes'=> 'numeric|between:0,50',
+       'number_of_special_students'=> 'numeric|between:0,2000',
+       'number_of_alef_students'=> 'numeric|between:1,2000',
+       'number_of_non_alef_students'=> 'numeric|between:1,2000',
+       'number_of_kindergarten_children'=> 'numeric|between:1,2000',
+       'kindergarten_children_age'=> 'alpha',
 		];
 	}
 }
