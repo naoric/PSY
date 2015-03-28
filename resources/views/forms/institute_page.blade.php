@@ -25,17 +25,30 @@
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
+             <div class="input-line">
+                    <label>כתובת</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
                 <div class="input-line">
                     <label>טלפון</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
-
-                    <div class="input-line">
-                    <label>שם המנהל</label>
+             <div class="input-line">
+                    <label>דואר אלקטרוני</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
+                    <div class="input-line">
+                    <label>מנהל המוסד- שם פרטי</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+             <div class="input-line">
+                    <label>מנהל המוסד- שם משפחה</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
 
                    <div class="input-line">
                     <label>מספר כיתות</label>
@@ -44,30 +57,34 @@
 
 
                    <div class="input-line">
-                    <label>כיתות מיוחדות</label>
+                    <label>מספר כיתות מיוחדות</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
             <div class="input-line">
+                    <label>תלמידים בחינוך מיוחד</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+             <div class="input-line">
+                    <label>תלמידים בכיתות א</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+            <div class="input-line">
+                    <label>תלמידים בכיתות ב-יב</label>
+                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    </div>
+
+             <div class="input-line">
                     <label>ילדי גן</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
 
              <div class="input-line">
-                    <label>תלמידים - כיתה א</label>
+                    <label>סוג גן</label>
                     <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
                     </div>
-
-            <div class="input-line">
-                    <label>תלמידים - כיתות ב-יב</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
-                    </div>
-
-             <div class="input-line">
-                    <label>תלמידים - צרכים מיוחדים</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
-                    </div>
-
 
             <a href="url">לצפיה במפגשי פסיכולוגים במוסד</a>
 
