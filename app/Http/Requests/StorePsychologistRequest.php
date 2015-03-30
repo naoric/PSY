@@ -22,8 +22,8 @@ class StorePsychologistRequest extends Request {
 	public function rules()
 	{
 		return [
-			'license_number' => 'unique:psychologists|numeric'
-
+			'license_number' => 'unique:psychologists|numeric',
+			'first_name' => 'required|alpha_num'
 		];
 	}
 

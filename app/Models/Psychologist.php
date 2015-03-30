@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-class Psychologist extends Model {
-	public function role() {
-		return $this->belongsTo( 'App\PsychologistRole' );
-	}
+
+use Illuminate\Database\Eloquent\Model;
+
+class Psychologist extends Model{
 }

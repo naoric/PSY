@@ -3,6 +3,8 @@
 .env
 .idea/
 
+/.phpintel
+
 /bootstrap/compiled.php
 .env.*.php
 .env.php
