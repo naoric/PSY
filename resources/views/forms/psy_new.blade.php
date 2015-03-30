@@ -8,70 +8,78 @@
 <!--form-->
 
 
-        <form class="psy-form" action="">
-
+        <form class="psy-form" action="{{{route('psychologist.update', 
+        $psychologist->id)}}}" method="post">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="input-line" required>
                 <label>מספר רשיון פסיכולוג</label>
-                <input type="text" name="" size="12" maxlength="12" required>
+                <input type="text" name="license_number" size="12" maxlength="12" required value="{{{$psychologist->license_number}}}">
                 <span class="error"></span>
             </div>
 
             <label>בחר שפ"ח</label>
 
             <div class="input-line clearfix">
-                <select name="type[]" class="pull-right mult">
+                <select name="shapah_id" class="pull-right mult">
                     <option disabled="disabled" selected="selected">בחר שירות</option>
-                    <option value="10">אופקים</option>
-                    <option value="11">נתיבות</option>
-                    <option value="12">עומר</option>
+                    @foreach ($shapahs as $shapah)
+                    <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
+                    @endforeach
                 </select>
                 <div class="error"></div>
             </div>
             <div class="input-line clearfix">
                 <label>מועד תחילת עבודה</label>
-                <input type="month" name="work_starting_date">
+                <input type="text" name="start_working_date" value="{{{$psychologist->start_working_date}}}">
                 <span class="error"></span>
             </div>
             <div class="input-line" required>
                 <label>שם פרטי</label>
-                <input type="text" name="" size="10" maxlength="8" required>
+                <input type="text" name="first_name" size="10" maxlength="8" value="{{{$psychologist->first_name}}}" required>
                 <span class="error"></span>
             </div>
             <div class="input-line" required>
                 <label>שם משפחה</label>
-                <input type="text" name="" size="10" maxlength="8" required>
+                <input type="text" name="last_name" size="10" maxlength="8" required value="{{{$psychologist->last_name}}}">
                 <span class="error"></span>
             </div>
 
             <div class="input-line">
                 <label>היקף משרה- שעות בשבוע</label>
-                <input type="number" class="small" name="" size="2" maxlength="2" max="50" min="1">
+                <input type="number" 
+                    class="small" 
+                    name="availability" 
+                    size="2" 
+                    maxlength="2" 
+                    max="50" 
+                    min="1"
+                    value="{{{$psychologist->availability}}}"
+                    >
                 <span class="error"></span>
             </div>
 
             <div class="input-line">
                 <label>טלפון</label>
-                <input type="tel" name="" size="10" maxlength="10" required>
+                <input type="tel" name="phone_number" size="10" maxlength="10" required value="{{{$psychologist->phone_number}}}">
                 <span class="error"></span>
             </div>
 
             <div class="input-line" required>
                 <label>email</label>
-                <input type="email" name="" size="22" maxlength="22" required>
+                <input type="email" name="psychologist_email" size="22" maxlength="22" required value="{{{$psychologist->psychologist_email}}}">
                 <span class="error"></span>
             </div>
             <div class="dynamic-list clearfix" data-label="ססטוס מקצועי">
                 <label>סטטוס מקצועי</label>
                 <div class="input-line">
-                    <select name="type[]" class="pull-right mult">
+                    <select name="professional_status_id" class="pull-right mult">
                         <option disabled="disabled" selected="selected">בחר סטטוס</option>
-                        <option value="1">סטודנט</option>
-                        <option value="2">פרקטיקום מורחב</option>
-                        <option value="3">מתמחה</option>
-                        <option value="4">מומחה</option>
-                        <option value="5">הסכמה להדרכה</option>
-                        <option value="6">מדריך</option>
-                        <option value="7">אחר</option>
+                        @foreach ($professional_statuses as $professional_status)
+                        <option value="{{{$professional_status->id}}}">
+                            {{{$professional_status->professional_status_description}}}
+                        </option>
+                        @endforeach
                     </select>
                     <span class="error"></span>
                 </div>
@@ -80,12 +88,12 @@
                 <label>תפקיד בשפ"ח</label>
 
                 <div class="input-line clearfix">
-                    <select name="type[]" class="pull-right mult">
+                    <select name="psychologist_role_id" class="pull-right mult">
                         <option disabled="disabled" selected="selected">בחר תפקיד</option>
-                        <option value="1">ראש צוות</option>
-                        <option value="2">אחראי תחום</option>
-                        <option value="3">מנהל שפ"ח</option>
-                        <option value="4">מדריך</option>
+                        @foreach ($roles as $role)
+                        <option value="{{{$role->id}}}">{{{$role->psychologist_roles_description}}}</option>
+                        
+                        @endforeach
                     </select>
                     <span class="error"></span>
                 </div>

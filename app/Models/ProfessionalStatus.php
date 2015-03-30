@@ -1,9 +1,12 @@
-<?php
+<?php 
 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PsychologistRole extends Model {
+
+class ProfessionalStatus extends Model {
+
+
 
 }
