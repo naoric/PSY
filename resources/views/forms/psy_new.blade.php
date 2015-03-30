@@ -45,6 +45,12 @@
                 <span class="error"></span>
             </div>
 
+               <div class="input-line" required>
+                <label>עיר מגורים</label>
+                <input type="text" name="" size="10" maxlength="8" required>
+                <span class="error"></span>
+            </div>
+
             <div class="input-line">
                 <label>היקף משרה- שעות בשבוע</label>
                 <input type="number" 
@@ -70,6 +76,13 @@
                 <input type="email" name="psychologist_email" size="22" maxlength="22" required value="{{{$psychologist->psychologist_email}}}">
                 <span class="error"></span>
             </div>
+
+              <div class="input-line" required>
+                <label>Password</label>
+                <input type="text" name="" size="14" maxlength="14" required>
+                <span class="error"></span>
+            </div>
+
             <div class="dynamic-list clearfix" data-label="ססטוס מקצועי">
                 <label>סטטוס מקצועי</label>
                 <div class="input-line">

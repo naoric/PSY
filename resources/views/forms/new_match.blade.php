@@ -12,7 +12,7 @@
                     <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
                         <select name="type[]" class="pull-right mult">
-                            <option disabled="disabled" selected="selected" >בחר מרשימה</option>
+                            <option disabled="disabled" selected="selected" >בחר מרשימה                               </option>
                             <option value="">דוד</option>
                             <option value="">משה</option>
                             <option value="">חיים</option>
@@ -21,7 +21,7 @@
 
                   <div class="input-line" >
                     <label>מספר רשיון פסיכולוג</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly style="background-color: #D8D8D8;">
+                    <input type="text" name="" size="12" maxlength="12" readonly                             style="background-color: #D8D8D8;">
                     <br></br>
                 </div>
 
