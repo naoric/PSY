@@ -66,6 +66,11 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
     return view('shapahs.shapah_eilat');
  });
 
+ Route::get('shapah_sheva', function () {
+    return view('shapahs.shapah_sheva');
+ });
+
+
  Route::get('psy_new', function () {
      return view('forms.psy_new');
  });
