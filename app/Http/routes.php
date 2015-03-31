@@ -31,6 +31,10 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
     return view('forms.psy_page');
  });
 
+ Route::get('shapah_eilat', function () {
+    return view('shapahs.shapah_eilat');
+ });
+
  Route::get('psy_new', function () {
      return view('forms.psy_new');
  });
@@ -83,6 +87,8 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
  Route::get('new_psy', function () {
      return view('forms.new_psy');
  });
+
+
 
  Route::get('new_page', function () {
     return view('forms.new_page');
