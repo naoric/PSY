@@ -22,6 +22,18 @@
                     </select>
                 </div>
 
+                    <div class="input-line clearfix">
+
+                    <select name="type[]" class="pull-right mult">
+                    <option disabled="disabled" selected="selected">בחר סוג המוסד</option>
+                        <option value="1">גן ילדים</option>
+                        <option value="2">בית ספר יסודי</option>
+                        <option value="3">חטיבת ביניים</option>
+                        <option value="4">בית ספר תיכון</option>
+                         <option value="5">בית ספר תיכון + חטיבת ביניים</option>
+                        <option value="6">בית ספר יסודי + חטיבת ביניים </option>
+                    </select>
+                </div>
                <div class="input-line">
                     <label>שם המוסד</label>
                     <input type="text" name="" size="12" maxlength="12" required>

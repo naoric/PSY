@@ -18,78 +18,78 @@ Route::resource('shapah', 'ShapahController', ['only' => ['show', 'edit', 'updat
 Route::resource('psychologist-visit', 'PsychologistVisitController', ['except' => ['patch']]);
 Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
 
-// Route::get('/', function () {
-//     return view('forms.login');
-// });
+ Route::get('/', function () {
+     return view('forms.login');
+ });
 
 
-// Route::get('map', function () {
-//     return view('general.map');
-// });
+ Route::get('map', function () {
+     return view('general.map');
+ });
 
-// Route::get('psy_page', function () {
-//     return view('forms.psy_page');
-// });
+ Route::get('psy_page', function () {
+    return view('forms.psy_page');
+ });
 
-// Route::get('psy_new', function () {
-//     return view('forms.psy_new');
-// });
+ Route::get('psy_new', function () {
+     return view('forms.psy_new');
+ });
 
-// Route::get('institute_page', function () {
-//     return view('forms.institute_page');
-// });
-
-
-
-// Route::get('psyc-report', function () {
-//     return view('forms.psyc-report');
-// });
-
-
-// Route::get('match', function () {
-//     return view('forms.match');
-// });
+ Route::get('institute_page', function () {
+     return view('forms.institute_page');
+ });
 
 
 
+ Route::get('psyc-report', function () {
+     return view('forms.psyc-report');
+ });
 
 
-// Route::get('calc', function () {
-//     return view('forms.calc');
-// });
-
-// Route::get('delete-match', function () {
-//     return view('forms.delete_match');
-// });
-
-// Route::get('institute_page', function () {
-//     return view('forms.institute_page');
-// });
+ Route::get('match', function () {
+     return view('forms.match');
+ });
 
 
-// Route::get('institute_new', function () {
-//     return view('forms.institute_new');
-// });
 
 
-// Route::get('new_match', function () {
-//     return view('forms.new_match');
-// });
 
-// Route::get('db', function () {
-//     return Psychologist::all();
-// });
+ Route::get('calc', function () {
+     return view('forms.calc');
+ });
 
-// Route::get('new_psy', function () {
-//     return view('forms.new_psy');
-// });
+ Route::get('delete-match', function () {
+     return view('forms.delete_match');
+ });
 
-// Route::get('new_page', function () {
-//     return view('forms.new_page');
-// });
+ Route::get('institute_page', function () {
+     return view('forms.institute_page');
+ });
 
-// Route::get('visit_report', function () {
-//     return view('forms.visit_report');
-// });
+
+ Route::get('institute_new', function () {
+     return view('forms.institute_new');
+ });
+
+
+ Route::get('new_match', function () {
+     return view('forms.new_match');
+ });
+
+ Route::get('db', function () {
+     return Psychologist::all();
+ });
+
+ Route::get('new_psy', function () {
+     return view('forms.new_psy');
+ });
+
+ Route::get('new_page', function () {
+    return view('forms.new_page');
+ });
+
+ Route::get('visit_report', function () {
+     return view('forms.visit_report');
+ });
 
 
