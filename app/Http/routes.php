@@ -74,8 +74,43 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
     return view('shapahs.shapah_shimon');
  });
 
+ Route::get('shapah_dimona', function () {
+    return view('shapahs.shapah_dimona');
+ });
+
  Route::get('psy_new', function () {
      return view('forms.psy_new');
+ });
+
+ Route::get('shapah_hevron', function () {
+    return view('shapahs.shapah_hevron');
+ });
+
+ Route::get('shapah_eilot', function () {
+    return view('shapahs.shapah_eilot');
+ });
+
+Route::get('shapah_hofashkelon', function () { return view('shapahs.shapah_hofashkelon');
+ });
+
+Route::get('shapah_hura', function () { return view('shapahs.shapah_hura');
+ });
+
+
+Route::get('shapah_yoav', function () { return view('shapahs.shapah_yoav');
+ });
+
+Route::get('shapah_yeruham', function () { return view('shapahs.shapah_yeruham');
+ });
+
+
+Route::get('shapah_ksayfe', function () { return view('shapahs.shapah_ksayfe');
+ });
+
+Route::get('shapah_lehavim', function () { return view('shapahs.shapah_lehavim');
+ });
+
+Route::get('shapah_lahish', function () { return view('shapahs.shapah_lahish');
  });
 
  Route::get('institute_page', function () {
