@@ -70,6 +70,9 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
     return view('shapahs.shapah_sheva');
  });
 
+ Route::get('shapah_shimon', function () {
+    return view('shapahs.shapah_shimon');
+ });
 
  Route::get('psy_new', function () {
      return view('forms.psy_new');
