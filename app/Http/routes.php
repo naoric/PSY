@@ -30,6 +30,37 @@ Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
  Route::get('psy_page', function () {
     return view('forms.psy_page');
  });
+//shapahs
+
+     Route::get('shapah_elksom', function () {
+    return view('shapahs.shapah_elksom');
+ });
+     Route::get('shapah_ofakim', function () {
+    return view('shapahs.shapah_ofakim');
+ });
+
+     Route::get('shapah_ashdod', function () {
+    return view('shapahs.shapah_ashdod');
+ });
+
+     Route::get('shapah_eshkol', function () {
+    return view('shapahs.shapah_eshkol');
+ });
+
+    Route::get('shapah_ashkelon', function () {
+    return view('shapahs.shapah_ashkelon');
+ });
+
+    Route::get('shapah_tuvia', function () {
+    return view('shapahs.shapah_tuvia');
+ });
+
+
+
+     Route::get('shapah_ashdod', function () {
+    return view('shapahs.shapah_ashdod');
+ });
+
 
  Route::get('shapah_eilat', function () {
     return view('shapahs.shapah_eilat');
