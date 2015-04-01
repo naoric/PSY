@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>דיווח מפגש</title>
+    <title>שפ"י דרום</title>
     <link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
     <link href="{{ asset('lib/Pikaday-master/css/pikaday.css') }}" rel="stylesheet">
 
