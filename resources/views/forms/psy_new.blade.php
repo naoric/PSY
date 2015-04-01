@@ -51,13 +51,14 @@
 
         <div class="input-line" required>
             <label>עיר מגורים</label>
-            <input type="text" name="city_of_residence" size="10" maxlength="8" required>
+            <input type="text" name="city_of_residence" size="10" maxlength="8" required value="{{$psychologist->city_of_residence}}">
             <span class="error"></span>
         </div>
 
         <div class="input-line">
-            <label>היקף משרה- שעות בשבוע</label>
+            <label for="availability">היקף משרה- שעות בשבוע</label>
             <input type="number"
+                   id="availability"
                    class="small"
                    name="availability"
                    size="2"

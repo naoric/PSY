@@ -12,15 +12,18 @@
 */
 
 
+use App\Models\ProfessionalStatus;
+use App\Models\Psychologist;
+
 Route::resource('psychologist', 'PsychologistController', ['except' => ['patch']]);
 Route::resource('educational-institute', 'EducationalInstituteController', ['except' => ['patch']]);
 Route::resource('shapah', 'ShapahController', ['only' => ['show', 'edit', 'update']]);
 Route::resource('psychologist-visit', 'PsychologistVisitController', ['except' => ['patch']]);
 Route::resource('match', 'MatchController', ['except' => ['show', 'patch']]);
 
-// Route::get('/', function () {
-//     return view('forms.login');
-// });
+ Route::get('/', function () {
+	 return Psychologist::find(1)->status()->get(['professional_status_description']);
+ });
 
 
 // Route::get('map', function () {
