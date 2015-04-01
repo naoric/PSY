@@ -125,11 +125,63 @@ Route::get('shapah_merhavim', function () { return view('shapahs.shapah_merhavim
 Route::get('shapah_netivot', function () { return view('shapahs.shapah_netivot');
  });
 
+Route::get('shapah_nevemidbar', function () { return view('shapahs.shapah_nevemidbar');
+ });
+
+Route::get('shapah_omer', function () { return view('shapahs.shapah_omer');
+ });
+
+Route::get('shapah_arava', function () { return view('shapahs.shapah_arava');
+ });
+
+Route::get('shapah_arad', function () { return view('shapahs.shapah_arad');
+ });
+
+Route::get('shapah_arara', function () { return view('shapahs.shapah_arara');
+ });
+
+Route::get('shapah_kiryatgat', function () { return view('shapahs.shapah_kiryatgat');
+ });
+
+Route::get('shapah_kiryatmalahi', function () { return view('shapahs.shapah_kiryatmalahi');
+ });
+
+Route::get('shapah_rahat', function () { return view('shapahs.shapah_rahat');
+ });
+
+Route::get('shapah_ramatnegev', function () { return view('shapahs.shapah_ramatnegev');
+ });
+
+Route::get('shapah_segev', function () { return view('shapahs.shapah_segev');
+ });
+
+Route::get('shapah_sdot', function () { return view('shapahs.shapah_sdot');
+ });
+
+Route::get('shapah_sderot', function () { return view('shapahs.shapah_sderot');
+ });
+Route::get('shapah_shaar', function () { return view('shapahs.shapah_shaar');
+ });
+
+Route::get('shapah_shafir', function () { return view('shapahs.shapah_shafir');
+ });
+
+
+Route::get('shapah_telsheva', function () { return view('shapahs.shapah_telsheva');
+ });
+
+Route::get('shapah_tamar', function () { return view('shapahs.shapah_tamar');
+ });
 
  Route::get('institute_page', function () {
      return view('forms.institute_page');
  });
 
+
+
+ Route::get('institute_page', function () {
+     return view('forms.institute_page');
+ });
 
 
  Route::get('psyc-report', function () {
