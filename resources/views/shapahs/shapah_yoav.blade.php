@@ -17,6 +17,8 @@
             <h2>רשימת כל הפסיכולוגים בשפ"ח</h2>
             <h2>רשימת כל מוסדות החינוך בשפ"ח</h2>
 
+            <div id="map-canvas">
+<iframe src="https://goo.gl/maps/PnW8S" width="800" height="400" frameborder="0" style="border:0"></iframe>
 
            <div id="map-canvas">
 <iframe src="https://goo.gl/maps/20RPB" width="800" height="400" frameborder="0" style="border:0"></iframe>

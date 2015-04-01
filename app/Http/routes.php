@@ -104,7 +104,7 @@ Route::get('shapah_yeruham', function () { return view('shapahs.shapah_yeruham')
  });
 
 
-Route::get('shapah_ksayfe', function () { return view('shapahs.shapah_ksayfe');
+Route::get('shapah_ksaife', function () { return view('shapahs.shapah_ksaife');
  });
 
 Route::get('shapah_lehavim', function () { return view('shapahs.shapah_lehavim');
@@ -112,6 +112,19 @@ Route::get('shapah_lehavim', function () { return view('shapahs.shapah_lehavim')
 
 Route::get('shapah_lahish', function () { return view('shapahs.shapah_lahish');
  });
+
+Route::get('shapah_meitar', function () { return view('shapahs.shapah_meitar');
+ });
+
+Route::get('shapah_mizpe', function () { return view('shapahs.shapah_mizpe');
+ });
+
+Route::get('shapah_merhavim', function () { return view('shapahs.shapah_merhavim');
+ });
+
+Route::get('shapah_netivot', function () { return view('shapahs.shapah_netivot');
+ });
+
 
  Route::get('institute_page', function () {
      return view('forms.institute_page');
