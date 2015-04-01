@@ -37,8 +37,8 @@
                 <li>
                     <a href="#">דיווח מפגש</a>
                     <ul>
-                        <li><a href="visit_report">דיווח מפגש פסיכולוג במוסד</a></li>
-                      <li><a href="visit_report">עיון במפגשי פסיכולוג</a></li>
+                        <li><a href="{{url('visit_report')}}">דיווח מפגש פסיכולוג במוסד</a></li>
+                      <li><a href="{{url('visit_report')}}">עיון במפגשי פסיכולוג</a></li>
                     </ul>
                 </li>
                 <li>

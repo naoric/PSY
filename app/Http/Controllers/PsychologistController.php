@@ -25,19 +25,23 @@ class PsychologistController extends Controller {
 
 	public function update($psychologist_id) {
 		$psychologist = Psychologist::find($psychologist_id);
-		$input_data = \Request::all();
-		
+		$input_data = \Request::except('shapah_id');
+
 		$psychologist->fill($input_data);
+		$psychologist->shapahs()->saveMany( \Request::only( 'shapah_id' ) );
 		$psychologist->save();
 
 		return redirect()->route('psychologist.index');
 	}
 
-	public function show() {
-		return redirect()->route('psychologist.index');
+	public function show($psychologist_id) {
+		$psychologist = Psychologist::find( $psychologist_id );
+		return view( 'singles.psychologist', compact('psychologist'));
 	}
 
-	public function destroy($id) {
 
+
+	public function destroy($psychologist_id) {
+		Psychologist::find( $psychologist_id )->delete();
 	}
 }
