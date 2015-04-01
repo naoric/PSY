@@ -28,7 +28,7 @@ class PsychologistController extends Controller {
 		$input_data = \Request::except('shapah_id');
 
 		$psychologist->fill($input_data);
-		$psychologist->shapahs()->saveMany( \Request::only( 'shapah_id' ) );
+//		$psychologist->shapahs()->saveMany( \Request::only( 'shapah_id' ) );
 		$psychologist->save();
 
 		return redirect()->route('psychologist.index');
