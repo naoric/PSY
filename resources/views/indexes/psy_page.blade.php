@@ -1,7 +1,7 @@
-@extends('app')
+    @extends('app')
 
 @section('page-title')
-       <h1>עמוד פסיכולוג</h1>
+       <h1>הפסיכולוגים במחוז</h1>
 @stop
 
 @section('content')
