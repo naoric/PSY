@@ -11,7 +11,7 @@ use App\Models\PsychologistRole;
 class PsychologistController extends Controller {
 	public function index() {
 		$all_psychologists = Psychologist::all();
-		return view('forms.psy_page', ['psychologists' => $all_psychologists]);
+		return view('indexes.psy_page', ['psychologists' => $all_psychologists]);
 	}
 
 	public function edit($psychologist_id) {
