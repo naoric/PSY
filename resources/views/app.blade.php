@@ -29,9 +29,9 @@
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
                      <ul>
-                        <li><a href="psy_page">עיון בפרטי פסיכולוג</a></li>
+                        <li><a href="psychologist">רשימת הפסיכולוגים</a></li>
                         <li><a href="psy_new">הוספת פסיכולוג חדש</a></li>
-                        <li><a href="#">עדכון פרטי פסיכולוג</a></li>
+
                     </ul>
                 </li>
                 <li>
