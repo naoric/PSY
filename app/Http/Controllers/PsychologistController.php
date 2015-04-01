@@ -23,7 +23,6 @@ class PsychologistController extends Controller {
 		return view('forms.psy_new', compact('psychologist', 'shapahs', 'professional_statuses', 'roles'));
 	}
 
-
 	public function update($psychologist_id) {
 		$psychologist = Psychologist::find($psychologist_id);
 		$input_data = \Request::all();
