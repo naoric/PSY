@@ -1,0 +1,13 @@
+<?php
+
+use Illuminate\Database\Eloquent\Model;
+
+class Match extends Model {
+	public function psychologist() {
+		return $this->belongsTo( 'App\Models\Psychologist' );
+	}
+
+	public function institute() {
+		return $this->belongsTo( 'App\Models\EducationalInstitute', 'educational_institute_id' );
+	}
+}
