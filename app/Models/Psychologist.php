@@ -8,6 +8,10 @@ class Psychologist extends Model {
 	protected $guarded = [ 'id' ];
 	public $timestamps = false;
 
+	public function institutes() {
+		return $this->hasManyThrough( 'App\Models\EducationalInstitute', 'App\Models\Match' );
+	}
+
 	public function status() {
 		return $this->belongsTo( 'App\Models\ProfessionalStatus', 'professional_status_id' );
 	}
