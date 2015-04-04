@@ -9,7 +9,7 @@ class VisitController extends Controller {
 	public function index() {
 		$visits = Visit::all();
 
-		return view( 'indexes.psychologist-vist', compact( 'visits' ) );
+		return view( 'indexes.visit', compact( 'visits' ) );
 	}
 
 	public function create() {
@@ -17,7 +17,7 @@ class VisitController extends Controller {
 		$is_new = true;
 		$institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
 
-		return view( 'forms.psychologist-visit', compact( 'visit', 'is_new', 'institutes' ) );
+		return view( 'forms.visit', compact( 'visit', 'is_new', 'institutes' ) );
 	}
 
 	public function store() {
@@ -47,6 +47,10 @@ class VisitController extends Controller {
 
 
 	private function getPsychologistInstitutes( Psychologist $psychologist ) {
-		return $psychologist->institutes;
+		$institutes = [];
+		foreach ( $psychologist->matches as $match ) {
+			$institutes[] = $match->institute;
+		}
+		return $institutes;
 	}
 }

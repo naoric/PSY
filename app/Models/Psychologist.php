@@ -24,7 +24,7 @@ class Psychologist extends Model {
 		return $this->belongsToMany( 'App\Models\Shapah', 'psychologist_shapah', 'psychologist_id', 'shapah_id' );
 	}
 
-	public function visits() {
-		return $this->hasManyThrough( 'App\Models\Visit', 'App\Models\Match' );
+	public function matches() {
+		return $this->hasMany( 'App\Models\Match' );
 	}
 }
