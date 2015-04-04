@@ -14,16 +14,14 @@ class PsychologistController extends Controller {
 		return view('indexes.psy_page', ['psychologists' => $all_psychologists]);
 	}
 
-	public function edit($psychologist_id) {
-		$psychologist = Psychologist::find($psychologist_id);
+	public function edit(Psychologist $psychologist) {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
 		// return $shapahs;
 		return view('forms.psy_new', $related_data);
 	}
 
-	public function update($psychologist_id) {
-		$psychologist = Psychologist::find($psychologist_id);
+	public function update(Psychologist $psychologist) {
 		$input_data = $this->getFormUserData();
 
 		$psychologist->fill($input_data);
@@ -32,8 +30,8 @@ class PsychologistController extends Controller {
 		return redirect()->route('psychologist.index');
 	}
 
-	public function show($psychologist_id) {
-		$psychologist = Psychologist::find( $psychologist_id );
+	public function show(Psychologist $psychologist) {
+//		$psychologist = Psychologist::find( $psychologist_id );
 		return view( 'singles.psychologist', compact('psychologist'));
 	}
 
@@ -54,8 +52,8 @@ class PsychologistController extends Controller {
 		return redirect()->route( 'psychologist.show', $psychologist->id );
 	}
 
-	public function destroy($psychologist_id) {
-		Psychologist::find( $psychologist_id )->delete();
+	public function destroy(Psychologist $psychologist) {
+		$psychologist->delete();
 	}
 
 	/**
