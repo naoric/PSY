@@ -64,4 +64,10 @@ class VisitController extends Controller {
 		}
 		return $institutes;
 	}
+
+    public function destroy(Visit $vis) {
+		$vis->delete();
+
+		return redirect()->route( 'visit.index' );
+	}
 }

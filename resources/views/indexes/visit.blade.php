@@ -11,28 +11,22 @@
             <td>ערוך</td>
             <td>מחק</td>
             <td>מזהה</td>
-            <td>שפ"ח</td>
-            <td>מספר רישיון</td>
-            <td>שם פרטי</td>
-            <td>שם משפחה</td>
-            <td>עיר מגורים</td>
-            <td>טלפון</td>
-            <td>דוא"ל</td>
-            <td>זמינות</td>
-            <td>סטטוס מקצועי</td>
-            <td>תפקיד בשפ"ח</td>
-            <td>מועד התחלת תפקיד</td>
+            <td>משובץ במוסד</td>
+            <td>תאריך</td>
+            <td>פעילות</td>
+            <td>משך הביקור</td>
+            <td>תיאור מפגש</td>
         </tr>
 
-        @foreach ($psychologists as $psy)
+        @foreach ($visits as $vis)
             <tr>
                 <td>
-                    <a href="{{{route('psychologist.edit', $psy->id)}}}">
+                    <a href="{{{route('visit.edit', $vis->id)}}}">
                         <img src="{{{asset('images/icons/edit.png')}}}">
                     </a>
                 </td>
                 <td>
-                    <form action="{{route('psychologist.destroy', $psy->id)}}" method="post">
+                    <form action="{{route('visit.destroy', $vis->id)}}" method="post">
                         <input type="hidden" name="_method" value="DELETE"/>
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <button type="submit">
@@ -42,25 +36,19 @@
 
                 </td>
                 <td>
-                    <a href="{{route('psychologist.show', $psy->id)}}">
-                        {{$psy->id}}
+                    <a href="{{route('visit.show', $vis->id)}}">
+                        {{$vis->id}}
                     </a>
                 </td>
                 <td>
-                    @foreach($psy->shapahs as $shapah)
-                        {{$shapah->shapah_name}}<br/>
+                    @foreach($vis->institutes as $institute)
+                        {{$institute->name}}<br/>
                     @endforeach
                 </td>
-                <td>{{{$psy->license_number}}}</td>
-                <td>{{{$psy->first_name}}}</td>
-                <td>{{{$psy->last_name}}}</td>
-                <td>{{{$psy->city_of_residence}}}</td>
-                <td>{{{$psy->phone_number}}}</td>
-                <td>{{{$psy->email}}}</td>
-                <td>{{{$psy->availability}}}</td>
-                <td>{{$psy->status['professional_status_description']}}</td>
-                <td>{{$psy->role['psychologist_roles_description']}}</td>
-                <td>{{{$psy->start_working_date}}}</td>
+                <td>{{{$vis->date}}}</td>
+                <td>{{{$vis->activity}}}</td>
+                <td>{{{$vis->length}}}</td>
+                <td>{{{$vis->comment}}}</td>
             </tr>
         @endforeach
     </table>
