@@ -65,13 +65,9 @@
                 <td>{{$visit->id}}</td>
                 <td>{{$visit->date}}</td>
                 <td>{{$visit->length_in_institute}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>{{$visit->comment1}}</td>
+                <td>{{$visit->length_in_shapah}}</td>
+                <td>{{$visit->comment2}}</td>
             </tr>
         @endforeach
         </table>

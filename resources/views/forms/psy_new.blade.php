@@ -31,8 +31,9 @@
                 @endforeach
             </select>
 
-            <div class="error"></div>
+            <span class="error">
         </div>
+
         <div class="input-line clearfix">
             <label>מועד תחילת עבודה</label>
             <input type="text" name="start_working_date" value="{{{$psychologist->start_working_date}}}">

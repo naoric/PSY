@@ -19,9 +19,7 @@
 		<td>מחק</td>
 		<td>מזהה</td>
         <td>שפ"ח</td>
-		<td>&nbsp&nbsp&nbsp&nbspעיר&nbsp&nbsp&nbsp&nbsp</td>
-		<td>טלפון</td>
-		<td>דוא"ל</td>
+		<td>עיר</td>
         <td>כיתות</td>
         <td>כיתות מיוחדות</td>
 		<td>תלמידים בחינוך מיוחד</td>
@@ -38,8 +36,8 @@
 				<img src="{{{asset('images/icons/edit.png')}}}">
 			</a>
 		</td>
-	<!--	<td>
-            <form action="{{route('psychologist.destroy', $psy->id)}}" method="post">
+		<td>
+      <form action="{{route('EducationalInstitute.destroy', $ei->id)}}" method="post">
                 <input type="hidden" name="_method" value="DELETE"/>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit">
@@ -50,23 +48,24 @@
 
 		</td>
 
-		<td>{{{$psy->id}}}</td>
+		<td>{{{$ei->id}}}</td>
         <td>
             @foreach($psy->shapahs as $shapah)
                 {{$shapah->shapah_name}}<br/>
             @endforeach
         </td>
-        <td>{{{$psy->license_number}}}</td>
-		<td>{{{$psy->first_name}}}</td>
-		<td>{{{$psy->last_name}}}</td>
-		<td>{{{$psy->city_of_residence}}}</td>
-		<td>{{{$psy->phone_number}}}</td>
-		<td>{{{$psy->psychologist_email}}}</td>
-		<td>{{{$psy->availability}}}</td>
-        <td>{{$psy->status['professional_status_description']}}</td>
-        <td>{{$psy->role['psychologist_roles_description']}}</td>
-		<td>{{{$psy->start_working_date}}}</td>
-
+-->
+        <td>{{{$ei->educational_institute_name}}}</td>
+		<td>{{{$ei->first_name}}}</td>
+		<td>{{{$ei->last_name}}}</td>
+		<td>{{{$ei->educational_institute_city}}}</td>
+		<td>{{{$ei->number_of_classes}}}</td>
+		<td>{{{$ei->number_of_special_classes}}}</td>
+		<td>{{{$ei->number_of_alef_students}}}</td>
+        <td>{{{$ei->number_of_non_alef_students}}}</td>
+         <td>{{{$ei->number_of_special_students}}}</td>
+        <td>{{{$ei->kindergaten_type}}}</td>
+        <td>{{{$ei->number_of_kindergarten_children}}}</td>
 -->
 	</tr>
 	@endforeach
