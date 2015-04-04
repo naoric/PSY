@@ -6,8 +6,6 @@
 
 @section('content')
     <!--form-->
-
-
     <form class="psy-form" action="{{{route('visit.update',
         $visit->id)}}}" method="post">
 
@@ -19,13 +17,13 @@
 
         <div class="input-line clearfix">
             <label>תאריך פגישה</label>
-            <input type="text" id="datepicker" class="datepicker" name="date" required value="{{{$visit->date}}}">
+            <input type="text" id="datepicker" class="datepicker" name="date" data-format="YYYY-MM-DD" required value="{{{$visit->date}}}">
         </div>
 
 
         <div class="input-line clearfix">
             <label>שם המוסד</label>
-            <select name="institute-name" title="שם המוסד">
+            <select name="institute_id" title="שם המוסד">
                 @foreach ($institutes as $ei)
                     <option value="{{{$ei['id']}}}">
                         {{{$ei['name']}}}</option>
@@ -35,22 +33,16 @@
 
         <div class="input-line" required>
             <label>שעות שהיה בבית הספר</label>
-            <input type="number" name="length_in_institute" size="1" maxlength="1" min="1" max="8" name="date"
-                   value="{{{$visit->length_in_institute}}}">
-        </div>
-
-        <div class="input-line" required>
-            <label>שעות שהיה בשפ"ח</label>
-            <input type="number" name="length_in_shapah" size="1" maxlength="1" max="8" min="1"
-                   value="{{{$visit->length_in_shapah}}}" title="שעות שהייה בשפח">
+            <input type="number" name="length" size="1" maxlength="1" min="1" max="8" name="date"
+                   value="{{{$visit->length}}}">
         </div>
 
         <div class="dynamic-list" data-label="סוגי פעילויות">
             <label>דווח פעילות</label>
 
             <div class="input-line">
-                <select name="activity1" class="pull-right mult" title="דווח פעילות">
-                    <option disabled="disabled" selected="selected" value="{{{$visit->activity1}}}">בחר פעילות</option>
+                <select name="activity" class="pull-right mult" title="דווח פעילות">
+                    <option disabled="disabled" selected="selected">בחר פעילות</option>
                     <optgroup label="ועדות /ישיבות">
                         <option>ישיבת צוות בינ-מקצועי + מנהל</option>
                         <option>ישיבת צוות בינ-מקצועי ללא מנהל</option>
@@ -106,10 +98,9 @@
                         <option>אחר</option>
                     </optgroup>
                 </select>
-                <textarea name="activity-desc1[]" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים " cols="40"
-                        >{{{$visit->comment1}}}</textarea>
+                <textarea name="comment" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים " cols="40"
+                        >{{{$visit->comment}}}</textarea>
             </div>
-
 
         </div>
 

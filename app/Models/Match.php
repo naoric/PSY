@@ -3,6 +3,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model {
+
+	public $timestamps = false;
+
 	public function psychologist() {
 		return $this->belongsTo( 'App\Models\Psychologist' );
 	}

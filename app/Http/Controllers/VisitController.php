@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Institute;
+use App\Models\Match;
 use App\Models\Psychologist;
 use App\Models\Visit;
 
@@ -21,10 +23,14 @@ class VisitController extends Controller {
 	}
 
 	public function store() {
-		$form_data = \Request::all();
-		Visit::create( $form_data );
+		$form_data = \Request::except('institute_id');
+		$visit = new Visit( $form_data );
+		$visit_match = $this->getMatchForPsychologist(\Request::input('institute_id'));
+		$visit->match()->associate($visit_match);
 
-		return redirect()->route( 'psychologist-visit.index' );
+		$visit->save();
+
+		return redirect()->route( 'visit.index' );
 	}
 
 	public function show( Visit $visit ) {
@@ -45,6 +51,11 @@ class VisitController extends Controller {
 		return redirect()->route( 'psychologist-visit.show', $visit->id );
 	}
 
+	private function getMatchForPsychologist($institute_id) {
+		// todo Change hard- coded psychologist id
+		return Match::where( 'institute_id', '=', $institute_id )
+					->where( 'psychologist_id', '=', '2' )->first();
+	}
 
 	private function getPsychologistInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
