@@ -22,7 +22,7 @@
             <td>ילדי גן</td>
         </tr>
 
-        @foreach ($all_educational_institutes as $ei)
+        @foreach ($all_institutes as $ei)
             <tr>
                 <td>
                     <a href="{{{route('educational-institute.edit', $ei->id)}}}">
@@ -42,9 +42,9 @@
                 </td>
 
                 <td>{{{$ei->id}}}</td>
-                <td>{{{$ei->educational_institute_name}}}</td>
+                <td>{{{$ei->name}}}</td>
                 <td>{{{$ei->shapah->shapah_name}}}</td>
-                <td>{{{$ei->educational_institute_city}}}</td>
+                <td>{{{$ei->city}}}</td>
                 <td>{{{$ei->number_of_classes}}}</td>
                 <td>{{{$ei->number_of_special_classes}}}</td>
                 <td>{{{$ei->number_of_special_students}}}</td>

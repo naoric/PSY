@@ -56,7 +56,7 @@
 		<td>{{{$psy->last_name}}}</td>
 		<td>{{{$psy->city_of_residence}}}</td>
 		<td>{{{$psy->phone_number}}}</td>
-		<td>{{{$psy->psychologist_email}}}</td>
+		<td>{{{$psy->email}}}</td>
 		<td>{{{$psy->availability}}}</td>
         <td>{{$psy->status['professional_status_description']}}</td>
         <td>{{$psy->role['psychologist_roles_description']}}</td>

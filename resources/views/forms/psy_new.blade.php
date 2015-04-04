@@ -85,7 +85,7 @@
         <div class="input-line" required>
             <label>email</label>
             <input type="email" name="psychologist_email" size="22" maxlength="22" required
-                   value="{{{$psychologist->psychologist_email}}}">
+                   value="{{{$psychologist->email}}}">
             <span class="error"></span>
         </div>
 

@@ -27,10 +27,10 @@ class RouteServiceProvider extends ServiceProvider {
 		$router->model( 'psychologist', 'App\Models\Psychologist', function () {
 			throw new NotFoundHttpException;
 		} );
-		$router->model( 'educational_institute', 'App\Models\EducationalInstitute', function () {
+		$router->model( 'educational_institute', 'App\Models\Institute', function () {
 			throw new NotFoundHttpException;
 		} );
-		$router->model( 'psychologist_visit', 'App\Models\PsychologistVisit', function () {
+		$router->model( 'psychologist_visit', 'App\Models\Visit', function () {
 			throw new NotFoundHttpException;
 		} );
 		//

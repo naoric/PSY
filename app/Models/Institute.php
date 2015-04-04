@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 
-class EducationalInstitute extends Model {
+class Institute extends Model {
 	protected $table = 'educational_institutes';
 	public $timestamps = false;
 	public $guarded = [ 'id' ];

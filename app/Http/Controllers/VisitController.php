@@ -4,17 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Request;
 use App\Models\Psychologist;
-use App\Models\PsychologistVisit;
+use App\Models\Visit;
 
-class PsychologistVisitController extends Controller {
+class VisitController extends Controller {
 	public function index() {
-		$visits = PsychologistVisit::all();
+		$visits = Visit::all();
 
 		return view( 'indexes.psychologist-vist', compact( 'visits' ) );
 	}
 
 	public function create() {
-		$visit  = new PsychologistVisit();
+		$visit  = new Visit();
 		$is_new = true;
 		$institutes = $this->getPsychologistInstitutes( \Auth::user() );
 
@@ -23,21 +23,21 @@ class PsychologistVisitController extends Controller {
 
 	public function store() {
 		$form_data = \Request::all();
-		PsychologistVisit::create( $form_data );
+		Visit::create( $form_data );
 
 		return redirect()->route( 'psychologist-visit.index' );
 	}
 
-	public function show( PsychologistVisit $visit ) {
+	public function show( Visit $visit ) {
 		return view( 'singles.psychologist-visit', compact( 'visit' ) );
 	}
 
-	public function edit( PsychologistVisit $visit ) {
+	public function edit( Visit $visit ) {
 		return view( 'forms.psychologist-visit', compact( 'visit' ) );
 
 	}
 
-	public function update( PsychologistVisit $visit ) {
+	public function update( Visit $visit ) {
 		$form_data = \Request::all();
 		$visit->fill( $form_data );
 		$visit->save();

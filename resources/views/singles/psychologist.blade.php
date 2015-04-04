@@ -36,7 +36,7 @@
 
     <div class="row">
 <label>דואר אלקטרוני</label>
-     <span class="label-data">{{$psychologist->psychologist_email}}</span>
+     <span class="label-data">{{$psychologist->email}}</span>
 </div>
 
 
