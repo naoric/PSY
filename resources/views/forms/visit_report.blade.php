@@ -12,7 +12,7 @@
 
                  <div class="input-line clearfix">
                     <label>תאריך פגישה</label>
-                    <input type="date" id="datepicker" class="datepicker" required>
+                    <input type="text" id="datepicker" class="datepicker" required>
                 </div>
 
 
