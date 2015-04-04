@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    <h1>הזנת פסיכולוג חדש</h1>
+    <h1>טופס פסיכולוג</h1>
 @stop
 
 @section('content')
@@ -12,7 +12,7 @@
     <form class="psy-form" action="{{{route('psychologist.update',
         $psychologist->id)}}}" method="post">
 
-        @if(!$is_new)
+        @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
