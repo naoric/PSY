@@ -1,14 +1,20 @@
 @extends('app')
 
 @section('page-title')
-    <h1>יצירת מוסד חינוכי חדש</h1>
+    <h1>טופס מוסד חינוכי</h1>
 @stop
 
 @section('content')
     <!--form-->
 
-    <form class="psy-form" action="{{{route('educational-institute.update',
-        $educational_institute->id)}}}" method="post">
+    <form class="institute-form" action="{{{route('educational-institute.update',
+       16)}}}" method="post">
+
+
+
+         @if(isset($is_new) && !$is_new)
+            <input type="hidden" name="_method" value="PUT">
+        @endif
         <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -131,7 +137,7 @@
 
 
         <div class="input-line clearfix">
-            <button type="submit" class="pull-left approve">צור מוסד</button>
+            <button type="submit" class="pull-left approve">שלח</button>
         </div>
 
 

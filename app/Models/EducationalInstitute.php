@@ -9,4 +9,8 @@ class EducationalInstitute extends Model {
 	public $timestamps = false;
 	public $guarded = [ 'id' ];
 
+
+    public function shapah() {
+        return $this->belongsTo('App\Models\Shapah', 'shapah_id');
+    }
 }

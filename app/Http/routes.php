@@ -199,10 +199,6 @@ Route::get( 'institute_page', function () {
 } );
 
 
-Route::get( 'institute_page', function () {
-	return view( 'forms.institute_page' );
-} );
-
 
 Route::get( 'psyc-report', function () {
 	return view( 'forms.psyc-report' );
