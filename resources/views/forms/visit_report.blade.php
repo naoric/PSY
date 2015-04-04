@@ -7,38 +7,43 @@
 @section('content')
 <!--form-->
 
-            <form class="psy-form" action="">
 
+ <form class="psy-form" action="{{{route('PsychologistVisit.update',
+        $PsychologistVisit->id)}}}" method="post">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                  <div class="input-line clearfix">
                     <label>תאריך פגישה</label>
-                    <input type="text" id="datepicker" class="datepicker" required>
+                    <input type="date" id="datepicker" class="datepicker" name="date"   required value="{{{$PsychologistVisit->date}}}">
                 </div>
 
 
                 <div class="input-line clearfix">
                     <label>שם המוסד</label>
                     <select name="institute-name">
-                        <option value="AU">תיכון עמית עמל</option>
-                         <option value="AU">תיכון ששת עמל</option>
+                        @foreach ($educational_institutes as $ei)
+                    <option value="{{{$EducationalInstitute->id}}}">
+                {{{$PsychologistVisit->educational_institute_id}}}</option>
+                @endforeach
                     </select>
                 </div>
 
                 <div class="input-line" required>
                     <label>שעות שהיה בבית הספר</label>
-                    <input type="number" name="" size="1" maxlength="1" min="1" max="8">
+                    <input type="number" name="length_in_institute" size="1" maxlength="1" min="1" max="8" name="date" value="{{{$PsychologistVisit->length_in_institute}}}">
                 </div>
 
                 <div class="input-line" required>
                     <label>שעות שהיה בשפ"ח</label>
-                    <input type="number" name="" size="1" maxlength="1" max="8" min="1">
+                    <input type="number" name="length_in_shapah" size="1" maxlength="1" max="8" min="1" value="{{{$PsychologistVisit->length_in_shapah}}}">
                 </div>
 
                 <div class="dynamic-list" data-label="סוגי פעילויות">
                    <label>דווח פעילות</label>
                     <div class="input-line">
-                        <select name="type[]" class="pull-right mult">
-                            <option disabled="disabled" selected="selected">בחר פעילות</option>
+                        <select name="activity1" class="pull-right mult">
+                            <option disabled="disabled" selected="selected" value="{{{$PsychologistVisit->activity1}}}">בחר פעילות</option>
                             <optgroup label="ועדות /ישיבות">
                             <option value="10">ישיבת צוות בינ-מקצועי + מנהל</option>
                             <option value="11">ישיבת צוות בינ-מקצועי ללא מנהל</option>
@@ -94,13 +99,13 @@
                             <option value="64">אחר</option>
                                   </optgroup>
                         </select>
-                        <textarea name="activity-desc[]" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים" cols="40"></textarea>
+                        <textarea name="activity-desc1[]" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים " cols="40" value="{{{$PsychologistVisit->comment1}}}"></textarea>
                     </div>
 
 
                     <label>דווח פעילות</label>
                     <div class="input-line">
-                        <select name="type[]" class="pull-right mult">
+                        <select name="type[]" class="pull-right mult" value="{{{$PsychologistVisit->activity2}}}">
                             <option disabled="disabled" selected="selected">בחר פעילות</option>
                             <optgroup label="ועדות /ישיבות">
                             <option value="10">ישיבת צוות בינ-מקצועי + מנהל</option>
@@ -157,7 +162,7 @@
                             <option value="64">אחר</option>
                                   </optgroup>
                         </select>
-                        <textarea name="activity-desc[]" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים" cols="40"></textarea>
+                        <textarea name="activity-desc2[]" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים" cols="40" value="{{{$PsychologistVisit->comment2}}}"></textarea>
                     </div>
 
                 </div>
