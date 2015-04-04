@@ -89,22 +89,18 @@
 
 
 
-    <div>
+  <div>
         <table border="1">
-        @foreach($psychologist->visits as $visit)
-            <tr>
-                <td>{{$visit->id}}</td>
-                <td>{{$visit->date}}</td>
-                <td>{{$visit->length_in_institute}}</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        @endforeach
+            @foreach($institute->visits as $visit)
+                <tr>
+                    <td>{{$visit->id}}</td>
+                    <td>{{$visit->date}}</td>
+                    <td>{{$visit->activity}}</td>
+                    <td>{{$visit->comment1}}</td>
+                    <td>{{$visit->length}}</td>
+                    <td>{{$visit->comment}}</td>
+                </tr>
+            @endforeach
         </table>
     </div>
 

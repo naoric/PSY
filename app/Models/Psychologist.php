@@ -27,4 +27,8 @@ class Psychologist extends Model {
 	public function matches() {
 		return $this->hasMany( 'App\Models\Match' );
 	}
+
+    	public function visits() {
+		return $this->hasManyThrough('App\Models\Visit', 'App\Models\Match' );
+	}
 }

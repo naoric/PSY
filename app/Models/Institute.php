@@ -12,5 +12,9 @@ class Institute extends Model {
 
     public function shapah() {
         return $this->belongsTo('App\Models\Shapah', 'shapah_id');
+
+           	public function visits() {
+		return $this->hasManyThrough('App\Models\Visit', 'App\Models\Match' );
+	}
     }
 }
