@@ -11,7 +11,10 @@
 
     <form class="psy-form" action="{{{route('psychologist.update',
         $psychologist->id)}}}" method="post">
-        <input type="hidden" name="_method" value="PUT">
+
+        @if(!$is_new)
+            <input type="hidden" name="_method" value="PUT">
+        @endif
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="input-line" required>

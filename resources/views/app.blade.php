@@ -29,8 +29,8 @@
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
                      <ul>
-                        <li><a href="psychologist">רשימת הפסיכולוגים</a></li>
-                        <li><a href="psy_new">הוספת פסיכולוג חדש</a></li>
+                        <li><a href="{{route('psychologist.index')}}">רשימת הפסיכולוגים</a></li>
+                        <li><a href="{{route('psychologist.create')}}">הוספת פסיכולוג חדש</a></li>
 
                     </ul>
                 </li>

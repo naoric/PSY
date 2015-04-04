@@ -41,7 +41,11 @@
             </form>
 
 		</td>
-		<td>{{{$psy->id}}}</td>
+		<td>
+            <a href="{{route('psychologist.show', $psy->id)}}">
+                {{$psy->id}}
+            </a>
+        </td>
         <td>
             @foreach($psy->shapahs as $shapah)
                 {{$shapah->shapah_name}}<br/>
