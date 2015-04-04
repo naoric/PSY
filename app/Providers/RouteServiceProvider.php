@@ -2,6 +2,7 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -23,9 +24,15 @@ class RouteServiceProvider extends ServiceProvider {
 	public function boot(Router $router)
 	{
 		parent::boot($router);
-		$router->model( 'psychologist', 'App\Models\Psychologist' );
-		$router->model( 'educational_institute', 'App\Models\EducationalInstitute' );
-
+		$router->model( 'psychologist', 'App\Models\Psychologist', function () {
+			throw new NotFoundHttpException;
+		} );
+		$router->model( 'educational_institute', 'App\Models\EducationalInstitute', function () {
+			throw new NotFoundHttpException;
+		} );
+		$router->model( 'psychologist_visit', 'App\Models\PsychologistVisit', function () {
+			throw new NotFoundHttpException;
+		} );
 		//
 	}
 

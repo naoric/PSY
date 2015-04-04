@@ -16,34 +16,28 @@ class EducationalInstituteController extends Controller {
 	}
 
 
-	public function edit( $id ) {
-		$educational_institute = EducationalInstitute::find( $id );
+	public function edit( EducationalInstitute $institute ) {
 		$shapahs               = Shapah::all();
-
-		return view( 'forms.institute_new', compact( 'educational_institute', 'shapahs' ) );
+		return view( 'forms.institute_new', compact( 'institute', 'shapahs' ) );
 	}
 
 
-	public function update( $id ) {
-		$educational_institute = EducationalInstitute::find( $id );
+	public function update(EducationalInstitute $institute ) {
 		$form_data             = \Request::all();
-
-		$educational_institute->fill( $form_data );
-		$educational_institute->save();
+		$institute->fill( $form_data );
+		$institute->save();
 
 		return redirect()->route( 'educational-institute.index' );
 	}
 
 
-	public function show( $id ) {
-		$educational_institute = educationalinstitute::find( $id );
+	public function show(EducationalInstitute $institute ) {
 
-		return view( 'singles.educational_institute', compact( 'educational_institute' ) );
+		return view( 'singles.educational_institute', compact( 'institute' ) );
 	}
 
-	Public function destroy($id) {
-		EducationalInstitute::destroy( $id );
-
+	Public function destroy(EducationalInstitute $institute) {
+		$institute->delete();
 		return redirect()->route( 'educational-institutes.index' );
 	}
 
