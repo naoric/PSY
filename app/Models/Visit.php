@@ -4,5 +4,5 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Visit extends Model {
-	protected $table = 'psychologist_visits';
+	protected $table = 'visits';
 }

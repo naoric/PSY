@@ -9,7 +9,7 @@ class Psychologist extends Model {
 	public $timestamps = false;
 
 	public function institutes() {
-		return $this->hasManyThrough( 'App\Models\EducationalInstitute', 'App\Models\Match' );
+		return $this->hasManyThrough( 'App\Models\Institute', 'App\Models\Match' );
 	}
 
 	public function status() {
@@ -25,6 +25,6 @@ class Psychologist extends Model {
 	}
 
 	public function visits() {
-		return $this->hasMany( 'App\Models\PsychologistVisit', 'psychologist_id' );
+		return $this->hasManyThrough( 'App\Models\Visit', 'App\Models\Match' );
 	}
 }

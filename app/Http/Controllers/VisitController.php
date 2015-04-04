@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Request;
 use App\Models\Psychologist;
 use App\Models\Visit;
 
@@ -16,7 +15,7 @@ class VisitController extends Controller {
 	public function create() {
 		$visit  = new Visit();
 		$is_new = true;
-		$institutes = $this->getPsychologistInstitutes( \Auth::user() );
+		$institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
 
 		return view( 'forms.psychologist-visit', compact( 'visit', 'is_new', 'institutes' ) );
 	}
@@ -33,7 +32,8 @@ class VisitController extends Controller {
 	}
 
 	public function edit( Visit $visit ) {
-		return view( 'forms.psychologist-visit', compact( 'visit' ) );
+		$is_new = false;
+		return view( 'forms.psychologist-visit', compact( 'visit', 'is_new' ) );
 
 	}
 

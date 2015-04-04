@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model {
@@ -8,6 +8,10 @@ class Match extends Model {
 	}
 
 	public function institute() {
-		return $this->belongsTo( 'App\Models\EducationalInstitute', 'educational_institute_id' );
+		return $this->belongsTo( 'App\Models\Institute', 'institute_id' );
+	}
+
+	public function visits() {
+		return $this->hasMany( 'App\Models\Visit' );
 	}
 }

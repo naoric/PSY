@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    {{$institute}}
+
     <div class="row">
         <label>מזהה פסיכולוג:</label>
         <span class="label-data">{{$psychologist->id}}</span>

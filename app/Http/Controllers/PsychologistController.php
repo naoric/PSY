@@ -17,6 +17,7 @@ class PsychologistController extends Controller {
 	public function edit(Psychologist $psychologist) {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
+		$related_data['is_new'] = false;
 		// return $shapahs;
 		return view('forms.psy_new', $related_data);
 	}
@@ -31,7 +32,6 @@ class PsychologistController extends Controller {
 	}
 
 	public function show(Psychologist $psychologist) {
-//		$psychologist = Psychologist::find( $psychologist_id );
 		return view( 'singles.psychologist', compact('psychologist'));
 	}
 
@@ -54,6 +54,8 @@ class PsychologistController extends Controller {
 
 	public function destroy(Psychologist $psychologist) {
 		$psychologist->delete();
+
+		return redirect()->route( 'psychologist.index' );
 	}
 
 	/**

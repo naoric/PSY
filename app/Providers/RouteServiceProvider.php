@@ -24,15 +24,9 @@ class RouteServiceProvider extends ServiceProvider {
 	public function boot(Router $router)
 	{
 		parent::boot($router);
-		$router->model( 'psychologist', 'App\Models\Psychologist', function () {
-			throw new NotFoundHttpException;
-		} );
-		$router->model( 'educational_institute', 'App\Models\Institute', function () {
-			throw new NotFoundHttpException;
-		} );
-		$router->model( 'psychologist_visit', 'App\Models\Visit', function () {
-			throw new NotFoundHttpException;
-		} );
+		$router->model( 'psychologist', 'App\Models\Psychologist');
+		$router->model( 'institute', 'App\Models\Institute');
+		$router->model( 'visit', 'App\Models\Visit');
 		//
 	}
 

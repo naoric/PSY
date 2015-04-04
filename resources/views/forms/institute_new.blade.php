@@ -7,15 +7,10 @@
 @section('content')
     <!--form-->
 
-    <form class="institute-form" action="{{{route('educational-institute.update',
-       16)}}}" method="post">
-
-
-
-         @if(isset($is_new) && !$is_new)
+    <form class="institute-form" action="{{{route('institute.update', $institute->id)}}}" method="post">
+        @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
-        <input type="hidden" name="_method" value="PUT">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
@@ -26,7 +21,7 @@
                     <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
                 @endforeach
             </select>
-            <span class="error">
+            <span class="error"></span>
         </div>
 
 
@@ -143,6 +138,4 @@
 
     </form>
 
-    </form>
-    <!-- /form -->
 @stop

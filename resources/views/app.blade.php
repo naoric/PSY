@@ -22,8 +22,8 @@
                 <li>
                     <a href="#">המוסדות במחוז</a>
                     <ul>
-                        <li><a href="{{route('educational-institute.index')}}">רשימת המוסדות</a></li>
-                        <li><a href="{{route('educational-institute.create')}}">הוספת מוסד חדש</a></li>
+                        <li><a href="{{route('institute.index')}}">רשימת המוסדות</a></li>
+                        <li><a href="{{route('institute.create')}}">הוספת מוסד חדש</a></li>
 
                     </ul>
                 </li>

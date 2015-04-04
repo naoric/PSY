@@ -13,9 +13,9 @@
 
 
 Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'educational-institute', 'EducationalInstituteController', [ 'except' => [ 'patch' ] ] );
+Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
 Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
-Route::resource( 'psychologist-visit', 'PsychologistVisitController', [ 'except' => [ 'patch' ] ] );
+Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
 Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
 
 Route::get( '/', function () {
