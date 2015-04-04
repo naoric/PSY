@@ -14,11 +14,12 @@
         @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
+
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="input-line clearfix">
             <label>תאריך פגישה</label>
-            <input type="date" id="datepicker" class="datepicker" name="date" required value="{{{$visit->date}}}">
+            <input type="text" id="datepicker" class="datepicker" name="date" required value="{{{$visit->date}}}">
         </div>
 
 
@@ -26,8 +27,8 @@
             <label>שם המוסד</label>
             <select name="institute-name" title="שם המוסד">
                 @foreach ($institutes as $ei)
-                    <option value="{{{$ei->id}}}">
-                        {{{$visit->institute_id}}}</option>
+                    <option value="{{{$ei['id']}}}">
+                        {{{$ei['name']}}}</option>
                 @endforeach
             </select>
         </div>
