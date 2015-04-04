@@ -7,12 +7,6 @@
 @section('content')
     <!--form-->
 
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
-    {{--<input type="checkbox" name="shapah_id[]"/>--}}
 
 
     <form class="psy-form" action="{{{route('psychologist.update',
