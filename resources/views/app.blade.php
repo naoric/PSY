@@ -17,7 +17,7 @@
         <nav class="horizontal">
             <ul class="clearfix">
                 <li>
-                      <a href="map">השפ"חים במחוז</a>
+                      <a href="/map">השפ"חים במחוז</a>
                 </li>
                 <li>
                     <a href="#">המוסדות במחוז</a>
@@ -44,7 +44,7 @@
                 <li>
                     <a href="#">שיבוץ פסיכולוג במוסד</a>
                      <ul>
-                    <li><a href="calc">מחשבון לתקן שיבוץ</a></li>
+                    <li><a href="/calc">מחשבון לתקן שיבוץ</a></li>
                       <li><a href="new_match">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
                       <li><a href="delete_match">מחיקת שיבוץ</a></li>
                     </ul>
