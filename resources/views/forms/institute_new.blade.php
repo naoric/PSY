@@ -7,8 +7,11 @@
 @section('content')
     <!--form-->
 
-    <form class="psy-form" action="{{route('educational-institute.update',
-        $educational_institute->id)}}" method="post">
+    <form class="institute-form" action="{{{route('educational-institute.update',
+       16)}}}" method="post">
+
+
+
          @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif

@@ -23,9 +23,7 @@ class EducationalInstituteController extends Controller {
 		return view( 'forms.institute_new', compact( 'educational_institute', 'shapahs' ) );
 	}
 
-public function create (){
 
-}
 	public function update( $id ) {
 		$educational_institute = EducationalInstitute::find( $id );
 		$form_data             = \Request::all();
