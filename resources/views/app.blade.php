@@ -72,9 +72,9 @@
                 <li><a href="http://www.apa.org/">American Psychological Association</a>
                 &nbsp
                 </li>
-                <li><a href="#">קישור לדף</a>
+                <li> <a href="http://www.psychology.org.il/">הסתדרות הפסיכולוגים בישראל</a>
                 </li>
-                <li><a href="#">קישור לדף</a>
+                <li><a href="http://www.hebpsy.net/">פסיכולוגיה עברית</a>
                 </li>
             </ul>
         </nav>
