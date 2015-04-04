@@ -10,6 +10,7 @@
             <td>ערוך</td>
             <td>מחק</td>
             <td>מזהה</td>
+            <td>שם המוסד</td>
             <td>שפ"ח</td>
             <td>עיר</td>
             <td>כיתות</td>
@@ -41,19 +42,17 @@
                 </td>
 
                 <td>{{{$ei->id}}}</td>
-                -->
                 <td>{{{$ei->educational_institute_name}}}</td>
-                <td>{{{$ei->first_name}}}</td>
-                <td>{{{$ei->last_name}}}</td>
+                <td>{{{$ei->shapah->shapah_name}}}</td>
                 <td>{{{$ei->educational_institute_city}}}</td>
                 <td>{{{$ei->number_of_classes}}}</td>
                 <td>{{{$ei->number_of_special_classes}}}</td>
-                <td>{{{$ei->number_of_alef_students}}}</td>
-                <td>{{{$ei->number_of_non_alef_students}}}</td>
                 <td>{{{$ei->number_of_special_students}}}</td>
+                 <td>{{{$ei->number_of_alef_students}}}</td>
+                <td>{{{$ei->number_of_non_alef_students}}}</td>
                 <td>{{{$ei->kindergaten_type}}}</td>
                 <td>{{{$ei->number_of_kindergarten_children}}}</td>
-                -->
+
             </tr>
         @endforeach
     </table>

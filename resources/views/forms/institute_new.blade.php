@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    <h1>יצירת מוסד חינוכי חדש</h1>
+    <h1>טופס מוסד חינוכי</h1>
 @stop
 
 @section('content')
@@ -131,7 +131,7 @@
 
 
         <div class="input-line clearfix">
-            <button type="submit" class="pull-left approve">צור מוסד</button>
+            <button type="submit" class="pull-left approve">שלח</button>
         </div>
 
 
