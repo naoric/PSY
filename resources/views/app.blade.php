@@ -20,11 +20,11 @@
                       <a href="map">השפ"חים במחוז</a>
                 </li>
                 <li>
-                    <a href="#">מוסדות המחוז</a>
+                    <a href="#">המוסדות במחוז</a>
                     <ul>
-                        <li><a href="institute_page">דף מוסד</a></li>
+                        <li><a href="educational-institute">רשימת המוסדות</a></li>
                         <li><a href="institute_new">הוספת מוסד חדש</a></li>
-                        <li><a href="#">עדכון פרטי מוסד</a></li>
+
                     </ul>
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
