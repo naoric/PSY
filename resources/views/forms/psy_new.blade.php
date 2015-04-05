@@ -88,7 +88,6 @@
                    value="{{{$psychologist->email}}}">
             <span class="error"></span>
         </div>
-
         <div class="input-line" required>
             <label>סיסמא</label>
             <input type="text" name="password" size="14" maxlength="14" required

@@ -67,6 +67,5 @@
                     <button type="submit" class="pull-left approve">שלח</button>
                 </div>
 
-
             </form> <!-- /form -->
 @stop
