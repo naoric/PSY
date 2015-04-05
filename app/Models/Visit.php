@@ -11,7 +11,7 @@ class Visit extends Model {
 	public function match() {
 		return $this->belongsTo( 'App\Models\Match' );
 	}
-    public function institutes() {
-		return $this->hasManyThrough( 'App\Models\Institute', 'App\Models\Match' );
+    public function institute() {
+        return $this->match->belongsTo('App\Models\Institute');
 	}
 }

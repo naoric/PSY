@@ -39,7 +39,7 @@ class VisitController extends Controller {
 
 	public function edit( Visit $visit ) {
 		$is_new = false;
-		return view( 'forms.psychologist-visit', compact( 'visit', 'is_new' ) );
+		return view( 'forms.visit', compact( 'visit', 'is_new' ) );
 
 	}
 

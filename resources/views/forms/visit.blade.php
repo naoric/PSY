@@ -101,7 +101,7 @@
 
                 <textarea name="comment" maxlength="100" placeholder="תאר את הפעילות - עד 100 תווים " cols="40"
                         >{{{$visit->comment}}}</textarea>
-                <label>שעות שהיה בבית הספר</label>
+                <label>תיאור פעילות</label>
             </div>
 
         </div>

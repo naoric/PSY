@@ -39,7 +39,7 @@
                         {{$vis->id}}
                 </td>
                 <td>
-
+                    {{{$vis->institute->name}}}
                 </td>
                 <td>{{{$vis->date}}}</td>
                 <td>{{{$vis->activity}}}</td>
