@@ -14,8 +14,8 @@
                     <div class="input-line clearfix">
                         <select name="psychologist_id" class="pull-right mult">
                             <option disabled="disabled" selected="selected" >בחר מרשימה                               </option>
-                           @foreach ($shapahs as $shapah)
-                    <option value="{{{$psychologists->id}}}">{{{$psychologists->first_name}}}</option>
+                           @foreach ($psychologists as $psychologist)
+                    <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name}}}</option>
                             @endforeach
                         </select>
                          <span class="error">
