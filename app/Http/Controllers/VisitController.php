@@ -48,7 +48,7 @@ class VisitController extends Controller {
 		$visit->fill( $form_data );
 		$visit->save();
 
-		return redirect()->route( 'psychologist-visit.show', $visit->id );
+		return redirect()->route( 'visit.index', $visit->id );
 	}
 
 	private function getMatchForPsychologist($institute_id) {
