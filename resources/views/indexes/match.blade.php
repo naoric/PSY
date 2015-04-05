@@ -9,7 +9,6 @@
     <table border="1">
         <tr>
             <td>ערוך</td>
-            <td>מחק</td>
             <td>מזהה</td>
             <td>פסיכולוג</td>
             <td>מוסד</td>
@@ -24,16 +23,7 @@
                         <img src="{{{asset('images/icons/edit.png')}}}">
                     </a>
                 </td>
-                <td>
-                    <form action="{{route('match.destroy', $mat->id)}}" method="post">
-                        <input type="hidden" name="_method" value="DELETE"/>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit">
-                            <img src="{{{asset('images/icons/delete.png')}}}">
-                        </button>
-                    </form>
 
-                </td>
                 <td>{{$mat->id}}</td>
                 <td>{{$mat->psychologist['first_name']}}</td>
                 <td>{{{$mat->institute['name']}}}</td>

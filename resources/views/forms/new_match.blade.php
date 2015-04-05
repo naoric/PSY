@@ -6,62 +6,58 @@
 
 @section('content')
 
-    <form class="match-form" action="{{{route('match.update',
-        $match->id)}}}" method="post">
+    <form class="match-form" action="{{{route('match.update',$match->id)}}}" method="post">
 
+        @if(isset($is_new) && !$is_new)
+            <input type="hidden" name="_method" value="PUT">
+        @endif
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <label>בחר פסיכולוג</label>
-                    <div class="input-line clearfix">
+                    <div class="input-line">
                         <select name="psychologist_id" class="pull-right mult">
-                            <option disabled="disabled" selected="selected" >בחר מרשימה                               </option>
-                           @foreach ($psychologists as $psychologist)
-                    <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name}}}</option>
+                            <option disabled="disabled" selected="selected">בחר מרשימה</option>
+                            @foreach ($psychologists as $psychologist)
+                                <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name}}}</option>
                             @endforeach
                         </select>
-                         <span class="error">
+                         <span class="error"></span>
                     </div>
-
-
 
            <label>שנת שיבוץ</label>
                     <div class="input-line clearfix">
                         <select name="match_year" class="pull-right mult" >
-<option disabled="disabled" selected="selected" value="{{{$match->match_year}}}">בחר שנה</option>
-                            <option value="">התשע"ה</option>
-                            <option value="">התשע"ו</option>
-                            <option value="">התשע"ז</option>
-                            <option value="">התשע"ח</option>
-                            <option value="">התשע"ט</option>
-                            <option value="">התש"ף</option>
-                            <option value="">התשפ"א</option>
+                            <option disabled="disabled" selected="selected">בחר שנה</option>
+                            <option>התשע"ה</option>
+                            <option>התשע"ו</option>
+                            <option>התשע"ז</option>
+                            <option>התשע"ח</option>
+                            <option>התשע"ט</option>
+                            <option>התש"ף</option>
+                            <option>התשפ"א</option>
                         </select>
                     </div>
 
 
-
+                <label>היקף משרה- שעות בשבוע</label>
                 <div class="input-line">
-                    <label>היקף משרה- שעות בשבוע</label>
                     <input type="number" name="match_hours" size="2" maxlength="2" max="60" min="1" value="{{{$match->match_hours}}}" required>
                 </div>
-                  <div class="input-line">
-
-
-
-
 
                     <label>שם המוסד</label>
-     <div class="input-line clearfix">
-            <select name="institute_id" class="pull-right mult">
-                <option disabled="disabled" selected="selected">בחר מוסד</option>
-                @foreach ($institutes as $institute)
-                    <option value="{{{$institute->id}}}">{{{$institute->name}}}</option>
-                @endforeach
-            </select>
-            <span class="error"></span>
-        </div>
+                    <div class="input-line">
+                    <select name="institute_id" class="pull-right mult">
+                        <option disabled="disabled" selected="selected">בחר מוסד</option>
+                        @foreach ($institutes as $institute)
+                            <option value="{{{$institute->id}}}">{{{$institute->name}}}</option>
+                        @endforeach
+                    </select>
+                    <span class="error"></span>
+                </div>
 
 
-                <div class="input-line clearfix">
+                <div class="input-line">
                     <button type="submit" class="pull-left approve">שלח</button>
                 </div>
 

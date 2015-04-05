@@ -3,7 +3,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 class Match extends Model {
-
+    protected $table = 'matches';
+	public $guarded = ['id'];
 	public $timestamps = false;
 
 	public function psychologist() {
