@@ -91,7 +91,8 @@
 
         <div class="input-line" required>
             <label>סיסמא</label>
-            <input type="text" name="password" size="14" maxlength="14" required>
+            <input type="text" name="password" size="14" maxlength="14" required
+                    value="{{{$psychologist->password}}}">
             <span class="error"></span>
         </div>
 
