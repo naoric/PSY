@@ -45,8 +45,8 @@
                     <a href="#">שיבוץ פסיכולוג במוסד</a>
                      <ul>
                     <li><a href="/calc">מחשבון לתקן שיבוץ</a></li>
-                      <li><a href="new_match">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
-                      <li><a href="delete_match">מחיקת שיבוץ</a></li>
+                         <li><a href="{{route('match.index')}}">רשימת שיבוצים</a></li>
+                      <li><a href="{{route('match.create')}}">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
                     </ul>
                 </li>
 
