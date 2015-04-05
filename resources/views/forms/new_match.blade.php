@@ -25,6 +25,25 @@
 
            <label>שנת שיבוץ</label>
                     <div class="input-line clearfix">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                        <select name="type[]" class="pull-right mult" >
+                            <option disabled="disabled" selected="selected" >בחר שנה</option>
+                            <option value="">2015</option>
+                            <option value="">2016</option>
+                            <option value="">2017</option>
+
+
+
+
+                            <option value="">2018</option>
+                            <option value="">2019</option>
+                            <option value="">2020</option>
+                            <option value="">2021</option>
+                            <option value="">2022</option>
+=======
+>>>>>>> origin/master
                         <select name="match_year" class="pull-right mult" >
 <option disabled="disabled" selected="selected" value="{{{$match->match_year}}}">בחר שנה</option>
                             <option value="">התשע"ה</option>
@@ -36,6 +55,10 @@
                             <option value="">התש"ף</option>
                             <option value="">התשפ"א</option>
                             <option value="">התשפ"ב</option>
+<<<<<<< HEAD
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
                         </select>
                     </div>
 
