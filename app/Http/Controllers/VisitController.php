@@ -39,7 +39,8 @@ class VisitController extends Controller {
 
 	public function edit( Visit $visit ) {
 		$is_new = false;
-		return view( 'forms.visit', compact( 'visit', 'is_new' ) );
+        $institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
+		return view( 'forms.visit', compact( 'visit', 'is_new' ,'institutes') );
 
 	}
 
