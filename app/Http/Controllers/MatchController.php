@@ -13,4 +13,11 @@ class MatchController extends Controller {
 		return view( 'indexes.match', compact( 'matches' ) );
 	}
 
+    public function create() {
+		$match  = new Match();
+		$is_new = true;
+		$institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
+
+		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes', 'psychologists' ) );
+	}
 }
