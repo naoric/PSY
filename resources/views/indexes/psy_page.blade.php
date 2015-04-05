@@ -6,6 +6,7 @@
 
 @section('content')
 
+
 <table border="1">
 	<tr>
 		<td>ערוך</td>
