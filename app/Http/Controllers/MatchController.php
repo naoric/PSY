@@ -18,8 +18,7 @@ class MatchController extends Controller {
 		$match  = new Match();
 		$is_new = true;
 		$institutes = $this->getShapahInstitutes( Psychologist::find(2) );
-        //$psychologists = $this->getShapahPsychologists( Psychologist::find(2) );
-        $psychologists = Psychologist::all();
+        $psychologists = $this->getShapahPsychologists( Psychologist::find(2) );
 
 		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 	}
@@ -48,7 +47,9 @@ class MatchController extends Controller {
 		$psychologists = [];
 		foreach ( $psychologist->shapahs as $shapah ) {
             // if psychologist is manager then take the psychologists from his shapah
-
+                foreach ($shapah->psychologists as $shap_psy){
+			         $psychologists[] = $shap_psy;
+                }
             }
 
 		return $psychologists;
