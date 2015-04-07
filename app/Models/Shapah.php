@@ -10,4 +10,9 @@ class Shapah extends Model {
     public function institute() {
 		return $this->hasMany( 'App\Models\Institute' );
 	}
+
+    public function psychologists() {
+		return $this->belongsToMany( 'App\Models\Psychologist', 'psychologist_shapah', 'shapah_id' , 'psychologist_id'  );
+	}
+
 }
