@@ -9,7 +9,7 @@
 
 
 
-    <form class="match-form" action="{{{route('psychologist.update',
+    <form class="psy-form" action="{{{route('psychologist.update',
         $psychologist->id)}}}" method="post">
 
         @if(isset($is_new) && !$is_new)
