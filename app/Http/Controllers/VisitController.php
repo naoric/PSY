@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Institute;
-use App\Models\Match;
+ use App\Models\Match;
 use App\Models\Psychologist;
 use App\Models\Visit;
 
@@ -17,7 +16,7 @@ class VisitController extends Controller {
 	public function create() {
 		$visit  = new Visit();
 		$is_new = true;
-		$institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
+		$institutes = $this->getPsychologistInstitutes( \Auth::user() );
 
 		return view( 'forms.visit', compact( 'visit', 'is_new', 'institutes' ) );
 	}
@@ -53,8 +52,7 @@ class VisitController extends Controller {
 
 	private function getMatchForPsychologist($institute_id) {
 		// todo Change hard- coded psychologist id
-		return Match::where( 'institute_id', '=', $institute_id )
-					->where( 'psychologist_id', '=', '2' )->first();
+		return \Auth::user()->matches()->whereInstituteId( $institute_id )->first();
 	}
 
 	private function getPsychologistInstitutes( Psychologist $psychologist ) {

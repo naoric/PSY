@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Institute;
+use App\Models\Psychologist;
 use App\Models\Shapah;
+use Illuminate\Support\Facades\Auth;
 
 
 class InstituteController extends Controller {
 
 	public function index() {
-		$all_institutes = Institute::all();
+		$institutes = $this->filterRelevantInstitutes(Auth::user());
 
-		return view( 'indexes.institute_page', compact( 'all_institutes' ) );
+		return view( 'indexes.institute_page', compact( 'institutes' ) );
 	}
 
 	public function edit( Institute $institute ) {
@@ -65,6 +67,23 @@ class InstituteController extends Controller {
 		$shapahs = Shapah::all();
 
 		return compact( 'shapahs' );
+	}
+
+	private function filterRelevantInstitutes( Psychologist $user ) {
+		if ( $user->isAdmin() ) {
+			return Institute::all();
+		}
+
+		return $this->getInstitutesForPsychologist( $user );
+	}
+
+	function getInstitutesForPsychologist( Psychologist $psychologist ) {
+		return \DB::table( 'psychologist_shapah' )
+		         ->join( 'shapahs', 'shapahs.id', '=', 'psychologist_shapah.shapah_id' )
+		         ->join( 'institutes', 'institutes.shapah_id', '=', 'shapahs.id' )
+		         ->where( 'psychologist_shapah.psychologist_id', '=', $psychologist->id )
+		         ->select('institutes.*')
+		         ->get();
 	}
 
 }

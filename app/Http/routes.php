@@ -10,17 +10,34 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-
-Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
-Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
+use App\Models\Psychologist;
 
 Route::get( '/', function () {
+	return redirect( 'auth/login' );
+} );
+
+
+Route::group( [ 'middleware' => 'auth', 'permissions' => 'user' ], function () {
+	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
+	Route::resource('match', 'MatchController', ['only' => ['index']]);
+	Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch', 'store' ] ] );
+} );
+
+Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function () {
+	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
+	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
+	Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
+	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
+} );
+
+
+Route::get( 'auth/login', function () {
 	return view( 'forms.login' );
 } );
+
+Route::post( 'auth/login', [ 'as' => 'login', 'uses' => 'Auth\AuthController@postLogin' ] );
+Route::post( 'auth/register', [ 'as' => 'register', 'uses' => 'Auth\AuthController@postRegister' ] );
+Route::get( 'auth/logout', [ 'as' => 'logout', 'uses' => 'Auth\AuthController@getLogout' ] );
 
 Route::get( 'map', function () {
 	return view( 'general.map' );
@@ -199,7 +216,6 @@ Route::get( 'institute_page', function () {
 } );
 
 
-
 Route::get( 'psyc-report', function () {
 	return view( 'forms.psyc-report' );
 } );
@@ -232,9 +248,6 @@ Route::get( 'new_match', function () {
 	return view( 'forms.new_match' );
 } );
 
-Route::get( 'db', function () {
-	return Psychologist::all();
-} );
 
 Route::get( 'new_psy', function () {
 	return view( 'forms.new_psy' );

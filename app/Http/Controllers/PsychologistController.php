@@ -6,6 +6,7 @@ use App\Models\Psychologist;
 use App\Models\Shapah;
 use App\Models\ProfessionalStatus;
 use App\Models\PsychologistRole;
+use App\User;
 
 
 class PsychologistController extends Controller {

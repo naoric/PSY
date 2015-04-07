@@ -2,6 +2,7 @@
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
+use Illuminate\Http\Request;
 
 class Authenticate {
 
@@ -11,6 +12,7 @@ class Authenticate {
 	 * @var Guard
 	 */
 	protected $auth;
+	protected $roles;
 
 	/**
 	 * Create a new filter instance.
@@ -21,6 +23,7 @@ class Authenticate {
 	public function __construct(Guard $auth)
 	{
 		$this->auth = $auth;
+		$this->roles = \Config::get( 'auth.roles' );
 	}
 
 	/**
@@ -32,7 +35,8 @@ class Authenticate {
 	 */
 	public function handle($request, Closure $next)
 	{
-		if ($this->auth->guest())
+		$required_permission = $this->getPermissions( $request );
+		if ($this->auth->guest() or !$this->hasPermissions($required_permission))
 		{
 			if ($request->ajax())
 			{
@@ -47,4 +51,13 @@ class Authenticate {
 		return $next($request);
 	}
 
+	private function hasPermissions($permission) {
+		return $this->auth->user()->permission >= $this->roles[ $permission ];
+	}
+
+	private function getPermissions(Request $request) {
+		$actions = $request->route()->getAction();
+
+		return $actions['permissions'];
+	}
 }

@@ -6,10 +6,11 @@
 
 @section('content')
     <!--form-->
+    @foreach($errors->all() as $msg)
+        {{$msg}}
+    @endforeach
 
-
-
-    <form class="psy-form" action="{{{route('psychologist.update',
+    <form class="psy-form" action="{{{route('register',
         $psychologist->id)}}}" method="post">
 
         @if(isset($is_new) && !$is_new)
@@ -91,7 +92,7 @@
 
         <div class="input-line" required>
             <label>Password</label>
-            <input type="text" name="" size="14" maxlength="14" required>
+            <input type="text" name="password" size="14" maxlength="14" required>
             <span class="error"></span>
         </div>
 
