@@ -84,15 +84,15 @@
         </div>
 
         <div class="input-line" required>
-            <label>email</label>
+            <label>דוא"ל</label>
             <input type="email" name="email" size="22" maxlength="22" required
                    value="{{{$psychologist->email}}}">
             <span class="error"></span>
         </div>
-
         <div class="input-line" required>
-            <label>Password</label>
-            <input type="text" name="password" size="14" maxlength="14" required>
+            <label>סיסמה</label>
+            <input type="text" name="password" size="14" maxlength="14" required
+                    value="{{{$psychologist->password}}}">
             <span class="error"></span>
         </div>
 

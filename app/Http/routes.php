@@ -43,9 +43,6 @@ Route::get( 'map', function () {
 	return view( 'general.map' );
 } );
 
-Route::get( 'psy_page', function () {
-	return view( 'forms.psy_page' );
-} );
 //shapahs
 
 Route::get( 'shapah_elksom', function () {
@@ -202,7 +199,6 @@ Route::get( 'shapah_shafir', function () {
 	return view( 'shapahs.shapah_shafir' );
 } );
 
-
 Route::get( 'shapah_telsheva', function () {
 	return view( 'shapahs.shapah_telsheva' );
 } );
@@ -249,15 +245,4 @@ Route::get( 'new_match', function () {
 } );
 
 
-Route::get( 'new_psy', function () {
-	return view( 'forms.new_psy' );
-} );
 
-
-Route::get( 'new_page', function () {
-	return view( 'forms.new_page' );
-} );
-
-Route::get( 'visit_report', function () {
-	return view( 'forms.visit_report' );
-} );

@@ -38,7 +38,8 @@ class VisitController extends Controller {
 
 	public function edit( Visit $visit ) {
 		$is_new = false;
-		return view( 'forms.psychologist-visit', compact( 'visit', 'is_new' ) );
+        $institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
+		return view( 'forms.visit', compact( 'visit', 'is_new' ,'institutes') );
 
 	}
 
@@ -47,7 +48,7 @@ class VisitController extends Controller {
 		$visit->fill( $form_data );
 		$visit->save();
 
-		return redirect()->route( 'psychologist-visit.show', $visit->id );
+		return redirect()->route( 'visit.index', $visit->id );
 	}
 
 	private function getMatchForPsychologist($institute_id) {

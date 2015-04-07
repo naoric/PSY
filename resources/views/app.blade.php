@@ -35,18 +35,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">דיווח מפגש</a>
+                    <a href="#">מפגשים ודיווח</a>
                     <ul>
-                        <li><a href="{{url('visit_report')}}">דיווח מפגש פסיכולוג במוסד</a></li>
-                      <li><a href="{{url('visit_report')}}">עיון במפגשי פסיכולוג</a></li>
+                        <li><a href="{{route('visit.index')}}">רשימת מפגשים
+                      <li><a href="{{route('visit.create')}}">דיווח מפגש במוסד</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">שיבוץ פסיכולוג במוסד</a>
                      <ul>
                     <li><a href="/calc">מחשבון לתקן שיבוץ</a></li>
-                      <li><a href="new_match">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
-                      <li><a href="delete_match">מחיקת שיבוץ</a></li>
+                         <li><a href="{{route('match.index')}}">רשימת שיבוצים</a></li>
+                      <li><a href="{{route('match.create')}}">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
                     </ul>
                 </li>
 

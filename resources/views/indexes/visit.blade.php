@@ -35,16 +35,8 @@
                     </form>
 
                 </td>
-                <td>
-                    <a href="{{route('visit.show', $vis->id)}}">
-                        {{$vis->id}}
-                    </a>
-                </td>
-                <td>
-                    @foreach($vis->institutes as $institute)
-                        {{$institute->name}}<br/>
-                    @endforeach
-                </td>
+                <td>{{$vis->id}}</td>
+                <td>{{{$vis->institute->name}}}</td>
                 <td>{{{$vis->date}}}</td>
                 <td>{{{$vis->activity}}}</td>
                 <td>{{{$vis->length}}}</td>

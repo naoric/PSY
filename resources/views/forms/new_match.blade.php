@@ -6,60 +6,60 @@
 
 @section('content')
 
-    <form class="psy-form" action="">
+    <form class="psy-form" action="{{{route('match.update',$match->id)}}}" method="post">
 
+        @if(isset($is_new) && !$is_new)
+            <input type="hidden" name="_method" value="PUT">
+        @endif
+
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
-                        <select name="type[]" class="pull-right mult">
-                            <option disabled="disabled" selected="selected" >בחר מרשימה                               </option>
-                            <option value="">דוד</option>
-                            <option value="">משה</option>
-                            <option value="">חיים</option>
+                        <select name="psychologist_id" class="pull-right mult">
+                            <option disabled="disabled" selected="selected">בחר מרשימה</option>
+                            @foreach ($psychologists as $psychologist)
+                                <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name}}}</option>
+                            @endforeach
                         </select>
+                         <span class="error"></span>
                     </div>
-
-                  <div class="input-line" >
-                    <label>מספר רשיון פסיכולוג</label>
-                    <input type="text" name="" size="12" maxlength="12" readonly                             style="background-color: #D8D8D8;">
-                    <br></br>
-                </div>
 
            <label>שנת שיבוץ</label>
                     <div class="input-line clearfix">
-                        <select name="type[]" class="pull-right mult" >
-                            <option disabled="disabled" selected="selected" >בחר שנה</option>
-                            <option value="">2015</option>
-                            <option value="">2016</option>
-                            <option value="">2017</option>
-                            <option value="">2018</option>
-                            <option value="">2019</option>
-                            <option value="">2020</option>
-                            <option value="">2021</option>
-                            <option value="">2022</option>
+                        <select name="match_year" class="pull-right mult" >
+                            <option disabled="disabled" selected="selected">בחר שנה</option>
+                            <option>התשע"ה</option>
+                            <option>התשע"ו</option>
+                            <option>התשע"ז</option>
+                            <option>התשע"ח</option>
+                            <option>התשע"ט</option>
+                            <option>התש"ף</option>
+                            <option>התשפ"א</option>
                         </select>
                     </div>
 
 
-
+                <label>היקף משרה- שעות בשבוע</label>
                 <div class="input-line">
-                    <label>היקף משרה- שעות בשבוע</label>
-                    <input type="number" name="" size="2" maxlength="2" max="60" min="1" required>
+                    <input type="number" name="match_hours" size="2" maxlength="2" max="60" min="1" value="{{{$match->match_hours}}}" required>
                 </div>
-                  <div class="input-line">
 
                     <label>שם המוסד</label>
-
-                    <select name="institute-name" >
-                        <option value="AU">תיכון עמית עמל</option>
-                         <option value="AU">תיכון ששת עמל</option>
+                    <div class="input-line">
+                    <select name="institute_id" class="pull-right mult">
+                        <option disabled="disabled" selected="selected">בחר מוסד</option>
+                        @foreach ($institutes as $institute)
+                            <option value="{{{$institute->id}}}">{{{$institute->name}}}</option>
+                        @endforeach
                     </select>
+                    <span class="error"></span>
                 </div>
 
-                <div class="input-line clearfix">
+
+                <div class="input-line">
                     <button type="submit" class="pull-left approve">שלח</button>
                 </div>
-
 
             </form> <!-- /form -->
 @stop

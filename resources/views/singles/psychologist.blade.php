@@ -61,6 +61,7 @@
     </tr>
 
     <div>
+        <h2>מפגשי הפסיכולוג</h2>
         <table border="1">
             @foreach($psychologist->visits as $visit)
                 <tr>

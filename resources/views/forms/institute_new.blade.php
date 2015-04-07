@@ -7,7 +7,7 @@
 @section('content')
     <!--form-->
 
-    <form class="institute-form" action="{{{route('institute.update', $institute->id)}}}" method="post">
+    <form class="psy-form" action="{{{route('institute.update', $institute->id)}}}" method="post">
         @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
@@ -29,12 +29,12 @@
             <select name="type" class="pull-right mult"
                     value="{{{$institute->type}}}">
                 <option disabled="disabled" selected="selected">בחר סוג המוסד</option>
-                <option value="1">גן ילדים</option>
-                <option value="2">בית ספר יסודי</option>
-                <option value="3">חטיבת ביניים</option>
-                <option value="4">בית ספר תיכון</option>
-                <option value="5">בית ספר תיכון + חטיבת ביניים</option>
-                <option value="6">בית ספר יסודי + חטיבת ביניים</option>
+                <option>גן ילדים</option>
+                <option>בית ספר יסודי</option>
+                <option>חטיבת ביניים</option>
+                <option>בית ספר תיכון</option>
+                <option>בית ספר תיכון + חטיבת ביניים</option>
+                <option>בית ספר יסודי + חטיבת ביניים</option>
             </select>
         </div>
 
@@ -118,15 +118,14 @@
         </div>
 
         <div class="input-line clearfix">
-            <label>בחר סוג גן</label>
             <select name="kindergaten_type" class="pull-right mult"
                     value="{{{$institute->kindergaten_type}}}">
-                <option disabled="disabled" selected="selected"></option>
-                <option value="1">טרום טרום חובה</option>
-                <option value="2">טרום חובה</option>
-                <option value="3">חובה</option>
-                <option value="4">רב גילי</option>
-                <option value="5">חנוך מיוחד</option>
+                <option disabled="disabled" selected="selected">בחר סוג גן</option>
+                <option>טרום טרום חובה</option>
+                <option>טרום חובה</option>
+                <option>חובה</option>
+                <option>רב גילי</option>
+                <option>חנוך מיוחד</option>
             </select>
         </div>
 
