@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <form class="match-form" action="{{{route('match.update',$match->id)}}}" method="post">
+    <form class="psy-form" action="{{{route('match.update',$match->id)}}}" method="post">
 
         @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
