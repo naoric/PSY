@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-    <form class="psy-form" action="">
+    <form class="match-form" action="">
 
 
         <div class="input-line clearfix">
