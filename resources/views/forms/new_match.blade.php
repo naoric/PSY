@@ -15,7 +15,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <label>בחר פסיכולוג</label>
-                    <div class="input-line">
+                    <div class="input-line clearfix">
                         <select name="psychologist_id" class="pull-right mult">
                             <option disabled="disabled" selected="selected">בחר מרשימה</option>
                             @foreach ($psychologists as $psychologist)
