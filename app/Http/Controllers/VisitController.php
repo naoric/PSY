@@ -23,9 +23,8 @@ class VisitController extends Controller {
 	}
 
 	public function store() {
-		$form_data = \Request::except('institute_id');
+        list($form_data, $visit_match) = $this->getFormData();
 		$visit = new Visit( $form_data );
-		$visit_match = $this->getMatchForPsychologist(\Request::input('institute_id'));
 		$visit->match()->associate($visit_match);
 
 		$visit->save();
@@ -39,14 +38,16 @@ class VisitController extends Controller {
 
 	public function edit( Visit $visit ) {
 		$is_new = false;
-        $institutes = $this->getPsychologistInstitutes( Psychologist::find(2) );
+        $institutes = $this->getPsychologistInstitutes( Auth::user() );
 		return view( 'forms.visit', compact( 'visit', 'is_new' ,'institutes') );
 
 	}
 
 	public function update( Visit $visit ) {
-		$form_data = \Request::all();
+        list($form_data, $visit_match) = $this->getFormData();
+
 		$visit->fill( $form_data );
+        $visit->match()->associate($visit_match);
 		$visit->save();
 
 		return redirect()->route( 'visit.index', $visit->id );
@@ -71,4 +72,12 @@ class VisitController extends Controller {
 
 		return redirect()->route( 'visit.index' );
 	}
+
+    private function getFormData() {
+        $form_data = \Request::except('institute_id');
+		$visit_match = $this->getMatchForPsychologist(\Request::input('institute_id'));
+
+		return [$form_data, $visit_match];
+
+    }
 }
