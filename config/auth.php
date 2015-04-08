@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'model' => 'App\User',
+	'model' => 'App\Models\Psychologist',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return [
 	|
 	*/
 
-	'table' => 'users',
+	'table' => 'psychologists',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -62,6 +62,13 @@ return [
 		'email' => 'emails.password',
 		'table' => 'password_resets',
 		'expire' => 60,
+	],
+
+	// roles
+	'roles' => [
+		'admin' => 3,
+		'manager' => 2,
+		'user' => 1
 	],
 
 ];

@@ -10,17 +10,34 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-
-Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
-Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
-Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
+use App\Models\Psychologist;
 
 Route::get( '/', function () {
+	return redirect( 'auth/login' );
+} );
+
+
+Route::group( [ 'middleware' => 'auth', 'permissions' => 'user' ], function () {
+	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
+	Route::resource('match', 'MatchController', ['only' => ['index']]);
+	Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch', 'store' ] ] );
+} );
+
+Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function () {
+	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
+	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
+	Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
+	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
+} );
+
+
+Route::get( 'auth/login', function () {
 	return view( 'forms.login' );
 } );
+
+Route::post( 'auth/login', [ 'as' => 'login', 'uses' => 'Auth\AuthController@postLogin' ] );
+Route::post( 'auth/register', [ 'as' => 'register', 'uses' => 'Auth\AuthController@postRegister' ] );
+Route::get( 'auth/logout', [ 'as' => 'logout', 'uses' => 'Auth\AuthController@getLogout' ] );
 
 Route::get( 'map', function () {
 	return view( 'general.map' );
@@ -190,12 +207,42 @@ Route::get( 'shapah_tamar', function () {
 	return view( 'shapahs.shapah_tamar' );
 } );
 
+Route::get( 'institute_page', function () {
+	return view( 'forms.institute_page' );
+} );
+
+
+Route::get( 'psyc-report', function () {
+	return view( 'forms.psyc-report' );
+} );
+
+
+Route::get( 'match', function () {
+	return view( 'forms.match' );
+} );
+
+
 Route::get( 'calc', function () {
 	return view( 'forms.calc' );
 } );
 
-Route::get( 'db', function () {
-	return Psychologist::all();
+Route::get( 'delete-match', function () {
+	return view( 'forms.delete_match' );
 } );
+
+Route::get( 'institute_page', function () {
+	return view( 'forms.institute_page' );
+} );
+
+
+Route::get( 'institute_new', function () {
+	return view( 'forms.institute_new' );
+} );
+
+
+Route::get( 'new_match', function () {
+	return view( 'forms.new_match' );
+} );
+
 
 

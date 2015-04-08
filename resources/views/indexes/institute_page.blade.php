@@ -22,7 +22,7 @@
             <td>ילדי גן</td>
         </tr>
 
-        @foreach ($all_institutes as $ei)
+        @foreach ($institutes as $ei)
             <tr>
                 <td>
                     <a href="{{{route('institute.edit', $ei->id)}}}">
