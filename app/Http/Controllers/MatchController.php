@@ -35,7 +35,7 @@ class MatchController extends Controller {
 		$institutes = [];
 		foreach ( $psychologist->shapahs as $shapah ) {
             // if psychologist is manager then take the institutes from his shapah
-                foreach ($shapah->institute as $shap_ins){
+                foreach ($shapah->institutes as $shap_ins){
 			         $institutes[] = $shap_ins;
 
             }

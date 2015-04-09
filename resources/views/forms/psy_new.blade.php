@@ -10,8 +10,7 @@
         {{$msg}}
     @endforeach
 
-    <form class="psy-form" action="{{{route('register',
-        $psychologist->id)}}}" method="post">
+    <form class="psy-form" action="{{{route('psychologist.update', $psychologist->id)}}}" method="post">
 
         @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">

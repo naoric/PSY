@@ -16,20 +16,20 @@ Route::get( '/', function () {
 	return redirect( 'auth/login' );
 } );
 
+Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function () {
+	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
+	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
+	Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
+	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
+    Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
+
+} );
 
 Route::group( [ 'middleware' => 'auth', 'permissions' => 'user' ], function () {
 	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
 	Route::resource('match', 'MatchController', ['only' => ['index']]);
 	Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch', 'store' ] ] );
 } );
-
-Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function () {
-	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
-	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
-	Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
-	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
-} );
-
 
 Route::get( 'auth/login', function () {
 	return view( 'forms.login' );
@@ -214,11 +214,6 @@ Route::get( 'institute_page', function () {
 
 Route::get( 'psyc-report', function () {
 	return view( 'forms.psyc-report' );
-} );
-
-
-Route::get( 'match', function () {
-	return view( 'forms.match' );
 } );
 
 

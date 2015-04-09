@@ -10,6 +10,7 @@ use App\User;
 
 
 class PsychologistController extends Controller {
+
 	public function index() {
 		$all_psychologists = Psychologist::all();
 		return view('indexes.psy_page', ['psychologists' => $all_psychologists]);
