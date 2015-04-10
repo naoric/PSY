@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <form class="psy-form" action="">
+    <form class="psy-form" id="calcForm">
 
 
                 <div class="input-line clearfix">
@@ -24,21 +24,32 @@
                     <label>מספר התלמידים בחינוך מיוחד</label>
                     <input type="number"   class= "small" id="agesspecial" size="4" maxlength="4" max="9999" min="1">
                 </div>
+        <br>
+ <button onclick="calcFunction(); return false;" clearfix>חשב תקן פסיכולוג</button>
+         <input type="button" onclick="resetFunction()" value="איפוס ערכים">
+        <br>
+        <br>
+                <div class="input-line clearfix">
+                    <label>מספר התקנים לפסיכולוג</label>
+<input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;">
+        </div>
 
 
 
 
-                        <button onclick="myFunction()">חשב תקן פסיכולוג</button>
 
-
-
-    </form> <!-- /form -->
+    </form>
 
         <script>
-function myFunction() {
+function calcFunction() {
 
 
-    alert(((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300)).toFixed(2));
+   document.getElementById('output').value = (((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300)).toFixed(2));
+}
+
+
+            function resetFunction() {
+    document.getElementById("calcForm").reset();
 }
             </script>
 @stop
