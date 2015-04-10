@@ -30,6 +30,18 @@ class PsychologistController extends Controller {
 		$psychologist->fill($input_data);
 		$psychologist->save();
 
+        $role_id = \DB::table('psychologists')->where('id',$psychologist->id)->pluck('psychologist_role_id');
+        if ($role_id == 1){
+            \DB::table('psychologists')
+                ->where('id',$psychologist->id)
+                ->update(['permission' => 2]);
+        }
+        else{
+            \DB::table('psychologists')
+                ->where('id',$psychologist->id)
+                ->update(['permission' => 1]);
+        }
+
 		return redirect()->route('psychologist.index');
 	}
 
