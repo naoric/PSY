@@ -218,7 +218,7 @@ Route::get( 'psyc-report', function () {
 
 
 Route::get( 'calc', function () {
-	return view( 'forms.calc' );
+	return view( 'other.calc' );
 } );
 
 Route::get( 'delete-match', function () {
