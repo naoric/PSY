@@ -8,6 +8,7 @@
 
 
 <table border="1">
+      <thead>
 	<tr>
 		<td>ערוך</td>
 		<td>מחק</td>
@@ -16,14 +17,13 @@
 		<td>מספר רישיון</td>
 		<td>שם פרטי</td>
 		<td>שם משפחה</td>
-		<td>עיר מגורים</td>
 		<td>טלפון</td>
-		<td>דוא"ל</td>
-		<td>זמינות</td>
+        <td>דואר אלקטרוני</td>
         <td>סטטוס מקצועי</td>
         <td>תפקיד בשפ"ח</td>
-		<td>מועד התחלת תפקיד</td>
+
 	</tr>
+    </thead>
 
 	@foreach ($psychologists as $psy)
 	<tr>
@@ -55,13 +55,13 @@
         <td>{{{$psy->license_number}}}</td>
 		<td>{{{$psy->first_name}}}</td>
 		<td>{{{$psy->last_name}}}</td>
-		<td>{{{$psy->city_of_residence}}}</td>
+
 		<td>{{{$psy->phone_number}}}</td>
 		<td>{{{$psy->email}}}</td>
-		<td>{{{$psy->availability}}}</td>
+
         <td>{{$psy->status['professional_status_description']}}</td>
         <td>{{$psy->role['psychologist_roles_description']}}</td>
-		<td>{{{$psy->start_working_date}}}</td>
+
 	</tr>
 	@endforeach
 </table>

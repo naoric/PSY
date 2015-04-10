@@ -7,6 +7,7 @@
 @section('content')
 
     <table border="1">
+         <thead>
         <tr>
             <td>ערוך</td>
             <td>מחק</td>
@@ -17,6 +18,7 @@
             <td>משך הביקור</td>
             <td>תיאור מפגש</td>
         </tr>
+        </thead>
 
         @foreach ($visits as $vis)
             <tr>

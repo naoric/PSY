@@ -7,6 +7,7 @@
 @section('content')
 
     <table border="1">
+        <thead>
         <tr>
             <td>ערוך</td>
             <td>מזהה</td>
@@ -15,6 +16,7 @@
             <td>שעות במוסד</td>
             <td>שנת שיבוץ</td>
         </tr>
+            </thead>
 
         @foreach ($matches as $mat)
             <tr>

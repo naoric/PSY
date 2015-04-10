@@ -6,8 +6,9 @@
 
 @section('content')
     <table border="1">
+        <thead>
         <tr>
-            <td>ערוך</td>
+            <td >ערוך</td>
             <td>מחק</td>
             <td>מזהה</td>
             <td>שם המוסד</td>
@@ -21,7 +22,7 @@
             <td>סוג גן</td>
             <td>ילדי גן</td>
         </tr>
-
+        </thead>
         @foreach ($institutes as $ei)
             <tr>
                 <td>
