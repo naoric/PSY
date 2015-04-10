@@ -34,10 +34,8 @@ class MatchController extends Controller {
     private function getShapahInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
 		foreach ( $psychologist->shapahs as $shapah ) {
-            // if psychologist is manager then take the institutes from his shapah
                 foreach ($shapah->institutes as $shap_ins){
 			         $institutes[] = $shap_ins;
-
             }
 		}
 		return $institutes;
@@ -46,9 +44,8 @@ class MatchController extends Controller {
     private function getShapahPsychologists( Psychologist $psychologist ) {
 		$psychologists = [];
 		foreach ( $psychologist->shapahs as $shapah ) {
-            // if psychologist is manager then take the psychologists from his shapah
                 foreach ($shapah->psychologists as $shap_psy){
-			         $psychologists[] = $shap_psy;
+			         $psychologists[$shap_psy->id] = $shap_psy;
                 }
             }
 
