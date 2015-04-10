@@ -6,6 +6,7 @@ use App\Models\Institute;
 use App\Models\Match;
 use App\Models\Psychologist;
 use App\Models\Shapah;
+use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller {
     public function index() {
@@ -17,8 +18,8 @@ class MatchController extends Controller {
     public function create() {
 		$match  = new Match();
 		$is_new = true;
-		$institutes = $this->getShapahInstitutes( Psychologist::find(2) );
-        $psychologists = $this->getShapahPsychologists( Psychologist::find(2) );
+		$institutes = $this->getShapahInstitutes( Auth::user() );
+        $psychologists = $this->getShapahPsychologists( Auth::user() );
 
 		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 	}
