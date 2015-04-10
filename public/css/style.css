@@ -436,12 +436,12 @@ table {
 }
 th,
 td {
-  padding: 4px 6px;
+  padding: 6px 8px;
   vertical-align: middle;
 }
 thead {
   background: #395870;
-  background: linear-gradient(#49708f, #293f50);
+  background: linear-gradient(#0099FF, #293f50);
   color: #fff;
   font-size: 14px;
   text-transform: uppercase;
