@@ -17,11 +17,12 @@ Route::get( '/', function () {
 } );
 
 Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function () {
-	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show', 'edit', 'update' ] ] );
 	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
 	Route::resource( 'match', 'MatchController', [ 'except' => [ 'show', 'patch' ] ] );
 	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
     Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
+
+    	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
 
 } );
 

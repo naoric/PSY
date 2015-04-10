@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Shapah extends Model {
 	protected $table = 'shapahs';
+	public $timestamps = false;
+	public $guarded = [ 'id' ];
+
 
 	public function institutes() {
 		return $this->hasMany( 'App\Models\Institute', 'shapah_id' );

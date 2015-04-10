@@ -9,4 +9,7 @@ class ShapahController extends Controller {
 		return view( 'singles.shapah', compact('shapah'));
 	}
 
+
+
+
 }
