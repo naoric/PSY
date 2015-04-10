@@ -60,7 +60,7 @@ class VisitController extends Controller {
 	private function getPsychologistInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
 		foreach ( $psychologist->matches as $match ) {
-			$institutes[] = $match->institute;
+			$institutes[$match->institute->id] = $match->institute;
 		}
 		return $institutes;
 	}
