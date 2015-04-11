@@ -476,3 +476,31 @@ td {
 tfoot {
   text-align: right;
 }
+
+
+.btn {
+  background: #808080;
+  background-image: -webkit-linear-gradient(top, #808080, #bcdaeb);
+  background-image: -moz-linear-gradient(top, #808080, #bcdaeb);
+  background-image: -ms-linear-gradient(top, #808080, #bcdaeb);
+  background-image: -o-linear-gradient(top, #808080, #bcdaeb);
+  background-image: linear-gradient(to bottom, #808080, #bcdaeb);
+  -webkit-border-radius: 3;
+  -moz-border-radius: 3;
+  border-radius: 3px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 5px 5px 5px 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}

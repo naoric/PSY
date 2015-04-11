@@ -14,6 +14,7 @@
 <body>
 <div class="container">
     <header class="main-header">
+        <button class="btn">התנתק מהמערכת</button>
         <nav class="horizontal">
             <ul class="clearfix">
                 <li>
