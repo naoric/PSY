@@ -82,15 +82,22 @@ class PsychologistController extends Controller {
 	}
     private function setUserPermission(Psychologist $psychologist){
         $role_id = \DB::table('psychologists')->where('id',$psychologist->id)->pluck('psychologist_role_id');
+        $shapah = \Request::Only('shapah_id');
         if ($role_id == 1){
             \DB::table('psychologists')
                 ->where('id',$psychologist->id)
                 ->update(['permission' => 2]);
+            \DB::table('psychologist_shapah')->insert(
+            ['shapah_id' =>  array_pull($shapah,'shapah_id'), 'psychologist_id' => $psychologist->id, 'is_manager' => 1]
+            );
         }
         else{
             \DB::table('psychologists')
                 ->where('id',$psychologist->id)
                 ->update(['permission' => 1]);
+            \DB::table('psychologist_shapah')->insert(
+            ['shapah_id' => array_pull($shapah,'shapah_id') , 'psychologist_id' => $psychologist->id, 'is_manager' => 0]
+            );
         }
     }
 }
