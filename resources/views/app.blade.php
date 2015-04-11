@@ -3,11 +3,25 @@
 
 <head>
     <meta charset="UTF-8">
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link href="{{asset('css/style.css')}}" rel="stylesheet">
+
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+  </script>
+
     <title>שפ"י דרום</title>
     <link href='http://fonts.googleapis.com/css?family=Alef:400,700' rel='stylesheet' type='text/css'>
-    <link href="{{ asset('lib/Pikaday-master/css/pikaday.css') }}" rel="stylesheet">
 
-    <link href="{{asset('css/style.css')}}" rel="stylesheet">
+
 
 </head>
 
@@ -82,8 +96,7 @@
 
     </footer>
 </div>
-<script src="{{asset('lib/moment/min/moment.min.js')}}"></script>
-<script src="{{asset('lib/Pikaday-master/pikaday.js')}}"></script>
+
 <script src="{{asset('js/app.js')}}"></script>
 </body>
 
