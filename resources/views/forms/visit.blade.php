@@ -17,7 +17,7 @@
 
         <div class="input-line clearfix">
             <label>תאריך פגישה</label>
-            <input type="text" id="datepicker" class="datepicker" name="date" data-format="YYYY-MM-DD" required value="{{{$visit->date}}}">
+            <input type="text" id="datepicker" class="datepicker" size="10" name="date" data-format="YYYY-MM-DD" required value="{{{$visit->date}}}">
         </div>
 
 
