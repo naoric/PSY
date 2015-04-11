@@ -39,7 +39,7 @@
 
         <div class="input-line clearfix">
             <label>מועד תחילת עבודה</label>
-            <input type="text" name="start_working_date" value="{{{$psychologist->start_working_date}}}">
+            <input type="text" id="datepicker" class="datepicker" name="start_working_date" value="{{{$psychologist->start_working_date}}}">
             <span class="error"></span>
         </div>
         <div class="input-line" required>
