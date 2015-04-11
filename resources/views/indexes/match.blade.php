@@ -27,7 +27,7 @@
                 </td>
 
                 <td>{{$mat->id}}</td>
-                <td>{{$mat->psychologist['first_name']}}</td>
+                <td>{{$mat->psychologist['first_name'].(' ').$mat->psychologist['last_name']}}</td>
                 <td>{{{$mat->institute['name']}}}</td>
                 <td>{{{$mat->match_hours}}}</td>
                 <td>{{{$mat->match_year}}}</td>

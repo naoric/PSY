@@ -19,7 +19,7 @@
                         <select name="psychologist_id" class="pull-right mult">
                             <option disabled="disabled" selected="selected">בחר מרשימה</option>
                             @foreach ($psychologists as $psychologist)
-                                <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name}}}</option>
+                                <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name.(' ').$psychologist->last_name}}}</option>
                             @endforeach
                         </select>
                          <span class="error"></span>

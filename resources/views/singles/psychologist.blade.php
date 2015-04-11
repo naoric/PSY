@@ -63,12 +63,20 @@
     <div>
         <h2>מפגשי הפסיכולוג</h2>
         <table border="1">
+            <thead>
+        <tr>
+            <td>מספר מפגש</td>
+            <td>תאריך המפגש</td>
+            <td>סוג פעילות</td>
+            <td>משך המפגש</td>
+            <td>תיאור הפעילות</td>
+        </tr>
+        </thead>
             @foreach($psychologist->visits as $visit)
                 <tr>
                     <td>{{$visit->id}}</td>
                     <td>{{$visit->date}}</td>
                     <td>{{$visit->activity}}</td>
-                    <td>{{$visit->comment1}}</td>
                     <td>{{$visit->length}}</td>
                     <td>{{$visit->comment}}</td>
                 </tr>
