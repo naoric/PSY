@@ -24,6 +24,14 @@
                     <label>מספר התלמידים בחינוך מיוחד</label>
                     <input type="number"   class= "small" id="agesspecial" size="4" maxlength="4" max="9999" min="1">
                 </div>
+
+
+
+                <div class="input-line clearfix">
+                    <label> (1-100) אחוז כיסוי</label>
+                    <input type="number"   class= "small" id="cover" size="4" maxlength="4" max="100" min="1">
+                </div>
+
         <br>
  <button onclick="calcFunction(); return false;" clearfix>חשב תקן פסיכולוג</button>
          <input type="button" onclick="resetFunction()" value="איפוס ערכים">
@@ -44,7 +52,7 @@
 function calcFunction() {
 
 
-   document.getElementById('output').value = (((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300)).toFixed(2));
+   document.getElementById('output').value = (((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300)*(document.getElementById('cover').value/100)).toFixed(2));
 }
 
 
