@@ -28,6 +28,10 @@ class PsychologistController extends Controller {
 		$input_data = $this->getFormUserData();
 		$psychologist->fill($input_data);
 		$psychologist->save();
+        $add_shapah_to_psy = 0;
+        if (!$add_shapah_to_psy){
+            \DB::table('psychologist_shapah')->where('psychologist_id','=',$psychologist->id)->delete();
+        }
         $this->setUserPermission($psychologist);
 
 		return redirect()->route('psychologist.index');
@@ -57,7 +61,7 @@ class PsychologistController extends Controller {
 
 	public function destroy(Psychologist $psychologist) {
 		$psychologist->delete();
-
+        \DB::table('psychologist_shapah')->where('psychologist_id','=',$psychologist->id)->delete();
 		return redirect()->route( 'psychologist.index' );
 	}
 
@@ -83,18 +87,23 @@ class PsychologistController extends Controller {
     private function setUserPermission(Psychologist $psychologist){
         $role_id = \DB::table('psychologists')->where('id',$psychologist->id)->pluck('psychologist_role_id');
         $shapah = \Request::Only('shapah_id');
+        // is manager
         if ($role_id == 1){
             \DB::table('psychologists')
                 ->where('id',$psychologist->id)
                 ->update(['permission' => 2]);
+            //set the record in psychologist_shapah table
+
             \DB::table('psychologist_shapah')->insert(
             ['shapah_id' =>  array_pull($shapah,'shapah_id'), 'psychologist_id' => $psychologist->id, 'is_manager' => 1]
             );
         }
+        // isn't a manager
         else{
             \DB::table('psychologists')
                 ->where('id',$psychologist->id)
                 ->update(['permission' => 1]);
+            //set the record in psychologist_shapah table
             \DB::table('psychologist_shapah')->insert(
             ['shapah_id' => array_pull($shapah,'shapah_id') , 'psychologist_id' => $psychologist->id, 'is_manager' => 0]
             );
