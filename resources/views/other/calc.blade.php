@@ -7,7 +7,8 @@
 @stop
 
 @section('content')
-    <form class="psy-form" id="calcForm">
+    <form class="psy-form" id="calcForm" STYLE="background-color: #E8E8E8;" >
+
 
 
                 <div class="input-line clearfix">
