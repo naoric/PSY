@@ -8,7 +8,6 @@ use App\Models\ProfessionalStatus;
 use App\Models\PsychologistRole;
 use App\User;
 
-
 class PsychologistController extends Controller {
 
 	public function index() {
@@ -20,6 +19,8 @@ class PsychologistController extends Controller {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
 		$related_data['is_new'] = false;
+        $related_data['add_shapah'] = 0;
+
 		// return $shapahs;
 		return view('forms.psy_new', $related_data);
 	}
@@ -28,8 +29,9 @@ class PsychologistController extends Controller {
 		$input_data = $this->getFormUserData();
 		$psychologist->fill($input_data);
 		$psychologist->save();
-        $add_shapah_to_psy = 0;
-        if (!$add_shapah_to_psy){
+
+        $add_shapah = array_pull($input_data,0);
+        if ($add_shapah != "on"){
             \DB::table('psychologist_shapah')->where('psychologist_id','=',$psychologist->id)->delete();
         }
         $this->setUserPermission($psychologist);
@@ -46,6 +48,7 @@ class PsychologistController extends Controller {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
 		$related_data['is_new'] = true;
+        $related_data['add_shapah'] = 0;
 
 		return view( 'forms.psy_new', $related_data );
 	}

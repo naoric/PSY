@@ -35,7 +35,16 @@
             </select>
 
             <span class="error">
+
+
+
         </div>
+
+            @if(isset($is_new) && !$is_new)
+                <label>הוסף שפ"ח</label>
+                <input tabindex="1" type="checkbox"  name="{{$add_shapah}}" id="{{$add_shapah}}">
+
+            @endif
 
         <div class="input-line clearfix">
             <label>מועד תחילת עבודה</label>
