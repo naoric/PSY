@@ -11,7 +11,6 @@
         @if(isset($is_new) && !$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
-
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                     <label>בחר פסיכולוג</label>

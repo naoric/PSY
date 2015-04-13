@@ -28,7 +28,19 @@ class MatchController extends Controller {
 		$user_data = \Request::all();
 		$match = new Match($user_data);
 		$match->save();
+		return redirect()->route( 'match.index', $match->id );
+	}
+    public function edit( Match $match ) {
+		$is_new = false;
+        $institutes = $this->getShapahInstitutes( Auth::user() );
+        $psychologists = $this->getShapahPsychologists( Auth::user() );
+		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 
+	}
+	public function update( Match $match ) {
+        $user_data = \Request::all();
+        $match->fill( $user_data );
+		$match->save();
 		return redirect()->route( 'match.index', $match->id );
 	}
 

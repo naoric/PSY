@@ -14,7 +14,7 @@
 
     <div class="row">
     <label>שפ"ח:</label>
-        <span class="label-data">   </span>
+        <span class="label-data">{{$institute->shapah->shapah_name}}</span>
 
 </div>
     <div class="row">
