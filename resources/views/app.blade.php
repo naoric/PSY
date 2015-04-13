@@ -65,8 +65,6 @@
                     </ul>
                 </li>
 
-                <li><a href="#">דו"חות</a>
-                </li>
             </ul>
         </nav>
     </header>
