@@ -24,6 +24,7 @@
         <div class="input-line clearfix">
             <label>שם המוסד</label>
             <select name="institute_id" title="שם המוסד">
+                  <option disabled="disabled" selected="selected">בחר מוסד</option>
                 @foreach ($institutes as $ei)
                     <option value="{{{$ei['id']}}}">
                         {{{$ei['name']}}}</option>

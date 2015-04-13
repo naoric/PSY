@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
  use App\Models\Match;
 use App\Models\Psychologist;
 use App\Models\Visit;
+use Illuminate\Support\Facades\Auth;
 
 class VisitController extends Controller {
 	public function index() {

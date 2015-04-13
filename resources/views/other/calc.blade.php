@@ -39,8 +39,12 @@
         <br>
                 <div class="input-line clearfix">
                     <label>מספר התקנים לפסיכולוג</label>
-<input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;">
+<input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;"></div>
+                    <div class="input-line clearfix">
+                     <label>מספר השעות</label>
+<input type="number" id="output2" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;">
         </div>
+
 
 
 
@@ -52,7 +56,10 @@
 function calcFunction() {
 
 
-   document.getElementById('output').value = (((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300)*(document.getElementById('cover').value/100)).toFixed(2));
+   document.getElementById('output').value = ((((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300))*(document.getElementById('cover').value/100)).toFixed(2));
+
+
+               document.getElementById('output2').value = ((((document.getElementById('agesspecial').value/500)+(document.getElementById('agesbetybet').value/1000)+(document.getElementById('agesspecial').value/300))*(document.getElementById('cover').value/100)*42.5).toFixed(2));
 }
 
 

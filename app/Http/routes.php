@@ -36,6 +36,12 @@ Route::get( 'auth/login', function () {
 	return view( 'forms.login' );
 } );
 
+
+Route::get( 'home', function () {
+	return view( 'general.map' );
+} );
+
+
 Route::post( 'auth/login', [ 'as' => 'login', 'uses' => 'Auth\AuthController@postLogin' ] );
 Route::post( 'auth/register', [ 'as' => 'register', 'uses' => 'Auth\AuthController@postRegister' ] );
 Route::get( 'auth/logout', [ 'as' => 'logout', 'uses' => 'Auth\AuthController@getLogout' ] );
