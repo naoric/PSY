@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class MatchController extends Controller {
     public function index() {
 		$matches = Match::all();
-        $institutes = $this->getShapahInstitutes( psychologist::find(2) );
+        $institutes = $this->getShapahInstitutes( Auth::user() );
 
 		return view( 'indexes.match', compact( 'matches' ) );
 	}
@@ -19,8 +19,8 @@ class MatchController extends Controller {
     public function create() {
 		$match  = new Match();
 		$is_new = true;
-		$institutes = $this->getShapahInstitutes( psychologist::find(2) );
-        $psychologists = $this->getShapahPsychologists( psychologist::find(2) );
+		$institutes = $this->getShapahInstitutes( Auth::user() );
+        $psychologists = $this->getShapahPsychologists( Auth::user() );
 
 		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 	}
