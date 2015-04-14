@@ -22,7 +22,7 @@ Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function (
 	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
     Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
 
-    	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
+    Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
 
 } );
 

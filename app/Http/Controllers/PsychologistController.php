@@ -19,6 +19,7 @@ class PsychologistController extends Controller {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
 		$related_data['is_new'] = false;
+		$related_data['form_url'] = 'psychologist.update';
         $related_data['add_shapah'] = 0;
 
 		// return $shapahs;
@@ -48,6 +49,7 @@ class PsychologistController extends Controller {
 		$related_data = $this->getPsychologistMetaFieldsData();
 		$related_data['psychologist'] = $psychologist;
 		$related_data['is_new'] = true;
+		$related_data['form_url'] = 'psychologist.store';
         $related_data['add_shapah'] = 0;
 
 		return view( 'forms.psy_new', $related_data );
@@ -84,6 +86,7 @@ class PsychologistController extends Controller {
 	 */
 	private function getFormUserData() {
 		$input_data = \Request::except( 'shapah_id' );
+		$input_data['password'] = bcrypt( $input_data['password'] );
 
 		return $input_data;
 	}
