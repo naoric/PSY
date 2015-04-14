@@ -18,8 +18,8 @@ class MatchController extends Controller {
     public function create() {
 		$match  = new Match();
 		$is_new = true;
-		$institutes = $this->getShapahInstitutes( Auth::user() );
-        $psychologists = $this->getShapahPsychologists( Auth::user() );
+		$institutes = $this->getShapahInstitutes( psychologist::find(2) );
+        $psychologists = $this->getShapahPsychologists( psychologist::find(2) );
 
 		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 	}
@@ -30,18 +30,12 @@ class MatchController extends Controller {
 		$match->save();
 		return redirect()->route( 'match.index', $match->id );
 	}
-    public function edit( Match $match ) {
-		$is_new = false;
-        $institutes = $this->getShapahInstitutes( Auth::user() );
-        $psychologists = $this->getShapahPsychologists( Auth::user() );
-		return view( 'forms.new_match', compact( 'match', 'is_new', 'institutes' ,'psychologists') );
 
-	}
-	public function update( Match $match ) {
-        $user_data = \Request::all();
-        $match->fill( $user_data );
-		$match->save();
-		return redirect()->route( 'match.index', $match->id );
+    public function destroy(Match $mat) {
+
+		$mat->delete();
+
+		return redirect()->route( 'match.index' );
 	}
 
     private function getShapahInstitutes( Psychologist $psychologist ) {

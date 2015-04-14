@@ -9,7 +9,7 @@
     <table border="1">
         <thead>
         <tr>
-            <td>ערוך</td>
+            <td>מחק</td>
             <td>מזהה</td>
             <td>פסיכולוג</td>
             <td>מוסד</td>
@@ -21,9 +21,13 @@
         @foreach ($matches as $mat)
             <tr>
                 <td>
-                    <a href="{{{route('match.edit', $mat->id)}}}">
-                        <img src="{{{asset('images/icons/edit.png')}}}">
-                    </a>
+                    <form action="{{route('match.destroy', $mat->id)}}" method="post">
+                        <input type="hidden" name="_method" value="DELETE"/>
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <button type="submit">
+                            <img src="{{{asset('images/icons/delete.png')}}}">
+                        </button>
+                    </form>
                 </td>
 
                 <td>{{$mat->id}}</td>
