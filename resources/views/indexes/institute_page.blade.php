@@ -44,12 +44,12 @@
 
                 <td>{{{$ei->id}}}</td>
                 <td>{{{$ei->name}}}</td>
-                <td>{{{$ei->shapah->shapah_name}}}</td>
+                <td>{{{$ei->shapah_name}}}</td>
                 <td>{{{$ei->city}}}</td>
                 <td>{{{$ei->number_of_classes}}}</td>
                 <td>{{{$ei->number_of_special_classes}}}</td>
                 <td>{{{$ei->number_of_special_students}}}</td>
-                 <td>{{{$ei->number_of_alef_students}}}</td>
+                <td>{{{$ei->number_of_alef_students}}}</td>
                 <td>{{{$ei->number_of_non_alef_students}}}</td>
                 <td>{{{$ei->kindergaten_type}}}</td>
                 <td>{{{$ei->number_of_kindergarten_children}}}</td>

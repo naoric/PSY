@@ -91,7 +91,7 @@ class InstituteController extends Controller {
 		         ->join( 'shapahs', 'shapahs.id', '=', 'psychologist_shapah.shapah_id' )
 		         ->join( 'institutes', 'institutes.shapah_id', '=', 'shapahs.id' )
 		         ->where( 'psychologist_shapah.psychologist_id', '=', $psychologist->id )
-		         ->select('institutes.*')
+		         ->select('institutes.*', 'shapahs.shapah_name as shapah_name')
 		         ->get();
 	}
 
