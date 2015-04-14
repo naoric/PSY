@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class MatchController extends Controller {
     public function index() {
 		$matches = Match::all();
+        $institutes = $this->getShapahInstitutes( psychologist::find(2) );
 
 		return view( 'indexes.match', compact( 'matches' ) );
 	}

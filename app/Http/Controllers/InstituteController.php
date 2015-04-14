@@ -28,6 +28,11 @@ class InstituteController extends Controller {
 		$institute->fill( $form_data );
 		$institute->save();
 
+        $standart_hours = $this->calc_hours($institute);
+        \DB::table('institutes')
+            ->where('id', $institute->id)
+            ->update(['hours_before_cover' => $standart_hours]);
+
 		return redirect()->route( 'institute.index' );
 	}
 
@@ -49,12 +54,16 @@ class InstituteController extends Controller {
 		return view( 'forms.institute_new', $view_data );
 	}
 
-
-
 	public function store() {
 		$user_data = $this->getFormUserData();
 		$institute = new Institute($user_data);
 		$institute->save();
+
+        $standart_hours = $this->calc_hours($institute);
+
+        \DB::table('institutes')
+            ->where('id', $institute->id)
+            ->update(['hours_before_cover' => $standart_hours]);
 
 		return redirect()->route( 'institute.show', $institute->id );
 	}
@@ -85,5 +94,14 @@ class InstituteController extends Controller {
 		         ->select('institutes.*')
 		         ->get();
 	}
+
+    function calc_hours(Institute $ins){
+        $first_standart = ($ins->number_of_alef_students + $ins->number_of_kindergarten_children) / 500;
+        $second_standart = ($ins->number_of_non_alef_students ) / 1000;
+        $third_standart = ($ins->number_of_special_students) / 300;
+
+        $all_standarts = $first_standart + $second_standart + $third_standart;
+        return $all_standarts;
+    }
 
 }
