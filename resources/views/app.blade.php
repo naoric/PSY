@@ -31,17 +31,12 @@
         <h3>{{Auth::user()->first_name}} ברוך הבא </h3>
 
 
-
-
-
-
-
         <nav class="horizontal">
             <ul class="clearfix">
-            <li>
+                <li>
                 </li>
                 <li>
-                      <a href="/map">השפ"חים במחוז</a>
+                    <a href="/map">השפ"חים במחוז</a>
                 </li>
                 <li>
                     <a href="#">המוסדות במחוז</a>
@@ -52,7 +47,7 @@
                     </ul>
                 </li>
                 <li><a href="#">הפסיכולוגים במחוז</a>
-                     <ul>
+                    <ul>
                         <li><a href="{{route('psychologist.index')}}">רשימת הפסיכולוגים</a></li>
                         <li><a href="{{route('psychologist.create')}}">הוספת פסיכולוג חדש</a></li>
 
@@ -63,25 +58,26 @@
                 <li>
                     <a href="#">מפגשים ודיווח</a>
                     <ul>
-                        <li><a href="{{route('visit.index')}}">רשימת מפגשים
-                      <li><a href="{{route('visit.create')}}">דיווח מפגש במוסד</a></li>
+                        <li><a href="{{route('visit.index')}}">רשימת מפגשים</a>
+                        <li><a href="{{route('visit.create')}}">דיווח מפגש במוסד</a></li>
                     </ul>
                 </li>
+                @if(!Auth::user()->isUser())
                 <li>
                     <a href="#">שיבוץ פסיכולוג במוסד</a>
-                     <ul>
-                    <li><a href="/calc">מחשבון לתקן שיבוץ</a></li>
-                         <li><a href="{{route('match.index')}}">רשימת שיבוצים</a></li>
-                      <li><a href="{{route('match.create')}}">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
+                    <ul>
+                        <li><a href="/calc">מחשבון לתקן שיבוץ</a></li>
+                        <li><a href="{{route('match.index')}}">רשימת שיבוצים</a></li>
+                        <li><a href="{{route('match.create')}}">שיבוץ פסיכולוג למוסד בשנת עבודה</a></li>
                     </ul>
                 </li>
-
-             <li>
-                        <a href="/auth/logout" STYLE="background-color: #C0C0C0;" >התנתק מהמערכת</a>
+                @endif
+                <li>
+                    <a href="/auth/logout" STYLE="background-color: #C0C0C0;">התנתק מהמערכת</a>
                 </li>
 
 
-
+            </ul>
         </nav>
     </header>
     <article class="main-content">

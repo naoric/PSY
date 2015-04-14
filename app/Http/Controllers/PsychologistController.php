@@ -37,7 +37,6 @@ class PsychologistController extends Controller {
 		$this->setUserPermission( $psychologist );
 
 
-		$psychologist->save();
 		return redirect()->route( 'psychologist.index' );
 	}
 
@@ -60,7 +59,6 @@ class PsychologistController extends Controller {
 		$user_data    = $this->getFormUserData();
 		$psychologist = new Psychologist( $user_data );
 		$this->setUserPermission( $psychologist );
-		$psychologist->save();
 
 		return redirect()->route( 'psychologist.show', $psychologist->id );
 	}
@@ -105,7 +103,7 @@ class PsychologistController extends Controller {
 		}
 		// isn't a manager
 		$psychologist->permission = $permission;
-
+		$psychologist->save();
 		$add_shapah = \Request::input('add_shapah');
 		if ( $add_shapah == 'on' ) {
 			if ( !$psychologist->hasShapah(\Request::input('shapah_id')) ) {
