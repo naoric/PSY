@@ -38,7 +38,7 @@
 
             @if(isset($is_new) && !$is_new)
                 <label>הוסף שפ"ח</label>
-                <input tabindex="1" type="checkbox"  name="{{$add_shapah}}" id="{{$add_shapah}}">
+                <input tabindex="1" type="checkbox"  name="add_shapah" id="{{$add_shapah}}">
 
             @endif
 
@@ -100,7 +100,7 @@
         <div class="input-line" required>
             <label>סיסמה</label>
             <input type="text" name="password" size="14" maxlength="14" required
-                    value="{{{$psychologist->password}}}">
+                    >
             <span class="error"></span>
         </div>
 

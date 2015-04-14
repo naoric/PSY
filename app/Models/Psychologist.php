@@ -9,7 +9,6 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 class Psychologist extends Model implements AuthenticatableContract {
 	protected $guarded = [ 'id' ];
 	protected $hidden = ['password', 'remember_token'];
-	public $timestamps = false;
 
 	use Authenticatable;
 
@@ -54,5 +53,9 @@ class Psychologist extends Model implements AuthenticatableContract {
 
 	public function isAdmin() {
 		return $this->permission === $this->getRoleCode( 'admin' );
+	}
+
+	public function hasShapah($shapah_id) {
+		return $this->shapahs->contains( $shapah_id );
 	}
 }
