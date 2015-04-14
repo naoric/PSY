@@ -31,7 +31,7 @@ class InstituteController extends Controller {
         $standart_hours = $this->calc_hours($institute);
         \DB::table('institutes')
             ->where('id', $institute->id)
-            ->update(['hours_before_cover' => $standart_hours]);
+            ->update(['standart_before_cover' => $standart_hours]);
 
 		return redirect()->route( 'institute.index' );
 	}
@@ -63,7 +63,7 @@ class InstituteController extends Controller {
 
         \DB::table('institutes')
             ->where('id', $institute->id)
-            ->update(['hours_before_cover' => $standart_hours]);
+            ->update(['standart_before_cover' => $standart_hours]);
 
 		return redirect()->route( 'institute.show', $institute->id );
 	}
