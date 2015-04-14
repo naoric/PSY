@@ -28,9 +28,18 @@
 <body>
 <div class="container">
     <header class="main-header">
-        <button class="btn">התנתק מהמערכת</button>
+        <h3>{{Auth::user()->first_name}} ברוך הבא </h3>
+
+
+
+
+
+
+
         <nav class="horizontal">
             <ul class="clearfix">
+            <li>
+                </li>
                 <li>
                       <a href="/map">השפ"חים במחוז</a>
                 </li>
@@ -49,6 +58,8 @@
 
                     </ul>
                 </li>
+
+
                 <li>
                     <a href="#">מפגשים ודיווח</a>
                     <ul>
@@ -65,7 +76,12 @@
                     </ul>
                 </li>
 
-            </ul>
+             <li>
+                        <a href="/auth/logout" STYLE="background-color: #C0C0C0;" >התנתק מהמערכת</a>
+                </li>
+
+
+
         </nav>
     </header>
     <article class="main-content">
