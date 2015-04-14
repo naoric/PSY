@@ -22,7 +22,6 @@ Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function (
 	Route::resource( 'institute', 'InstituteController', [ 'except' => [ 'patch' ] ] );
     Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch' ] ] );
 
-    Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
 
 } );
 
@@ -30,7 +29,9 @@ Route::group( [ 'middleware' => 'auth', 'permissions' => 'user' ], function () {
 	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
 	Route::resource('match', 'MatchController', ['only' => ['index']]);
 	Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch', 'store' ] ] );
+	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
 } );
+
 
 Route::get( 'auth/login', function () {
 	return view( 'forms.login' );
