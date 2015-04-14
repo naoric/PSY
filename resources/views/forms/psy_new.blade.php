@@ -10,9 +10,9 @@
         {{$msg}}
     @endforeach
 
-    <form class="psy-form" action="{{{route('psychologist.update', $psychologist->id)}}}" method="post">
+    <form class="psy-form" action="{{{route($form_url, $psychologist->id)}}}" method="post">
 
-        @if(isset($is_new) && !$is_new)
+        @if(!$is_new)
             <input type="hidden" name="_method" value="PUT">
         @endif
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
