@@ -28,7 +28,6 @@ class VisitController extends Controller {
 		$visit = new Visit( $form_data );
 		$visit->match()->associate($visit_match);
 
-        $institutes = Institute::all();
         $const_institute_id = $visit_match->institute_id;
         $visit->intitute_name_const = Institute::find($const_institute_id)->name;
 		$visit->save();
@@ -52,6 +51,9 @@ class VisitController extends Controller {
 
 		$visit->fill( $form_data );
         $visit->match()->associate($visit_match);
+
+        $const_institute_id = $visit_match->institute_id;
+        $visit->intitute_name_const = Institute::find($const_institute_id)->name;
 		$visit->save();
 
 		return redirect()->route( 'visit.index', $visit->id );
