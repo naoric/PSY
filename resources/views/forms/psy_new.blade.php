@@ -31,6 +31,7 @@
                 <option disabled="disabled" selected="selected" value="">בחר שירות</option>
                 @foreach ($shapahs as $shapah)
                     <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
+
                 @endforeach
             </select>
 
@@ -111,10 +112,14 @@
                 <select name="professional_status_id" class="pull-right mult" required>
                     <option disabled="disabled" selected="selected" value="">בחר סטטוס</option>
                     @foreach ($professional_statuses as $professional_status)
-                        <option value="{{{$professional_status->id}}}">
+                        <option value="{{{$professional_status->id}}}"
+
+ {{$psychologist->professional_status_id == $professional_status->id ? 'selected' : ''}}>
+
                             {{{$professional_status->professional_status_description}}}
                         </option>
                     @endforeach
+
                 </select>
                 <span class="error"></span>
             </div>
