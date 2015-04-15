@@ -1,7 +1,7 @@
 @extends('app')
 
 @section('page-title')
-    <h1>מוסדות המחוז</h1>
+    <h1>המוסדות במסגרת שלי</h1>
 @stop
 
 @section('content')
@@ -44,7 +44,7 @@
 
                 <td>{{{$ei->id}}}</td>
                 <td>{{{$ei->name}}}</td>
-                <td>{{{$ei->shapah_name}}}</td>
+                <td>{{{$ei->shapah->shapah_name}}}</td>
                 <td>{{{$ei->city}}}</td>
                 <td>{{{$ei->number_of_classes}}}</td>
                 <td>{{{$ei->number_of_special_classes}}}</td>
@@ -57,4 +57,6 @@
             </tr>
         @endforeach
     </table>
+{!! $institutes->render() !!}
+
 @stop

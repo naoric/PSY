@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Auth;
 class InstituteController extends Controller {
 
 	public function index() {
-		$institutes = $this->filterRelevantInstitutes(Auth::user());
+        $institutes = $this->filterRelevantInstitutes(Auth::user());
+        $institutes = Institute::paginate(5);
 
-		return view( 'indexes.institute_page', compact( 'institutes' ) );
+
+		return view( 'indexes.institute_page',  ['institutes'=> $institutes ]);
 	}
 
 	public function edit( Institute $institute ) {
