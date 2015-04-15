@@ -126,7 +126,7 @@
                 <select name="psychologist_role_id" class="pull-right mult">
                     <option disabled="disabled" selected="selected">בחר תפקיד</option>
                     @foreach ($roles as $role)
-                        <option value="{{{$role->id}}}">{{{$role->psychologist_roles_description}}}</option>
+                        <option value="{{{$role->id}}}" {{$psychologist->psychologist_role_id == $role->id ? 'selected' : ''}}>{{{$role->psychologist_roles_description}}}</option>
 
                     @endforeach
                 </select>

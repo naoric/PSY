@@ -64,7 +64,9 @@
 
 	</tr>
 	@endforeach
+
 </table>
+{!! $psychologists->render() !!}
 
 
       
