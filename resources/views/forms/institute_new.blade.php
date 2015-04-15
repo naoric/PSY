@@ -77,7 +77,7 @@
 
         <div class="input-line">
             <label>מנהל המוסד- שם משפחה</label>
-            <input type="text" name="principal_last_name" size="7" maxlength="7"
+            <input type="text" name="principal_last_name" size="11" maxlength="11"
                    value="{{{$institute->principal_last_name}}}">
         </div>
 

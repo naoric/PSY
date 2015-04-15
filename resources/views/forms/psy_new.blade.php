@@ -59,7 +59,7 @@
         </div>
         <div class="input-line" required>
             <label>שם משפחה</label>
-            <input type="text" name="last_name" size="10" maxlength="8" required value="{{{$psychologist->last_name}}}">
+            <input type="text" name="last_name" size="12" maxlength="12" required value="{{{$psychologist->last_name}}}">
             <span class="error"></span>
         </div>
 
