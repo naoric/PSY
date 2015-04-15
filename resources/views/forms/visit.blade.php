@@ -23,8 +23,8 @@
 
         <div class="input-line clearfix">
             <label>שם המוסד</label>
-            <select name="institute_id" title="שם המוסד">
-                  <option disabled="disabled" selected="selected">בחר מוסד</option>
+            <select name="institute_id" title="שם המוסד" required>
+                  <option disabled="disabled" selected="selected" value="">בחר מוסד</option>
                 @foreach ($institutes as $ei)
                     <option value="{{{$ei['id']}}}">
                         {{{$ei['name']}}}</option>
@@ -42,8 +42,8 @@
             <label>דווח פעילות</label>
 
             <div class="input-line">
-                <select name="activity" class="pull-right mult" title="דווח פעילות">
-                    <option disabled="disabled" selected="selected">בחר פעילות</option>
+                <select name="activity" class="pull-right mult" title="דווח פעילות" required>
+                    <option disabled="disabled" selected="selected" value="">בחר פעילות</option>
                     <optgroup label="ועדות /ישיבות">
                         <option>ישיבת צוות בינ-מקצועי + מנהל</option>
                         <option>ישיבת צוות בינ-מקצועי ללא מנהל</option>
