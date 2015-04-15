@@ -9,6 +9,12 @@ class Shapah extends Model {
 	public $timestamps = false;
 	public $guarded = [ 'id' ];
 
+    public function setStandarts(Shapah $shapah){
+        $sum = 0;
+        foreach ($shapah->institutes as $ins){
+            $shapah->standart_hours = $sum + $ins->standart_before_cover;
+        }
+    }
 
 	public function institutes() {
 		return $this->hasMany( 'App\Models\Institute', 'shapah_id' );

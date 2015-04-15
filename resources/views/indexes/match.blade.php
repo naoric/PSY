@@ -15,7 +15,7 @@
             <td>מוסד</td>
             <td>שעות במוסד</td>
             <td>שנת שיבוץ</td>
-            <td>שעות תקן</td>
+            <td>תקן למוסד (למחוק)</td>
         </tr>
             </thead>
 
@@ -36,7 +36,7 @@
                 <td>{{{$mat->institute['name']}}}</td>
                 <td>{{{$mat->match_hours}}}</td>
                 <td>{{{$mat->match_year}}}</td>
-                <td>{{{$mat->institute['hours_before_cover']}}}</td>
+                <td>{{{$mat->institute['standart_before_cover']}}}</td>
             </tr>
         @endforeach
     </table>
