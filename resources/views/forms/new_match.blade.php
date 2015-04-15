@@ -15,8 +15,8 @@
 
                     <label>בחר פסיכולוג</label>
                     <div class="input-line clearfix">
-                        <select name="psychologist_id" class="pull-right mult">
-                            <option disabled="disabled" selected="selected">בחר מרשימה</option>
+                        <select name="psychologist_id" class="pull-right mult" required>
+                            <option disabled="disabled" selected="selected" value="">בחר מרשימה</option>
                             @foreach ($psychologists as $psychologist)
                                 <option value="{{{$psychologist->id}}}">{{{$psychologist->first_name.(' ').$psychologist->last_name}}}</option>
                             @endforeach
@@ -25,9 +25,9 @@
                     </div>
 
            <label>שנת שיבוץ</label>
-                    <div class="input-line clearfix">
-                        <select name="match_year" class="pull-right mult" >
-                            <option disabled="disabled" selected="selected">בחר שנה</option>
+                    <div class="input-line clearfix" >
+                        <select name="match_year" class="pull-right mult"  required>
+                            <option disabled="disabled" selected="selected"  value="">בחר שנה</option>
                             <option>התשע"ה</option>
                             <option>התשע"ו</option>
                             <option>התשע"ז</option>
@@ -46,8 +46,8 @@
 
                     <label>שם המוסד</label>
                     <div class="input-line">
-                    <select name="institute_id" class="pull-right mult">
-                        <option disabled="disabled" selected="selected">בחר מוסד</option>
+                    <select name="institute_id" class="pull-right mult" required>
+                        <option disabled="disabled" selected="selected" value="">בחר מוסד</option>
                         @foreach ($institutes as $institute)
                             <option value="{{{$institute->id}}}">{{{$institute->name}}}</option>
                         @endforeach
