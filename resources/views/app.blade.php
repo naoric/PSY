@@ -28,8 +28,13 @@
 <body>
 <div class="container">
     <header class="main-header">
-        <h3>{{Auth::user()->first_name}} ברוך הבא </h3>
+        <h3><a href="/auth/logout"> <img src="{{{asset('images/icons/logout.png')}}}" height="20" width="20"  style="PADDING-TOP: 5px" title="התנתק מהמערכת">
+                               </a>
 
+            {{Auth::user()->first_name}} ברוך הבא
+
+
+                           </h3>
 
         <nav class="horizontal">
             <ul class="clearfix">
@@ -72,9 +77,6 @@
                     </ul>
                 </li>
                 @endif
-                <li>
-                    <a href="/auth/logout" STYLE="background-color: #C0C0C0;">התנתק מהמערכת</a>
-                </li>
 
 
             </ul>
