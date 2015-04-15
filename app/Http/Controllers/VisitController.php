@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
- use App\Models\Match;
+use App\Models\Match;
 use App\Models\Psychologist;
 use App\Models\Visit;
+use App\Models\Institute;
 use Illuminate\Support\Facades\Auth;
 
 class VisitController extends Controller {
@@ -27,6 +28,9 @@ class VisitController extends Controller {
 		$visit = new Visit( $form_data );
 		$visit->match()->associate($visit_match);
 
+        $institutes = Institute::all();
+        $const_institute_id = $visit_match->institute_id;
+        $visit->intitute_name_const = Institute::find($const_institute_id)->name;
 		$visit->save();
 
 		return redirect()->route( 'visit.index' );
@@ -60,6 +64,7 @@ class VisitController extends Controller {
 
 	private function getPsychologistInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
+
 		foreach ( $psychologist->matches as $match ) {
 			$institutes[$match->institute->id] = $match->institute;
 		}
