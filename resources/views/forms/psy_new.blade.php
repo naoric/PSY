@@ -27,8 +27,8 @@
         <label>בחר שפ"ח</label>
 
         <div class="input-line clearfix">
-            <select name="shapah_id" class="pull-right mult">
-                <option disabled="disabled" selected="selected">בחר שירות</option>
+            <select name="shapah_id" class="pull-right mult" required>
+                <option disabled="disabled" selected="selected" value="">בחר שירות</option>
                 @foreach ($shapahs as $shapah)
                     <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
                 @endforeach
@@ -108,8 +108,8 @@
             <label>סטטוס מקצועי</label>
 
             <div class="input-line">
-                <select name="professional_status_id" class="pull-right mult">
-                    <option disabled="disabled" selected="selected">בחר סטטוס</option>
+                <select name="professional_status_id" class="pull-right mult" required>
+                    <option disabled="disabled" selected="selected" value="">בחר סטטוס</option>
                     @foreach ($professional_statuses as $professional_status)
                         <option value="{{{$professional_status->id}}}">
                             {{{$professional_status->professional_status_description}}}
@@ -123,8 +123,8 @@
             <label>תפקיד בשפ"ח</label>
 
             <div class="input-line clearfix">
-                <select name="psychologist_role_id" class="pull-right mult">
-                    <option disabled="disabled" selected="selected">בחר תפקיד</option>
+                <select name="psychologist_role_id" class="pull-right mult" required>
+                    <option disabled="disabled" selected="selected" value="">בחר תפקיד</option>
                     @foreach ($roles as $role)
                         <option value="{{{$role->id}}}" {{$psychologist->psychologist_role_id == $role->id ? 'selected' : ''}}>{{{$role->psychologist_roles_description}}}</option>
 
