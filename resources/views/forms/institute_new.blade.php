@@ -15,8 +15,8 @@
 
 
         <div class="input-line clearfix">
-            <select name="shapah_id" class="pull-right mult">
-                <option disabled="disabled" selected="selected">בחר שירות</option>
+            <select name="shapah_id" class="pull-right mult" required>
+                <option disabled="disabled" selected="selected" value="">בחר שירות</option>
                 @foreach ($shapahs as $shapah)
                     <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
                 @endforeach
@@ -27,8 +27,8 @@
 
         <div class="input-line clearfix">
             <select name="type" class="pull-right mult"
-                    value="{{{$institute->type}}}">
-                <option disabled="disabled" selected="selected">בחר סוג המוסד</option>
+                    value="{{{$institute->type}}}" required >
+                <option disabled="disabled" selected="selected"  value="">בחר סוג המוסד</option>
                 <option>גן ילדים</option>
                 <option>בית ספר יסודי</option>
                 <option>חטיבת ביניים</option>
