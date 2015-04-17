@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class MatchController extends Controller {
     public function index() {
         $main_shapah = $this->getMainShapah( Auth::user() );
-        $hours_for_matches = $main_shapah->getStandarts($main_shapah);
+        $hours_for_matches = $main_shapah->getStandarts($main_shapah) * 42.5;
 
 		$matches = $this->getShapahMatches( Auth::user() );
 
-		return view( 'indexes.match', compact( 'matches' ) );
+		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches') );
 	}
 
     public function create() {
