@@ -10,14 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller {
     public function index() {
-        $shapah = 0;
-        $main_shapah = 0;
-        foreach (Auth::user()->shapahs as $shapah){
-            if (Auth::user()->shapahs()->where('shapah_id',$shapah->id)->first()->pivot->is_manager){
-                $main_shapah = $shapah;
-            }
-        }
-        $hours_for_matches = $shapah->getStandarts($main_shapah);
+        $main_shapah = $this->getMainShapah( Auth::user() );
+        $hours_for_matches = $main_shapah->getStandarts($main_shapah);
 
 		$matches = Match::all();
         $institutes = $this->getShapahInstitutes( Auth::user() );
@@ -50,22 +44,31 @@ class MatchController extends Controller {
 
     private function getShapahInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
-		foreach ( $psychologist->shapahs as $shapah ) {
-                foreach ($shapah->institutes as $shap_ins){
+		$main_shapah = $this->getMainShapah($psychologist);
+                foreach ($main_shapah->institutes as $shap_ins){
 			         $institutes[] = $shap_ins;
             }
-		}
+
 		return $institutes;
 	}
 
     private function getShapahPsychologists( Psychologist $psychologist ) {
 		$psychologists = [];
-		foreach ( $psychologist->shapahs as $shapah ) {
-                foreach ($shapah->psychologists as $shap_psy){
+		$main_shapah = $this->getMainShapah($psychologist);
+                foreach ($main_shapah->psychologists as $shap_psy){
 			         $psychologists[$shap_psy->id] = $shap_psy;
                 }
-            }
+
 
 		return $psychologists;
 	}
+
+    public function getMainShapah(Psychologist $manager){
+        foreach ($manager->shapahs as $shapah){
+            if ($manager->shapahs()->where('shapah_id',$shapah->id)->first()->pivot->is_manager){
+                $main_shapah = $shapah;
+            }
+        }
+        return $main_shapah;
+    }
 }
