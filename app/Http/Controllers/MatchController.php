@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller {
     public function index() {
+        $shapah = 0;
+        $main_shapah = 0;
+        foreach (Auth::user()->shapahs as $shapah){
+            if (Auth::user()->shapahs()->where('shapah_id',$shapah->id)->first()->pivot->is_manager){
+                $main_shapah = $shapah;
+            }
+        }
+        $hours_for_matches = $shapah->getStandarts($main_shapah);
+
 		$matches = Match::all();
         $institutes = $this->getShapahInstitutes( Auth::user() );
 

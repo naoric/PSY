@@ -9,11 +9,12 @@ class Shapah extends Model {
 	public $timestamps = false;
 	public $guarded = [ 'id' ];
 
-    public function setStandarts(Shapah $shapah){
+    public function getStandarts(Shapah $shapah){
         $sum = 0;
         foreach ($shapah->institutes as $ins){
-            $shapah->standart_hours = $sum + $ins->standart_before_cover;
+            $sum = $sum + $ins->standart_before_cover;
         }
+        return $sum;
     }
 
 	public function institutes() {

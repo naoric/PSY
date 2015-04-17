@@ -28,7 +28,8 @@ Route::group( [ 'middleware' => 'auth', 'permissions' => 'manager' ], function (
 Route::group( [ 'middleware' => 'auth', 'permissions' => 'user' ], function () {
 	Route::resource( 'visit', 'VisitController', [ 'except' => [ 'patch' ] ] );
 	Route::resource('match', 'MatchController', ['only' => ['index']]);
-	Route::resource( 'psychologist', 'PsychologistController', [ 'except' => [ 'patch', 'store' ] ] );
+    Route::resource( 'institute', 'InstituteController', [ 'only' => [ 'show', 'index' ] ] );
+	Route::resource( 'psychologist', 'PsychologistController', [ 'only' => [ 'show', 'index' ] ] );
 	Route::resource( 'shapah', 'ShapahController', [ 'only' => [ 'show'] ] );
 } );
 
