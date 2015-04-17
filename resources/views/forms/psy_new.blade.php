@@ -37,14 +37,11 @@
 
             <span class="error">
 
-            @if(isset($is_new) && !$is_new)
-                <label>הוסף שפ"ח</label>
-                <input tabindex="1" type="checkbox"  name="add_shapah" id="{{$add_shapah}}">
-
-            @endif
-
-        </div>
-
+                            @if(isset($is_new) && !$is_new)
+  <input tabindex="1" type="checkbox"  name="add_shapah" id="{{$add_shapah}}">
+           ריבוי שפ"ח לפסיכולוג
+  @endif
+</div>
 
 
         <div class="input-line clearfix">
