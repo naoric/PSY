@@ -7,7 +7,6 @@ use App\Models\Institute;
 class ShapahController extends Controller {
 
     public function show(Shapah $shapah) {
-        $shapah->setStandarts($shapah);
 		return view( 'singles.shapah', compact('shapah'));
 	}
 
