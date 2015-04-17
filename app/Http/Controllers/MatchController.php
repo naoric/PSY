@@ -13,8 +13,7 @@ class MatchController extends Controller {
         $main_shapah = $this->getMainShapah( Auth::user() );
         $hours_for_matches = $main_shapah->getStandarts($main_shapah);
 
-		$matches = Match::all();
-        $institutes = $this->getShapahInstitutes( Auth::user() );
+		$matches = $this->getShapahMatches( Auth::user() );
 
 		return view( 'indexes.match', compact( 'matches' ) );
 	}
@@ -62,6 +61,17 @@ class MatchController extends Controller {
 
 		return $psychologists;
 	}
+
+    public function getShapahMatches(Psychologist $manager){
+        $matches = [];
+        $all_matches = Match::all();
+        foreach ($all_matches as $match){
+            if ($match->institute->shapah_id == $this->getMainShapah($manager)->id){
+                $matches[$match->id] = $match;
+            }
+        }
+        return $matches;
+    }
 
     public function getMainShapah(Psychologist $manager){
         foreach ($manager->shapahs as $shapah){
