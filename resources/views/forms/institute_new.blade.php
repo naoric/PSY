@@ -18,7 +18,7 @@
             <select name="shapah_id" class="pull-right mult" required>
                 <option disabled="disabled" selected="selected" value="">בחר שירות</option>
                 @foreach ($shapahs as $shapah)
-                    <option value="{{{$shapah->id}}}">{{{$shapah->shapah_name}}}</option>
+                    <option value="{{{$shapah->id}}}" {{$institute->shapah_id == $shapah->id ? 'selected' : ''}}>{{{$shapah->shapah_name}}}</option>
                 @endforeach
             </select>
             <span class="error"></span>
