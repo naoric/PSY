@@ -12,19 +12,25 @@
     </div>
 
     <div class="row">
-        <label>שם פרטי- מנהל השפ"ח:</label>
-        <span class="label-data">{{$shapah->manager_first_name}}</span>
+        <label>מנהל השפ"ח:</label>
+        <span class="label-data">{{$shapah->manager_first_name}} {{$shapah->manager_last_name}}</span>
     </div>
 
-    <div class="row">
-        <label>שם משפחה- מנהל השפ"ח:</label>
-        <span class="label-data">{{$shapah->manager_last_name}}</span>
-    </div>
+
 
 <div class="row">
         <label>כתובת:</label>
         <span class="label-data">{{$shapah->address}}</span>
     </div>
+
+<!--
+<div class="row">
+        <label>מפה:</label>
+        <span class="label-data">< a href="">   </a></span>
+    </div>
+-->
+
+
 <div class="row">
         <label>טלפון:</label>
         <span class="label-data">{{$shapah->phone}}</span>
