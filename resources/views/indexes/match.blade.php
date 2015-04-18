@@ -6,6 +6,14 @@
 
 @section('content')
 
+<div class="input-line clearfix">
+    <label>כמות שעות לשיבוץ</label>
+    <input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches}}}">
+    <label>בחר אחוז כיסוי</label>
+    <input type="decimal" name="percent_cover" size="2" maxlength="5" max="1" min="0" value="0.75">
+    <button type="submit" class="">עדכן</button>
+</div>
+
     <table border="1">
         <thead>
         <tr>

@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller {
     public function index() {
-		$matches = Match::all();
-        $institutes = $this->getShapahInstitutes( Auth::user() );
+        $main_shapah = $this->getMainShapah( Auth::user() );
+        $hours_for_matches = $main_shapah->getStandarts($main_shapah) * 42.5;
 
-		return view( 'indexes.match', compact( 'matches' ) );
+		$matches = $this->getShapahMatches( Auth::user() );
+
+		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches') );
 	}
 
     public function create() {
@@ -41,22 +43,42 @@ class MatchController extends Controller {
 
     private function getShapahInstitutes( Psychologist $psychologist ) {
 		$institutes = [];
-		foreach ( $psychologist->shapahs as $shapah ) {
-                foreach ($shapah->institutes as $shap_ins){
+		$main_shapah = $this->getMainShapah($psychologist);
+                foreach ($main_shapah->institutes as $shap_ins){
 			         $institutes[] = $shap_ins;
             }
-		}
+
 		return $institutes;
 	}
 
     private function getShapahPsychologists( Psychologist $psychologist ) {
 		$psychologists = [];
-		foreach ( $psychologist->shapahs as $shapah ) {
-                foreach ($shapah->psychologists as $shap_psy){
+		$main_shapah = $this->getMainShapah($psychologist);
+                foreach ($main_shapah->psychologists as $shap_psy){
 			         $psychologists[$shap_psy->id] = $shap_psy;
                 }
-            }
+
 
 		return $psychologists;
 	}
+
+    public function getShapahMatches(Psychologist $manager){
+        $matches = [];
+        $all_matches = Match::all();
+        foreach ($all_matches as $match){
+            if ($match->institute->shapah_id == $this->getMainShapah($manager)->id){
+                $matches[$match->id] = $match;
+            }
+        }
+        return $matches;
+    }
+
+    public function getMainShapah(Psychologist $manager){
+        foreach ($manager->shapahs as $shapah){
+            if ($manager->shapahs()->where('shapah_id',$shapah->id)->first()->pivot->is_manager){
+                $main_shapah = $shapah;
+            }
+        }
+        return $main_shapah;
+    }
 }

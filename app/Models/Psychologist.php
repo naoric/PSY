@@ -26,7 +26,7 @@ class Psychologist extends Model implements AuthenticatableContract {
 	}
 
 	public function shapahs() {
-		return $this->belongsToMany( 'App\Models\Shapah', 'psychologist_shapah', 'psychologist_id', 'shapah_id' );
+		return $this->belongsToMany( 'App\Models\Shapah', 'psychologist_shapah', 'psychologist_id', 'shapah_id' )->withPivot('is_manager');
 	}
 
 	public function matches() {
