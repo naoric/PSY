@@ -12,7 +12,7 @@
 	<tr>
 		<td>ערוך</td>
 		<td>מחק</td>
-		<td>מזהה</td>
+		<td>צפיה</td>
         <td>שפ"ח</td>
 		<td>מספר רישיון</td>
 		<td>שם פרטי</td>
@@ -29,7 +29,7 @@
 	<tr>
 		<td>
 			<a href="{{{route('psychologist.edit', $psy->id)}}}">
-				<img src="{{{asset('images/icons/edit.png')}}}">
+				<img src="{{{asset('images/icons/edit.png')}}} ">
 			</a>
 		</td>
 		<td>
@@ -44,7 +44,7 @@
 		</td>
 		<td>
             <a href="{{route('psychologist.show', $psy->id)}}">
-                {{$psy->id}}
+                <img src="{{{asset('images/icons/view.png')}}}" height="20" width="20">
             </a>
         </td>
         <td>
