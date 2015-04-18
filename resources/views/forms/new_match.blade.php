@@ -41,7 +41,7 @@
 
                 <label>היקף משרה- שעות בשבוע</label>
                 <div class="input-line">
-                    <input type="number" name="match_hours" size="2" maxlength="2" max="60" min="1" value="{{{$match->match_hours}}}" required>
+                    <input type="number" name="match_hours" size="2" maxlength="3" max="60" min="1" value="{{{$match->match_hours}}}" required>
                 </div>
 
                     <label>שם המוסד</label>

@@ -14,8 +14,13 @@ class MatchController extends Controller {
         $hours_for_matches = $main_shapah->getStandarts($main_shapah) * 42.5;
 
 		$matches = $this->getShapahMatches( Auth::user() );
-
-		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches') );
+        $used_hours = 0;
+        foreach ($matches as $mat){
+            if ($mat->match_year == 'התשע"ו'){
+                $used_hours = $used_hours + $mat->match_hours;
+            }
+        }
+		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches','used_hours') );
 	}
 
     public function create() {

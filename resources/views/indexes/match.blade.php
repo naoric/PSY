@@ -5,14 +5,29 @@
 @stop
 
 @section('content')
-
+<form class="psy-form">
+<div class="input-line clearfix">
+    <label>סה"כ שעות</label>
+    <input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches}}}">
+</div>
+<br>
+<div class="input-line clearfix">
+    <label>בחר אחוז כיסוי</label>
+    %<input type="decimal" id="percent" size="2" maxlength="5" max="100" min="0" value="100">
+    <button onclick="updateFunction(); return false;" clearfix>עדכן</button>
+</div>
+<br>
 <div class="input-line clearfix">
     <label>כמות שעות לשיבוץ</label>
-    <input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches}}}">
-    <label>בחר אחוז כיסוי</label>
-    <input type="decimal" name="percent_cover" size="2" maxlength="5" max="1" min="0" value="0.75">
-    <button type="submit" class="">עדכן</button>
+    <input type="number" id="output2" readonly class= "medium" size="5" maxlength="3" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches}}}">
 </div>
+<br>
+<div class="input-line clearfix">
+    <label>שעות שנותרו לשיבוץ</label>
+    <input type="number" id="output3" readonly class= "medium" size="5" maxlength="3" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches-$used_hours}}}">
+</div>
+<br>
+</form>
 
     <table border="1">
         <thead>
@@ -23,7 +38,6 @@
             <td>מוסד</td>
             <td>שעות במוסד</td>
             <td>שנת שיבוץ</td>
-            <td>תקן למוסד (למחוק)</td>
         </tr>
             </thead>
 
@@ -44,11 +58,16 @@
                 <td>{{{$mat->institute['name']}}}</td>
                 <td>{{{$mat->match_hours}}}</td>
                 <td>{{{$mat->match_year}}}</td>
-                <td>{{{$mat->institute['standart_before_cover']}}}</td>
             </tr>
         @endforeach
     </table>
 
+    <script>
+        function updateFunction() {
+       document.getElementById('output2').value = (document.getElementById('output').value)*             (document.getElementById('percent').value)/100;
+        document.getElementById('output3').value = (document.getElementById('output2').value)-{{{$used_hours}}};
+    }
+    </script>
 
 
 
