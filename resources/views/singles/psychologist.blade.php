@@ -72,14 +72,16 @@
             <td>תיאור הפעילות</td>
         </tr>
         </thead>
-            @foreach($psychologist->visits as $visit)
-                <tr>
-                    <td>{{$visit->id}}</td>
-                    <td>{{$visit->date}}</td>
-                    <td>{{$visit->activity}}</td>
-                    <td>{{$visit->length}}</td>
-                    <td>{{$visit->comment}}</td>
-                </tr>
+            @foreach($all_visits as $visit)
+                @if ($psychologist->id == $visit->psychologist_id_const)
+                    <tr>
+                        <td>{{$visit->id}}</td>
+                        <td>{{$visit->date}}</td>
+                        <td>{{$visit->activity}}</td>
+                        <td>{{$visit->length}}</td>
+                        <td>{{$visit->comment}}</td>
+                    </tr>
+                @endif
             @endforeach
         </table>
     </div>

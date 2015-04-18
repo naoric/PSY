@@ -10,8 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class VisitController extends Controller {
 	public function index() {
-		$visits = Visit::all();
-
+        $visits = $this->getUserVisits( Auth::user() );
 		return view( 'indexes.visit', compact( 'visits' ) );
 	}
 
@@ -27,6 +26,9 @@ class VisitController extends Controller {
         list($form_data, $visit_match) = $this->getFormData();
 		$visit = new Visit( $form_data );
 		$visit->match()->associate($visit_match);
+
+        $const_psy_id = $visit_match->psychologist_id;
+        $visit->psychologist_id_const = Psychologist::find($const_psy_id)->id;
 
         $const_institute_id = $visit_match->institute_id;
         $visit->intitute_name_const = Institute::find($const_institute_id)->name;
@@ -51,6 +53,9 @@ class VisitController extends Controller {
 
 		$visit->fill( $form_data );
         $visit->match()->associate($visit_match);
+
+        $const_psy_id = $visit_match->psychologist_id;
+        $visit->psychologist_id_const = Psychologist::find($const_psy_id)->id;
 
         $const_institute_id = $visit_match->institute_id;
         $visit->intitute_name_const = Institute::find($const_institute_id)->name;
@@ -84,6 +89,16 @@ class VisitController extends Controller {
 		$visit_match = $this->getMatchForPsychologist(\Request::input('institute_id'));
 
 		return [$form_data, $visit_match];
+    }
 
+    public function getUserVisits( Psychologist $user ){
+        $visits = [];
+        $all_visits = Visit::all();
+        foreach ($all_visits as $visit){
+            if ($visit->psychologist_id_const == $user->id){
+                $visits[$visit->id] = $visit;
+            }
+        }
+        return $visits;
     }
 }

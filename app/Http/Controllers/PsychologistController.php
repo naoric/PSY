@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Psychologist;
 use App\Models\Shapah;
+use App\Models\Visit;
 use App\Models\ProfessionalStatus;
 use App\Models\PsychologistRole;
 use App\User;
@@ -41,7 +42,8 @@ class PsychologistController extends Controller {
 	}
 
 	public function show( Psychologist $psychologist ) {
-		return view( 'singles.psychologist', compact( 'psychologist' ) );
+        $all_visits = Visit::all();
+		return view( 'singles.psychologist', compact( 'psychologist', 'all_visits' ) );
 	}
 
 	public function create() {
