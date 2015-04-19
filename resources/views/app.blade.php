@@ -31,7 +31,7 @@
         <h3><a href="/auth/logout"> <img src="{{{asset('images/icons/logout.png')}}}" height="20" width="20"  style="PADDING-TOP: 5px" title="התנתק מהמערכת">
                                </a>
 
-            {{Auth::user()->first_name}} ברוך הבא
+            {{Auth::user()->first_name}}, ברוך הבא
 
 
                            </h3>
@@ -44,7 +44,7 @@
                     <a href="/map">השפ"חים במחוז</a>
                 </li>
                 <li>
-                    <a href="#">המוסדות במחוז</a>
+                    <a href="#">המוסדות בשפ"ח</a>
                     <ul>
                         <li><a href="{{route('institute.index')}}">רשימת המוסדות</a></li>
                         <li><a href="{{route('institute.create')}}">הוספת מוסד חדש</a></li>
