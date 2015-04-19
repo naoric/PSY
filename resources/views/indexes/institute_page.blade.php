@@ -44,7 +44,7 @@
 
                 <td>{{{$ei->id}}}</td>
                 <td>{{{$ei->name}}}</td>
-                <td>{{{$ei->shapah->shapah_name}}}</td>
+                <td>{{{$ei->shapah_name}}}</td>
                 <td>{{{$ei->city}}}</td>
                 <td>{{{$ei->number_of_classes}}}</td>
                 <td>{{{$ei->number_of_special_classes}}}</td>
@@ -57,6 +57,6 @@
             </tr>
         @endforeach
     </table>
-{!! $institutes->render() !!}
 
+{!! $institutes->render() !!}
 @stop

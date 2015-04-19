@@ -13,7 +13,7 @@ class InstituteController extends Controller {
 
 	public function index() {
         $institutes = $this->filterRelevantInstitutes(Auth::user());
-        $institutes = Institute::paginate(5);
+//        $institutes = Institute::paginate(5);
 
 
 		return view( 'indexes.institute_page',  ['institutes'=> $institutes ]);
@@ -93,8 +93,7 @@ class InstituteController extends Controller {
 		         ->join( 'shapahs', 'shapahs.id', '=', 'psychologist_shapah.shapah_id' )
 		         ->join( 'institutes', 'institutes.shapah_id', '=', 'shapahs.id' )
 		         ->where( 'psychologist_shapah.psychologist_id', '=', $psychologist->id )
-		         ->select('institutes.*', 'shapahs.shapah_name as shapah_name')
-		         ->get();
+		         ->select('institutes.*', 'shapahs.shapah_name as shapah_name')->paginate(5);
 	}
 
     function calc_hours(Institute $ins){
