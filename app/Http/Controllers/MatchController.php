@@ -10,17 +10,34 @@ use Illuminate\Support\Facades\Auth;
 
 class MatchController extends Controller {
     public function index() {
-        $main_shapah = $this->getMainShapah( Auth::user() );
-        $hours_for_matches = $main_shapah->getStandarts($main_shapah) * 42.5;
-
-		$matches = $this->getShapahMatches( Auth::user() );
+        $hours_for_matches = 0;
         $used_hours = 0;
-        foreach ($matches as $mat){
-            if ($mat->match_year == 'התשע"ו'){
-                $used_hours = $used_hours + $mat->match_hours;
+        if (Auth::user()->permission == 2){
+            $main_shapah = $this->getMainShapah( Auth::user() );
+            $hours_for_matches = $main_shapah->getStandarts($main_shapah) * 42.5;
+
+            $matches = $this->getShapahMatches( Auth::user() );
+            foreach ($matches as $mat){
+                if ($mat->match_year == 'התשע"ו'){
+                    $used_hours = $used_hours + $mat->match_hours;
+                }
             }
         }
-		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches','used_hours') );
+        else{
+            $all_shapah = Shapah::all();
+            foreach ($all_shapah as $shapah){
+                $hours_for_matches = $hours_for_matches + ( $shapah->getStandarts($shapah) *42.5 );
+            }
+            $matches = Match::all();
+            foreach ($matches as $mat){
+                if ($mat->match_year == 'התשע"ו'){
+                    $used_hours = $used_hours + $mat->match_hours;
+                }
+            }
+
+        }
+        $psy =Auth::user();
+		return view( 'indexes.match', compact( 'matches' ,'hours_for_matches','used_hours', 'psy') );
 	}
 
     public function create() {
@@ -79,6 +96,7 @@ class MatchController extends Controller {
     }
 
     public function getMainShapah(Psychologist $manager){
+        $main_shapah = new Shapah();
         foreach ($manager->shapahs as $shapah){
             if ($manager->shapahs()->where('shapah_id',$shapah->id)->first()->pivot->is_manager){
                 $main_shapah = $shapah;

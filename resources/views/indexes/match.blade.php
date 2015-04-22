@@ -5,7 +5,9 @@
 @stop
 
 @section('content')
+
 <form class="psy-form">
+
 <div class="input-line clearfix">
     <label>סה"כ שעות</label>
     <input type="number" id="output" readonly class= "medium" size="5" STYLE="background-color: #B8B8B8;" value="{{{$hours_for_matches}}}">
@@ -38,6 +40,9 @@
             <td>מוסד</td>
             <td>שעות במוסד</td>
             <td>שנת שיבוץ</td>
+            @if ($psy->permission == 3)
+                <td>שפ"ח</td>
+            @endif
         </tr>
             </thead>
 
@@ -58,6 +63,9 @@
                 <td>{{{$mat->institute['name']}}}</td>
                 <td>{{{$mat->match_hours}}}</td>
                 <td>{{{$mat->match_year}}}</td>
+                @if ($psy->permission == 3)
+                    <td>{{{$mat->institute->shapah['shapah_name']}}}</td>
+                @endif
             </tr>
         @endforeach
     </table>
