@@ -72,8 +72,8 @@
 
     <script>
         function updateFunction() {
-       document.getElementById('output2').value = (document.getElementById('output').value)*             (document.getElementById('percent').value)/100;
-        document.getElementById('output3').value = (document.getElementById('output2').value)-{{{$used_hours}}};
+       document.getElementById('output2').value = ((document.getElementById('output').value)*             (document.getElementById('percent').value)/100).toFixed(2);
+        document.getElementById('output3').value = ((document.getElementById('output2').value)-{{{$used_hours}}}).toFixed(2);
     }
     </script>
 
