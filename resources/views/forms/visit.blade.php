@@ -55,12 +55,12 @@
                     </optgroup>
 
                     <optgroup label="פגישות">
-                        <option>מנהל</option>
-                        <option>יועצת</option>
-                        <option>גננת</option>
-                        <option>מורה</option>
+                        <option>פגישה עם מנהל</option>
+                        <option>פגישה עם יועצת</option>
+                        <option>פגישה עם גננת</option>
+                        <option>פגישה עם מורה</option>
                         <option>אינטייק הורים</option>
-                        <option>החזר הוצאות הורים</option>
+                        <option>החזר תוצאות הורים</option>
                         <option>הדרכת הורים</option>
                         <option>אחר</option>
                     </optgroup>

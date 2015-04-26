@@ -24,37 +24,39 @@
         </tr>
         </thead>
         @foreach ($institutes as $ei)
-            <tr>
-                <td>
-                    <a href="{{{route('institute.edit', $ei->id)}}}">
-                        <img src="{{{asset('images/icons/edit.png')}}}">
-                    </a>
-                </td>
-                <td>
-                    <form action="{{route('institute.destroy', $ei->id)}}" method="post">
-                        <input type="hidden" name="_method" value="DELETE"/>
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit">
-                            <img src="{{{asset('images/icons/delete.png')}}}">
-                        </button>
-                    </form>
+            @if ($ei->name <> "דיווח כללי")
+                <tr>
+                    <td>
+                        <a href="{{{route('institute.edit', $ei->id)}}}">
+                            <img src="{{{asset('images/icons/edit.png')}}}">
+                        </a>
+                    </td>
+                    <td>
+                        <form action="{{route('institute.destroy', $ei->id)}}" method="post">
+                            <input type="hidden" name="_method" value="DELETE"/>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit">
+                                <img src="{{{asset('images/icons/delete.png')}}}">
+                            </button>
+                        </form>
 
 
-                </td>
+                    </td>
 
-                <td>{{{$ei->id}}}</td>
-                <td>{{{$ei->name}}}</td>
-                <td>{{{$ei->shapah_name}}}</td>
-                <td>{{{$ei->city}}}</td>
-                <td>{{{$ei->number_of_classes}}}</td>
-                <td>{{{$ei->number_of_special_classes}}}</td>
-                <td>{{{$ei->number_of_special_students}}}</td>
-                <td>{{{$ei->number_of_alef_students}}}</td>
-                <td>{{{$ei->number_of_non_alef_students}}}</td>
-                <td>{{{$ei->kindergaten_type}}}</td>
-                <td>{{{$ei->number_of_kindergarten_children}}}</td>
+                    <td>{{{$ei->id}}}</td>
+                    <td>{{{$ei->name}}}</td>
+                    <td>{{{$ei->shapah_name}}}</td>
+                    <td>{{{$ei->city}}}</td>
+                    <td>{{{$ei->number_of_classes}}}</td>
+                    <td>{{{$ei->number_of_special_classes}}}</td>
+                    <td>{{{$ei->number_of_special_students}}}</td>
+                    <td>{{{$ei->number_of_alef_students}}}</td>
+                    <td>{{{$ei->number_of_non_alef_students}}}</td>
+                    <td>{{{$ei->kindergaten_type}}}</td>
+                    <td>{{{$ei->number_of_kindergarten_children}}}</td>
 
-            </tr>
+                </tr>
+            @endif
         @endforeach
     </table>
 
