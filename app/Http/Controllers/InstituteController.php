@@ -13,9 +13,6 @@ class InstituteController extends Controller {
 
 	public function index() {
         $institutes = $this->filterRelevantInstitutes(Auth::user());
-//        $institutes = Institute::paginate(5);
-
-
 		return view( 'indexes.institute_page',  ['institutes'=> $institutes ]);
 	}
 
@@ -81,8 +78,9 @@ class InstituteController extends Controller {
 	}
 
 	private function filterRelevantInstitutes( Psychologist $user ) {
-		if ( $user->isAdmin() ) {
-			return Institute::all();
+		if ( $user->permission == 3 ) {
+            $institutes = Institute::where('name', '<>', "דיווח כללי")->paginate(5);
+            return $institutes;
 		}
 
 		return $this->getInstitutesForPsychologist( $user );
@@ -104,5 +102,4 @@ class InstituteController extends Controller {
         $all_standarts = $first_standart + $second_standart + $third_standart;
         return $all_standarts;
     }
-
 }
