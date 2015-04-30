@@ -9,7 +9,6 @@
         <thead>
         <tr>
             <td >ערוך</td>
-            <td>מחק</td>
             <td>מזהה</td>
             <td>שם המוסד</td>
             <td>שפ"ח</td>
@@ -30,17 +29,6 @@
                         <a href="{{{route('institute.edit', $ei->id)}}}">
                             <img src="{{{asset('images/icons/edit.png')}}}">
                         </a>
-                    </td>
-                    <td>
-                        <form action="{{route('institute.destroy', $ei->id)}}" method="post">
-                            <input type="hidden" name="_method" value="DELETE"/>
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <button type="submit">
-                                <img src="{{{asset('images/icons/delete.png')}}}">
-                            </button>
-                        </form>
-
-
                     </td>
 
                     <td>{{{$ei->id}}}</td>

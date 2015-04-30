@@ -67,6 +67,7 @@
         <tr>
             <td>מספר מפגש</td>
             <td>תאריך המפגש</td>
+            <td>מוסד</td>
             <td>סוג פעילות</td>
             <td>משך המפגש</td>
             <td>תיאור הפעילות</td>
@@ -77,6 +78,7 @@
                     <tr>
                         <td>{{$visit->id}}</td>
                         <td>{{$visit->date}}</td>
+                        <td>{{$visit->intitute_name_const}}</td>
                         <td>{{$visit->activity}}</td>
                         <td>{{$visit->length}}</td>
                         <td>{{$visit->comment}}</td>
